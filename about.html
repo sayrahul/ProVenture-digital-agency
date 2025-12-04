@@ -1,0 +1,962 @@
+﻿<!DOCTYPE html>
+<html class="mozilla" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="DPR,ViewPort-Width,Width" http-equiv="Accept-CH"/>
+<link href="https://www.googletagmanager.com/" rel="preconnect"/>
+<link href="https://www.google-analytics.com/" rel="preconnect"/>
+<link href="https://connect.facebook.net/" rel="preconnect"/>
+<link href="https://www.facebook.com/" rel="preconnect"/>
+<link href="https://px.ads.linkedin.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/" rel="dns-prefetch"/>
+<link href="https://fonts.gstatic.com/" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/" rel="preconnect"/>
+<link href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="http://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="preload"/>
+<link as="style" href="http://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="preload"/>
+<link href="custom/css/default-20252e34.css?v=112" rel="stylesheet" type="text/css"/>
+<link href="custom/css/proventure-custom.css" rel="stylesheet" type="text/css"/>
+<link href="util/js/lenis/lenis.min.css" rel="stylesheet" type="text/css"/>
+<link href="util/widgets/businessrating/businessrating.min.css" rel="stylesheet" type="text/css"/>
+<style nonce="c799f9759bce4511b7ada938ccc4ad0d">
+		/*! Flickity v2.3.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+		.flickity-enabled {
+			position: relative;
+		}
+
+		.flickity-enabled:focus {
+			outline: none;
+		}
+
+		.flickity-viewport {
+			overflow: hidden;
+			position: relative;
+			height: 100%;
+		}
+
+		.flickity-slider {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.flickity-enabled.is-draggable {
+			-webkit-tap-highlight-color: transparent;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.flickity-enabled.is-draggable .flickity-viewport {
+			cursor: move;
+			cursor: -webkit-grab;
+			cursor: grab;
+		}
+
+		.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+			cursor: -webkit-grabbing;
+			cursor: grabbing;
+		}
+
+		.flickity-button {
+			position: absolute;
+			background: hsla(0, 0%, 100%, .75);
+			border: none;
+			color: #333;
+		}
+
+		.flickity-button:hover {
+			background: #fff;
+			cursor: pointer;
+		}
+
+		.flickity-button:focus {
+			outline: none;
+			box-shadow: 0 0 0 5px #19f;
+		}
+
+		.flickity-button:active {
+			opacity: .6;
+		}
+
+		.flickity-button:disabled {
+			opacity: .3;
+			cursor: auto;
+			pointer-events: none;
+		}
+
+		.flickity-button-icon {
+			fill: currentColor;
+		}
+
+		.flickity-prev-next-button {
+			top: 50%;
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+
+		.flickity-prev-next-button.previous {
+			left: 10px;
+		}
+
+		.flickity-prev-next-button.next {
+			right: 10px;
+		}
+
+		.flickity-rtl .flickity-prev-next-button.previous {
+			left: auto;
+			right: 10px;
+		}
+
+		.flickity-rtl .flickity-prev-next-button.next {
+			right: auto;
+			left: 10px;
+		}
+
+		.flickity-prev-next-button .flickity-button-icon {
+			position: absolute;
+			left: 20%;
+			top: 20%;
+			width: 60%;
+			height: 60%;
+		}
+
+		.flickity-page-dots {
+			position: absolute;
+			width: 100%;
+			bottom: -25px;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			text-align: center;
+			line-height: 1;
+		}
+
+		.flickity-rtl .flickity-page-dots {
+			direction: rtl;
+		}
+
+		.flickity-page-dots .dot {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0 8px;
+			background: #333;
+			border-radius: 50%;
+			opacity: .25;
+			cursor: pointer;
+		}
+
+		.flickity-page-dots .dot.is-selected {
+			opacity: 1;
+		}
+	</style>
+<style nonce="c799f9759bce4511b7ada938ccc4ad0d">
+		.cc-window {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-content: center;
+			font-size: 15px;
+			line-height: 1.4em;
+			box-sizing: border-box;
+			padding: 20px;
+			box-shadow: 0 0 16px rgba(0, 0, 0, .4);
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
+			z-index: 9999;
+			opacity: 1;
+			-webkit-transition: opacity 1s ease;
+			-moz-transition: opacity 1s ease;
+			-o-transition: opacity 1s ease;
+			transition: opacity 1s ease;
+		}
+
+		.cc-window.cc-invisible {
+			opacity: 0 !important;
+		}
+
+		@media screen and (min-width:900px) {
+			.cc-window {
+				flex-direction: row;
+			}
+		}
+
+		.cc-window .cc-message {
+			flex: 1 1 auto;
+		}
+
+		.cc-window .cc-compliance {
+			display: flex;
+			flex: 0 1 auto;
+			align-items: center;
+			align-content: space-between;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			margin-top: 20px;
+		}
+
+		.cc-window .cc-compliance .cc-btn {
+			cursor: pointer;
+			color: #fff;
+			flex: 1 0 auto;
+			width: 100%;
+			line-height: 24px;
+			padding: 10px 20px;
+			text-align: center;
+			text-transform: uppercase;
+			transition: all .15s linear;
+		}
+
+		.cc-window .cc-compliance .cc-btn:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		.cc-window .cc-compliance .cc-btn.cc-dismiss {
+			background: transparent;
+			border: 1px solid rgba(255, 255, 255, .1);
+		}
+
+		.cc-window .cc-compliance .cc-btn:hover,
+		.cc-window .cc-compliance .cc-btn:active,
+		.cc-window .cc-compliance .cc-btn:focus {
+			border-color: #fff;
+		}
+
+		.cc-window .cc-compliance .cc-btn:last-child,
+		.cc-window .cc-compliance .cc-btn.cc-allow {
+			color: #000;
+			font-size: 18px;
+			border: 1px solid rgba(255, 255, 255, .1);
+			background: rgba(255, 255, 255, .9);
+		}
+
+		.cc-window .cc-compliance .cc-btn:last-child:hover,
+		.cc-window .cc-compliance .cc-btn.cc-allow:hover,
+		.cc-window .cc-compliance .cc-btn:last-child:active,
+		.cc-window .cc-compliance .cc-btn.cc-allow:active,
+		.cc-window .cc-compliance .cc-btn:last-child:focus,
+		.cc-window .cc-compliance .cc-btn.cc-allow:focus {
+			background: #fff;
+			border-color: #fff;
+		}
+
+		@media screen and (min-width:900px) {
+			.cc-window .cc-compliance {
+				flex-direction: row;
+				margin-top: 0;
+				margin-left: 40px;
+			}
+
+			.cc-window .cc-compliance .cc-btn {
+				width: auto;
+			}
+
+			.cc-window .cc-compliance .cc-btn:not(:first-child) {
+				margin-top: 0;
+				margin-left: 10px;
+			}
+		}
+	</style>
+<link href="http://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet" type="text/css"/>
+<link href="http://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet" type="text/css"/>
+<link href="index.html" rel="canonical"/>
+<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../icon.png" rel="icon" type="image/png"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<title>About ProVenture Digital Agency | Our Story &amp; Team in Chhatrapati Sambhajinagar (Aurangabad)</title>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="ProVenture Digital Agency" name="author"/>
+<meta content="Meet the creative team behind ProVenture. Learn about our story, our mission, and the values that drive our digital marketing and branding success in Chhatrapati Sambhajinagar (Aurangabad)." name="description"/>
+<meta content="about proventure, proventure digital agency team, our story, digital marketing experts Chhatrapati Sambhajinagar (Aurangabad), branding agency maharashtra, creative team aurangabad" name="keywords"/>
+<link href="https://www.proventure.in/about.html" rel="canonical"/>
+<meta content="IN-MH" name="geo.region"/>
+<meta content="Chhatrapati Sambhajinagar (Aurangabad)" name="geo.placename"/>
+<meta content="19.8359784;75.2958903" name="geo.position"/>
+<meta content="19.8359784, 75.2958903" name="ICBM"/>
+<meta content="The ProVenture Story | Meet Our Digital Marketing Team" property="og:title"/>
+<meta content="Discover the passion and expertise that drives ProVenture. Learn about our journey to becoming a leading digital agency in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.proventure.in/about.html" property="og:url"/>
+<meta content="ProVenture Digital Agency" property="og:site_name"/>
+<meta content="en_IN" property="og:locale"/>
+<meta content="https://www.proventure.in/custom/images/og-image-1200x630.jpg.png" property="og:image"/>
+<meta content="The ProVenture Digital Agency team in their Chhatrapati Sambhajinagar (Aurangabad) office" property="og:image:alt"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@YProventureIN" name="twitter:site"/>
+<meta content="@YProventureIN" name="twitter:creator"/>
+<meta content="The ProVenture Story | Meet Our Digital Marketing Team" name="twitter:title"/>
+<meta content="Discover the passion and expertise that drives ProVenture. Learn about our journey to becoming a leading digital agency in Chhatrapati Sambhajinagar (Aurangabad)." name="twitter:description"/>
+<meta content="https://www.proventure.in/custom/images/og-image-1200x630.jpg.png" name="twitter:image"/>
+<meta content="The ProVenture Digital Agency team in their Chhatrapati Sambhajinagar (Aurangabad) office" name="twitter:image:alt"/>
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#FFFFFF" name="theme-color"/> <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About ProVenture Digital Agency | Our Story & Team",
+  "url": "https://www.proventure.in/about.html",
+  "description": "Learn about the history, mission, and expert team at ProVenture, a full-service digital marketing and branding agency based in Chhatrapati Sambhajinagar (Aurangabad).",
+  "mainEntity": {
+    "@type": "MarketingAgency",
+    "name": "ProVenture Digital Agency",
+    "@id": "https://www.proventure.in/",
+    "telephone": "+919595997711",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kanchanwadi",
+      "addressLocality": "Chhatrapati Sambhajinagar (Aurangabad)",
+      "addressRegion": "Maharashtra",
+      "postalCode": "431001",
+      "addressCountry": "IN"
+    }
+  }
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-54GD0NH4WH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-54GD0NH4WH');
+</script>
+<!-- Script Includes - PageHead -->
+<script nonce="c387845dbecc4d21a0a0f5ca4724ef3f" src="util/jquery/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+</head>
+<body class="contentmodule custommodule pagezonemodule wc-page page_age section_age lang_en mode_normal status_success page page_3783" id="body">
+<!--WCFormStart-->
+<form action="https://www.proventure.in/about.html" id="ctl02" method="post">
+<div class="aspNetHidden">
+</div>
+<div class="cursor"></div>
+<div class="is-loading page-wrapper">
+<header class="header">
+<a class="sr-only sr-only-focusable skiplink" href="#C_T_DefaultRegion">Skip to content</a>
+<div class="logoslogan">
+<a aria-label="Go to homepage" href="index.html" title="ProVenture digital agency">
+<strong>ProVenture</strong>
+</a>
+<a ariahidden="true" href="index.html" title="Full-Service Marketing Agency — ProVenture, Chhatrapati Sambhajinagar (Aurangabad), Aurangabad">
+<div class="number"><small>10+</small><span>years of creativity</span></div>
+</a>
+</div>
+<div class="header-nav">
+<a aria-label="Go to homepage" class="startpagelink header-logo" href="index.html" title="ProVenture digital agency">
+<svg viewbox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+<g>
+<g>
+<!-- VP Logo Main Shape -->
+<path class="icon" d="M112.34,113.1c-.51.38-2.08-2.34-2.4-2.85-4.89-7.67-9.09-16.07-14.04-23.75-.03-.59,5.05-7.12,5.8-8.49,5.37-9.91-.76-22.24-12.01-23.4l-55.74-.05-15.2-26.95h76.34c28.07,1.77,44.16,30.89,33.5,56.3l-16.26,29.19ZM70.8,66.6l34,59.02-15.4,26.78-2.31-3, -46.31-81.79L41.11,66.6H70.8ZM161.24,27.6l-18.75,32.99c-.68.12-.4-.3-.44-.73-.7-8.12-1.01-13.43-4.37-19.47-.89-1.63-2.03-3.32-3.44-5.12-2.48-3.18-4.75-4.37-7.61-6.81-.3-.28-.62-.3-.5-.85h35.1Zm0,0l-18.75,32.99c-.68.12-.4-.3-.44-.73-.7-8.12-1.01-13.43-4.37-19.47l23.56-12.79Z" fill="#0099cc"></path>
+</g>
+<g>
+<!-- VP Logo Inner Shape -->
+<path class="icon" d="M112.34,113.1c-.51.38-2.08-2.34-2.4-2.85-4.89-7.67-9.09-16.07-14.04-23.75-.03-.59,5.05-7.12,5.8-8.49,5.37-9.91-.76-22.24-12.01-23.4l-55.74-.05-15.2-26.95h76.34c28.07,1.77,44.16,30.89,33.5,56.3l-16.26,29.19ZM70.8,66.6l34,59.02-15.4,26.78-2.31-3, -46.31-81.79L41.11,66.6H70.8ZM161.24,27.6l-18.75,32.99c-.68.12-.4-.3-.44-.73-.7-8.12-1.01-13.43-4.37-19.47-.89-1.63-2.03-3.32-3.44-5.12-2.48-3.18-4.75-4.37-7.61-6.81-.3-.28-.62-.3-.5-.85h35.1Zm0,0l-18.75,32.99c-.68.12-.4-.3-.44-.73-.7-8.12-1.01-13.43-4.37-19.47l23.56-12.79Z" fill="#0099cc"></path>
+</g>
+</g>
+</svg>
+</a>
+<div class="navtoggle">
+<span></span>
+<span></span>
+</div>
+</div>
+<div class="mainnav">
+<div class="mainnav-in">
+<ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
+<li id="navigation_2"><a class="sitemenuitem" href="about.html">About Us</a></li>
+<li id="navigation_3"><a class="sitemenuitem" href="services.html">Services</a></li>
+<li id="navigation_4"><a class="sitemenuitem" href="http://work.proventure.in/">Projects</a></li>
+<li id="navigation_5"><a class="sitemenuitem" href="clients.html">Clients</a></li>
+<li id="navigation_6"><a class="sitemenuitem" href="contact.html">Contact Us</a></li>
+</ul>
+<div class="container-big">
+<div class="grid-row mainnav-inner">
+<div class="mainnav-servicethumb">
+<img alt="ProVenture digital agency Logo" class="img-fluid img-thumbnail default-img" height="600" loading="lazy" src="thumbnails/121216-533-600-Crop.jpg" width="533"/>
+<img alt="ProVenture Services &gt; Strategy" class="img-fluid img-thumbnail img-1" height="600" loading="lazy" src="thumbnails/98123-533-600-Crop.jpg" width="533"/>
+<img alt="ProVenture Services &gt; Creation" class="img-fluid img-thumbnail img-2" height="600" loading="lazy" src="thumbnails/99887-533-600-Crop.jpg" width="533"/>
+<img alt="ProVenture Services &gt; Marketing" class="img-fluid img-thumbnail img-3" height="600" loading="lazy" src="thumbnails/120771-533-600-Crop.jpg" width="533"/>
+<img alt="ProVenture Services &gt; Applications" class="img-fluid img-thumbnail img-4" height="600" loading="lazy" src="thumbnails/99711-533-600-Crop.jpg" width="533"/>
+</div>
+<div class="mainnav-servicenav servicenav">
+<div class="servicenav-item" data-img=".img-1">
+<a href="graphic-design.html"><span class="h3">Design</span></a>
+<ul class="catlist">
+<li><a href="graphic-design.html">Graphic Design &amp; Branding</a></li>
+<li><a href="web-design.html">Website Design &amp; Development</a></li>
+<li><a href="creative-content.html">Creative Content</a></li>
+</ul>
+</div>
+<div class="servicenav-item" data-img=".img-2">
+<a href="digital-printing.html"><span class="h3">Printing</span></a>
+<ul class="catlist">
+<li><a href="digital-printing.html">Digital Printing</a></li>
+<li><a href="offset-printing.html">Offset Printing</a></li>
+<li><a href="special-materials.html">Special Prints &amp; Event
+													Material</a></li>
+</ul>
+</div>
+<div class="servicenav-item" data-img=".img-3">
+<a href="digital-marketing.html"><span class="h3">Marketing</span></a>
+<ul class="catlist">
+<li><a href="digital-marketing.html">Digital Marketing</a></li>
+<li><a href="online-advertising.html">Online Advertising</a></li>
+<li><a href="social-media.html">Social Media Marketing</a></li>
+</ul>
+</div>
+<div class="servicenav-item" data-img=".img-4">
+<a href="video-production.html"><span class="h3">Video</span></a>
+<ul class="catlist">
+<li><a href="video-production.html">Video Production</a></li>
+<li><a href="video-editing.html">Video Editing</a></li>
+<li><a href="video-marketing.html">Video Marketing</a></li>
+</ul>
+</div>
+</div>
+<div class="mainnav-cta">
+<p>Got an idea or project? Let’s start today!</p>
+<a class="btn btn-outline pv-btn-primary pv-magnetic" href="tel:+919595997711" title="ProVenture Digital Agency">
+										Call us now
+									</a>
+<div class="socialicons">
+<!-- LinkedIn -->
+<a aria-label="Connect with us on LinkedIn" class="sociallink sociallink-linkedin" href="https://www.linkedin.com/company/proventurein/" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<svg class="svg" role="presentation" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M100.3 448H7V148.9h93.3V448zm-46.6-341C24 
+											107 0 83 0 53.3 0 23.6 24 0 53.7 
+											0s53.7 23.6 53.7 53.3c0 29.6-24 
+											53.7-53.7 53.7zM447.9 
+											448h-92.4V302.4c0-34.7-12.5-58.4-43.7-58.4-23.9 
+											0-38.1 16.1-44.4 31.6-2.3 5.4-2.9 
+											12.9-2.9 20.4V448h-92.4s1.2-270.4 
+											0-299.1h92.4v42.4c12.3-19 
+											34.4-46 83.7-46 61.2 0 
+											107.1 39.9 107.1 125.4V448z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- Facebook -->
+<a aria-label="Follow us on Facebook" class="sociallink sociallink-facebook" href="https://www.facebook.com/ProVentureIN/" rel="noopener noreferrer" target="_blank" title="Facebook">
+<svg class="svg" role="presentation" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 
+											12.42-50.06 52.24-50.06H293V6.26S259.77 0 225.36 
+											0c-73.61 0-121.36 44.38-121.36 124.72v70.62H22.89V288h81.11v224h100.17V288z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- Instagram -->
+<a aria-label="Follow us on Instagram" class="sociallink sociallink-instagram" href="https://www.instagram.com/proventureIN/" rel="noopener noreferrer" target="_blank" title="Instagram">
+<svg class="svg" role="presentation" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 
+												114.9s51.3 114.9 114.9 114.9S339 
+												319.5 339 255.9 287.7 141 224.1 
+												141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 
+												74.7-74.7 74.7 33.5 74.7 
+												74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 
+												14.9-12 26.8-26.8 
+												26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 
+												26.8-26.8 26.8 12 26.8 
+												26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 
+												0-35.8 1.7-67.6 9.9-93.9 
+												36.1s-34.4 58-36.2 93.9c-2.1 
+												37-2.1 147.9 0 184.9 1.7 35.9 9.9 
+												67.7 36.2 93.9s58 34.4 93.9 
+												36.2c37 2.1 147.9 2.1 184.9 
+												0 35.9-1.7 67.7-9.9 93.9-36.2 
+												26.2-26.2 34.4-58 36.2-93.9 2.1-37 
+												2.1-147.8 0-184.8zM398.8 388c-7.8 
+												19.6-22.9 34.7-42.6 
+												42.6-29.5 11.7-99.5 9-132.1 
+												9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 
+												9-132.1c7.8-19.6 22.9-34.7 
+												42.6-42.6 29.5-11.7 99.5-9 
+												132.1-9s102.7-2.6 
+												132.1 9c19.6 7.8 34.7 22.9 
+												42.6 42.6 11.7 29.5 9 
+												99.5 9 132.1s2.7 102.7-9 132.1z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- WhatsApp -->
+<a aria-label="Chat with us on WhatsApp" class="sociallink sociallink-whatsapp" href="https://wa.me/919595997711" rel="noopener noreferrer" target="_blank" title="WhatsApp">
+<svg class="svg" role="presentation" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="main" id="C_T_DefaultRegion">
+<div class="hero bg-white">
+<div class="container">
+<h1>
+<span class="reveal"><span>ProVenture</span></span>
+</h1>
+<div class="hero-intro">
+<p>
+								With over a decade of expertise, ProVenture Digital Agency has been trusted by
+								businesses
+								for delivering impactful design, marketing, branding, and print solutions.
+								Our creative team blends strategy and innovation to build brands that truly stand out.
+							</p>
+</div>
+</div>
+<div class="container-big">
+<div class="hero-parallax">
+<div class="parallax">
+<img alt="proventure" class="img-fluid img-thumbnail" height="150" loading="lazy" src="thumbnails/99731-200-150-Crop.jpg" width="200"/>
+</div>
+<div class="parallax">
+<img alt="proventure" class="img-fluid img-thumbnail" height="700" loading="lazy" src="thumbnails/121197-1000-700-Crop.jpg" width="1000"/>
+</div>
+<div class="parallax">
+<img alt="proventure" class="img-fluid img-thumbnail" height="600" loading="lazy" src="thumbnails/120782-500-600-Crop.jpg" width="500"/>
+</div>
+</div>
+<div class="scrolldown"><span>Discover</span></div>
+</div>
+</div>
+<div class="bg-full bg-white">
+<div class="facts">
+<div class="container-small">
+<div class="flex-ctr scroll-el">
+<div class="facts-item">
+<span class="number">10+</span>
+<span class="title">Years of Expertise</span>
+</div>
+<div class="facts-item">
+<span class="number">100+</span>
+<span class="title">Happy Clients</span>
+</div>
+<div class="facts-item">
+<span class="number">1200+</span>
+<span class="title">Projects Delivered</span>
+</div>
+<div class="facts-item">
+<span class="number">01</span>
+<span class="title">Complete Branding Hub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="anniversary">
+<div class="container">
+<div class="flex-ctr">
+<div class="thumb">
+<img alt="ProVenture Anniversary" class="img-fluid img-thumbnail" height="600" loading="lazy" src="thumbnails/121267-800-600-Crop.jpg" width="800"/>
+</div>
+<div class="text">
+<h2 class="h3">Celebrating 10+ Years of Expertise</h2>
+<p>A decade of creativity, strategy, and innovation—helping brands grow with impactful
+									design,
+									marketing, and print solutions.</p>
+<a class="btn btn-outline pv-btn-primary pv-magnetic" href="#">Discover Our
+									Journey</a>
+</div>
+</div>
+</div>
+</section>
+<section class="values bg-white">
+<div class="container-big">
+<div class="grid-row">
+<div class="values-title scroll-el">
+<h2>Our Core Values &amp; Strengths</h2>
+</div>
+<div class="values-list scroll-el">
+<ul class="hashlist list-unstyled">
+<li>
+<span class="hash">Creativity</span>
+<div class="usp-text">
+<span class="h4">We design with impact.</span>
+<p>Our team blends imagination with strategy to deliver designs and
+												campaigns
+												that make your brand unforgettable. Every project is crafted to inspire
+												and connect.</p>
+</div>
+</li>
+<li>
+<span class="hash">Innovation</span>
+<div class="usp-text">
+<span class="h4">We embrace new technology.</span>
+<p>By staying aligned with the latest trends and tools, we ensure your brand
+												stays ahead in today’s competitive digital era.</p>
+</div>
+</li>
+<li>
+<span class="hash">Trust</span>
+<div class="usp-text">
+<span class="h4">We value long-term partnerships.</span>
+<p>Transparent communication, honest advice, and on-time delivery form the
+												foundation of our work—building relationships that last.</p>
+</div>
+</li>
+<li>
+<span class="hash">Customization</span>
+<div class="usp-text">
+<span class="h4">We tailor every solution.</span>
+<p>No two brands are alike. We design strategies and solutions
+												that highlight your unique identity and help you stand out.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="impressions bg-white">
+<div class="galleryslider">
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121198-1000-750-Crop.jpg" width="1000"/>
+</div>
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121194-1000-750-Crop.jpg" width="1000"/>
+</div>
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121199-1000-750-Crop.jpg" width="1000"/>
+</div>
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121200-1000-750-Crop.jpg" width="1000"/>
+</div>
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121193-1000-750-Crop.jpg" width="1000"/>
+</div>
+<div class="galleryslider-item carousel-cell">
+<img alt="Images - Agence" class="img-fluid img-thumbnail imagethumbnail imagethumbnail-content carousel-cell-image" height="750" loading="lazy" src="thumbnails/121196-1000-750-Crop.jpg" width="1000"/>
+</div>
+</div>
+</section>
+<section class="footerservice bg-white">
+<div class="container-small">
+<div class="footerservice-inner grid-row">
+<div class="footerservice-title scroll-el">
+<h2 class="toptitle">Our Services</h2>
+</div>
+<div class="footerservice-text scroll-el">
+<p>
+									How can our team help you? Explore the complete range of design,
+									digital marketing, branding, printing, and video solutions we offer
+									to help your business grow.
+								</p>
+<a class="pagelink lnk lnk-black" href="../services/index.html" title="ProVenture Digital Agency - Services">Discover Our Services</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer bg-gradient">
+<div class="container-big">
+<div class="footer-wrapper grid-row">
+<ul class="address list-unstyled">
+<li class="footer-title">ProVenture Digital Agency</li>
+<li><span class="contactinfo contactinfo-address-address">Kanchanwadi</span><span class="contactinfo contactinfo-address-locality">Chhatrapati
+									Sambhajinagar</span><span class="contactinfo contactinfo-address-country">Maharashtra, IN</span></li>
+</ul>
+<ul class="links contactlinks list-unstyled">
+<li><a href="contact.html" title="ProVenture Digital Agency - Contact Information">Contact
+									Us</a></li>
+<li><a class="btn btn-outline pv-btn-primary pv-magnetic" href="tel:+919595997711" title="Start Your Project with ProVenture Digital Agency">Call us now</a></li>
+</ul>
+<div class="socialicons">
+<!-- LinkedIn -->
+<a aria-label="Connect with us on LinkedIn" class="sociallink sociallink-linkedin" href="https://www.linkedin.com/company/proventurein/" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<svg class="svg" role="presentation" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M100.3 448H7V148.9h93.3V448zm-46.6-341C24 
+											107 0 83 0 53.3 0 23.6 24 0 53.7 
+											0s53.7 23.6 53.7 53.3c0 29.6-24 
+											53.7-53.7 53.7zM447.9 
+											448h-92.4V302.4c0-34.7-12.5-58.4-43.7-58.4-23.9 
+											0-38.1 16.1-44.4 31.6-2.3 5.4-2.9 
+											12.9-2.9 20.4V448h-92.4s1.2-270.4 
+											0-299.1h92.4v42.4c12.3-19 
+											34.4-46 83.7-46 61.2 0 
+											107.1 39.9 107.1 125.4V448z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- Facebook -->
+<a aria-label="Follow us on Facebook" class="sociallink sociallink-facebook" href="https://www.facebook.com/ProVentureIN/" rel="noopener noreferrer" target="_blank" title="Facebook">
+<svg class="svg" role="presentation" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 
+											12.42-50.06 52.24-50.06H293V6.26S259.77 0 225.36 
+											0c-73.61 0-121.36 44.38-121.36 124.72v70.62H22.89V288h81.11v224h100.17V288z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- Instagram -->
+<a aria-label="Follow us on Instagram" class="sociallink sociallink-instagram" href="https://www.instagram.com/proventuredigitalagency/" rel="noopener noreferrer" target="_blank" title="Instagram">
+<svg class="svg" role="presentation" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 
+												114.9s51.3 114.9 114.9 114.9S339 
+												319.5 339 255.9 287.7 141 224.1 
+												141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 
+												74.7-74.7 74.7 33.5 74.7 
+												74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 
+												14.9-12 26.8-26.8 
+												26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 
+												26.8-26.8 26.8 12 26.8 
+												26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 
+												0-35.8 1.7-67.6 9.9-93.9 
+												36.1s-34.4 58-36.2 93.9c-2.1 
+												37-2.1 147.9 0 184.9 1.7 35.9 9.9 
+												67.7 36.2 93.9s58 34.4 93.9 
+												36.2c37 2.1 147.9 2.1 184.9 
+												0 35.9-1.7 67.7-9.9 93.9-36.2 
+												26.2-26.2 34.4-58 36.2-93.9 2.1-37 
+												2.1-147.8 0-184.8zM398.8 388c-7.8 
+												19.6-22.9 34.7-42.6 
+												42.6-29.5 11.7-99.5 9-132.1 
+												9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 
+												9-132.1c7.8-19.6 22.9-34.7 
+												42.6-42.6 29.5-11.7 99.5-9 
+												132.1-9s102.7-2.6 
+												132.1 9c19.6 7.8 34.7 22.9 
+												42.6 42.6 11.7 29.5 9 
+												99.5 9 132.1s2.7 102.7-9 132.1z" fill="currentColor"></path>
+</svg>
+</a>
+<!-- WhatsApp -->
+<a aria-label="Chat with us on WhatsApp" class="sociallink sociallink-whatsapp" href="https://wa.me/919595997711" rel="noopener noreferrer" target="_blank" title="WhatsApp">
+<svg class="svg" role="presentation" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="currentColor"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="copyright">
+<div class="container">
+<span class="legalinfobar">
+<span>© 2025 ProVenture Digital Agency. All rights reserved.</span>
+<span class="legalinfolinks">
+<a class="pagelink" href="legal.html" title="ProVenture Digital Agency - Legal Notice">Legal Notice</a> -
+								<a class="pagelink" href="privacy.html" title="ProVenture Digital Agency - Privacy Policy">Privacy Policy</a> -
+								<a class="pagelink" href="terms.html" title="ProVenture Digital Agency - Terms &amp; Conditions">Terms &amp; Conditions</a>
+</span>
+</span>
+</div>
+</div>
+</footer>
+</div>
+</form>
+<!--WCFormEnd-->
+<!-- Script Includes - BodyEnd -->
+<script nonce="c387845dbecc4d21a0a0f5ca4724ef3f" src="util/js/lenis/lenis.min.js" type="text/javascript">
+</script>
+<script nonce="c387845dbecc4d21a0a0f5ca4724ef3f" src="util/js/gsap/minified/gsap.min.js" type="text/javascript">
+</script>
+<script nonce="c387845dbecc4d21a0a0f5ca4724ef3f" src="util/js/gsap/minified/ScrollTrigger.min.js" type="text/javascript"></script>
+<script nonce="c387845dbecc4d21a0a0f5ca4724ef3f" src="util/jquery/flickity/flickity.pkgd.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(document).ready(function () {
+			// Register GSAP ScrollTrigger
+			gsap.registerPlugin(ScrollTrigger);
+
+			// Parallax effect for hero section
+			const parallaxSpeeds = [40, -25, 30]; // Adjust speed per layer
+			document.querySelectorAll('.parallax').forEach((el, index) => {
+				gsap.fromTo(el, {
+					yPercent: 0
+				}, {
+					yPercent: parallaxSpeeds[index],
+					ease: "none",
+					scrollTrigger: {
+						trigger: ".hero-parallax",
+						start: "top bottom",
+						end: "bottom top",
+						scrub: 1
+					}
+				});
+			});
+
+			// Continuous horizontal slider (Flickity ticker)
+			const sliderEl = document.querySelector('.galleryslider');
+			const tickerSpeed = 3; // Adjust speed as needed
+
+			const flickity = new Flickity(sliderEl, {
+				autoPlay: false, // Disable default autoplay
+				cellAlign: 'left',
+				contain: true,
+				wrapAround: true, // Infinite loop
+				prevNextButtons: false,
+				pageDots: false,
+				draggable: true,
+				selectedAttraction: 0.015,
+				friction: 0.25
+			});
+
+			flickity.x = 0; // Initialize position
+
+			// Continuous ticker update
+			const updateTicker = () => {
+				if (flickity.slides.length) {
+					flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+					flickity.selectedIndex = flickity.dragEndRestingSelect();
+					flickity.updateSelectedSlide();
+					flickity.settle(flickity.x);
+				}
+				requestAnimationFrame(updateTicker);
+			};
+			updateTicker();
+		});
+	</script>
+<script type="text/javascript">
+		$(document).ready(function () {
+
+			// Remove loading state
+			$(".is-loading").removeClass("is-loading");
+
+			// Adjust main bottom margin based on footer height
+			function updateMainMargin() {
+				const footerHeight = $('footer').outerHeight(true);
+				$('main').css('margin-bottom', footerHeight + 'px');
+			}
+			updateMainMargin();
+			$(window).on('resize', updateMainMargin);
+
+			// Service thumbnails hover effect
+			$('.servicenav-item').hover(
+				function () {
+					const targetImg = $(this).data('img');
+					$('.mainnav-servicethumb img').not(targetImg).css({
+						'opacity': 0,
+						'transform': 'scale(1)'
+					});
+					$(targetImg).css({
+						'opacity': 1,
+						'transform': 'scale(1.05)'
+					});
+				},
+				function () {
+					$('.mainnav-servicethumb img').css({
+						'opacity': 0,
+						'transform': 'scale(1)'
+					});
+					$('.mainnav-servicethumb .default-img').css({
+						'opacity': 1,
+						'transform': 'scale(1)'
+					});
+				}
+			);
+
+			// Custom cursor
+			const $cursor = $('.cursor');
+			let mouseX = 0,
+				mouseY = 0;
+			let cursorX = 0,
+				cursorY = 0;
+			const speed = 0.1;
+
+			$(document).mousemove(function (e) {
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+			});
+
+			function lerp(start, end, speed) {
+				return start + (end - start) * speed;
+			}
+
+			function animateCursor() {
+				cursorX = lerp(cursorX, mouseX, speed);
+				cursorY = lerp(cursorY, mouseY, speed);
+				$cursor.css({
+					left: cursorX,
+					top: cursorY,
+					position: 'fixed'
+				});
+				requestAnimationFrame(animateCursor);
+			}
+			animateCursor();
+
+			$('a, button, .navtoggle').hover(
+				function () {
+					$cursor.css({
+						transform: 'translate(-50%, -50%) scale(2.2)'
+					});
+				},
+				function () {
+					$cursor.css({
+						transform: 'translate(-50%, -50%) scale(1)'
+					});
+				}
+			);
+
+			// Navigation toggle
+			$('.navtoggle').click(function () {
+				$('html').toggleClass('shownav');
+			});
+
+			// Smooth scrolling with Lenis
+			const lenis = new Lenis({
+				lerp: 0.08,
+				wheelMultiplier: 1.2
+			});
+
+			function raf(time) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+			requestAnimationFrame(raf);
+
+			// Change logo color on white background sections
+			const $body = $('body');
+			const $sections = $('.bg-white');
+
+			function checkSectionInView() {
+				let active = false;
+				$sections.each(function () {
+					const sectionTop = $(this).offset().top;
+					const sectionBottom = sectionTop + $(this).outerHeight();
+					const scrollTop = $(window).scrollTop();
+					if (scrollTop + 59 >= sectionTop && scrollTop < sectionBottom - 59) {
+						active = true;
+						return false;
+					}
+				});
+				$body.toggleClass('bg-white-active', active);
+			}
+			$(window).on('scroll', checkSectionInView);
+			checkSectionInView();
+
+			// Scroll-triggered reveal for elements
+			function isInViewport(elem) {
+				const rect = elem.getBoundingClientRect();
+				return (rect.top <= window.innerHeight && rect.bottom >= 0);
+			}
+
+			function revealElements() {
+				$('.scroll-el, .reveal-el').each(function () {
+					if (isInViewport(this)) $(this).addClass('visible');
+				});
+			}
+			revealElements();
+			$(window).on('scroll', revealElements);
+
+			// Body scrolled class toggle
+			$(window).on('scroll load', function () {
+				$('body').toggleClass('scrolled', $(window).scrollTop() > 40);
+			});
+
+		});
+	</script>
+<!-- ProVenture Custom JavaScript -->
+<script src="custom/js/proventure-custom.js"></script>
+<!-- Script Inlines - BodyEndScripts -->
+</body>
+</html>

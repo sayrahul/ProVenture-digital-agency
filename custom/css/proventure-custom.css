@@ -1,0 +1,424 @@
+/* ProVenture Custom Design Elements */
+/* Original design components created for ProVenture Digital Agency */
+
+/* ========================================
+   1. CUSTOM ANIMATED GRADIENT BACKGROUND
+   ======================================== */
+
+.pv-gradient-bg {
+    position: relative;
+    background: linear-gradient(135deg, #0099cc 0%, #00ACDF 25%, #182533 75%, #1C1E20 100%);
+    background-size: 400% 400%;
+    animation: pvGradientShift 15s ease infinite;
+}
+
+@keyframes pvGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ========================================
+   2. CUSTOM CARD DESIGN WITH GLASSMORPHISM
+   ======================================== */
+
+.pv-glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 172, 223, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pv-glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 172, 223, 0.25);
+    border-color: rgba(0, 172, 223, 0.4);
+}
+
+/* ========================================
+   3. CUSTOM ANIMATED UNDERLINE
+   ======================================== */
+
+.pv-animated-link {
+    position: relative;
+    display: inline-block;
+    color: #00ACDF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pv-animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: linear-gradient(90deg, #00ACDF, #0099cc);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateX(-50%);
+}
+
+.pv-animated-link:hover::after {
+    width: 100%;
+}
+
+.pv-animated-link:hover {
+    color: #0099cc;
+}
+
+/* ========================================
+   4. CUSTOM BUTTON STYLES
+   ======================================== */
+
+.pv-btn-primary {
+    position: relative;
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #00ACDF 0%, #0099cc 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 172, 223, 0.3);
+}
+
+.pv-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.pv-btn-primary:hover::before {
+    left: 100%;
+}
+
+.pv-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 172, 223, 0.4);
+}
+
+.pv-btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   5. CUSTOM FLOATING ANIMATION
+   ======================================== */
+
+.pv-float {
+    animation: pvFloat 3s ease-in-out infinite;
+}
+
+@keyframes pvFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.pv-float-slow {
+    animation: pvFloatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pvFloatSlow {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ========================================
+   6. CUSTOM PULSE ANIMATION
+   ======================================== */
+
+.pv-pulse {
+    animation: pvPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pvPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   7. CUSTOM GRID PATTERN BACKGROUND
+   ======================================== */
+
+.pv-grid-bg {
+    background-image:
+        linear-gradient(rgba(0, 172, 223, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 172, 223, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    position: relative;
+}
+
+.pv-grid-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(28, 30, 32, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* ========================================
+   8. CUSTOM SECTION DIVIDER
+   ======================================== */
+
+.pv-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ACDF, transparent);
+    margin: 60px 0;
+}
+
+.pv-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #00ACDF;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 172, 223, 0.5);
+}
+
+/* ========================================
+   9. CUSTOM STATS COUNTER
+   ======================================== */
+
+.pv-stat-box {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 172, 223, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(0, 172, 223, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pv-stat-box:hover {
+    border-color: #00ACDF;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 172, 223, 0.2);
+}
+
+.pv-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00ACDF, #0099cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.pv-stat-label {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   10. CUSTOM LOADING ANIMATION
+   ======================================== */
+
+.pv-loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 172, 223, 0.1);
+    border-top-color: #00ACDF;
+    border-radius: 50%;
+    animation: pvSpin 1s linear infinite;
+}
+
+@keyframes pvSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   11. CUSTOM TOOLTIP
+   ======================================== */
+
+.pv-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.pv-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: #1C1E20;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pv-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    border: 6px solid transparent;
+    border-top-color: #1C1E20;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.pv-tooltip:hover::after,
+.pv-tooltip:hover::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* ========================================
+   12. CUSTOM SCROLL INDICATOR
+   ======================================== */
+
+.pv-scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00ACDF, #0099cc);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* ========================================
+   13. RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (max-width: 768px) {
+    .pv-glass-card {
+        padding: 20px;
+    }
+
+    .pv-stat-number {
+        font-size: 36px;
+    }
+
+    .pv-btn-primary {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   14. CUSTOM FOCUS STATES (Accessibility)
+   ======================================== */
+
+.pv-btn-primary:focus,
+.pv-animated-link:focus {
+    outline: 3px solid rgba(0, 172, 223, 0.5);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   15. PRINT STYLES
+   ======================================== */
+
+@media print {
+
+    .pv-gradient-bg,
+    .pv-glass-card,
+    .pv-float,
+    .pv-pulse {
+        animation: none !important;
+        background: #fff !important;
+    }
+}
+
+/* ========================================
+   16. FOOTER FIXES (Force Standard Layout)
+   ======================================== */
+
+/* Fix for footer appearing at top or scrolling issues */
+footer.footer {
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+/* Ensure main content doesn't have unnecessary margin from JS */
+main.main {
+    margin-bottom: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    background: #fff;
+    /* Ensure content covers anything behind */
+}
+
+/* Ensure page wrapper behaves correctly */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.main {
+    flex: 1;
+}

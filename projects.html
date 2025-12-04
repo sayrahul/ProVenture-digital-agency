@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <title>Our Projects | ProVenture Digital Agency</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="custom/css/default-20252e34.css?v=112" rel="stylesheet" type="text/css"/>
+    <link href="custom/css/proventure-custom.css" rel="stylesheet" type="text/css"/>
+    <link href="util/js/lenis/lenis.min.css" rel="stylesheet" type="text/css"/>
+
+    <style>
+        /* Page Specific Styles */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .project-card {
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-thumb {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .project-card:hover .project-thumb img {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: transparent;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--pv-primary, #00ACDF);
+            color: white;
+            border-color: var(--pv-primary, #00ACDF);
+        }
+    </style>
+</head>
+<body class="page_projects">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logoslogan">
+            <a href="index.html" title="ProVenture digital agency"><strong>ProVenture</strong></a>
+        </div>
+        <div class="header-nav">
+            <div class="navtoggle"><span></span><span></span></div>
+        </div>
+        
+        <!-- Navigation Overlay -->
+        <div class="mainnav">
+            <div class="mainnav-in">
+                <ul class="navigation">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="http://work.proventure.in/">Projects</a></li>
+                    <li><a href="clients.html">Clients</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero pv-gradient-bg" style="min-height: 60vh; display: flex; align-items: center;">
+            <div class="container-big">
+                <h1 class="pv-reveal">Our <span style="color: rgba(255,255,255,0.7);">Work</span></h1>
+                <p class="pv-reveal" style="font-size: 1.5rem; color: white; max-width: 600px; margin-top: 20px;">
+                    We craft digital experiences that build trust and drive growth. Explore our latest projects.
+                </p>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <section class="section bg-white" style="padding: 80px 0;">
+            <div class="container-big">
+                
+                <!-- Filters -->
+                <div class="filter-nav pv-reveal">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card pv-glass-card pv-reveal" data-category="branding">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120238-400-225-Crop.png" alt="Brand Identity">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Branding</span>
+                            <h3 style="margin: 10px 0;">VisionGrip Identity</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Complete brand overhaul including logo, stationery, and brand guidelines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card pv-glass-card pv-reveal" data-category="web">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120239-800-500-Crop.jpg" alt="Web Design">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">Visit Website</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Web Design</span>
+                            <h3 style="margin: 10px 0;">Sage Wellness</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Responsive e-commerce platform built for performance and conversion.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card pv-glass-card pv-reveal" data-category="marketing">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120304-800-500-Crop.jpg" alt="Social Media">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Results</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Marketing</span>
+                            <h3 style="margin: 10px 0;">Election Campaign</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Targeted social media strategy reaching 100k+ local voters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card pv-glass-card pv-reveal" data-category="web">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120296-800-500-Crop.jpg" alt="Corporate Website">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Web Design</span>
+                            <h3 style="margin: 10px 0;">TechCorp Solutions</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Modern corporate website with custom animations and CMS integration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card pv-glass-card pv-reveal" data-category="branding">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120294-800-500-Crop.jpg" alt="Rebranding">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Branding</span>
+                            <h3 style="margin: 10px 0;">EcoLife Packaging</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Sustainable packaging design and visual identity system.</p>
+                        </div>
+                    </div>
+
+                     <!-- Project 6 -->
+                     <div class="project-card pv-glass-card pv-reveal" data-category="marketing">
+                        <div class="project-thumb">
+                            <img src="thumbnails/120297-800-500-Crop.jpg" alt="SEO Campaign">
+                            <div class="project-overlay">
+                                <a href="#" class="btn btn-sm btn-primary">View Results</a>
+                            </div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <span class="hash" style="color: var(--pv-primary); font-size: 0.9rem; font-weight: 600;">Marketing</span>
+                            <h3 style="margin: 10px 0;">Local SEO Dominance</h3>
+                            <p style="color: #666; font-size: 0.95rem;">Achieved #1 ranking for 15+ keywords for a local healthcare provider.</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- CTA -->
+                <div class="text-center" style="margin-top: 60px;">
+                    <h3 class="pv-reveal">Ready to start your project?</h3>
+                    <a href="contact.html" class="btn btn-outline pv-btn-primary pv-magnetic" style="margin-top: 20px;">Get a Quote</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-gradient">
+        <div class="container-big">
+            <div class="footer-wrapper grid-row">
+                <ul class="address list-unstyled">
+                    <li class="footer-title">ProVenture Digital Agency</li>
+                    <li>Kanchanwadi, Chhatrapati Sambhajinagar (Aurangabad), Maharashtra, IN</li>
+                </ul>
+                <ul class="links contactlinks list-unstyled">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="tel:+919595997711" class="btn btn-outline pv-btn-primary pv-magnetic">Call us now</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <span>© 2025 ProVenture Digital Agency. All rights reserved.</span>
+                    <span class="legalinfolinks">
+                        <a href="legal.html">Legal Notice</a> - 
+                        <a href="privacy.html">Privacy Policy</a> - 
+                        <a href="terms.html">Terms & Conditions</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="util/jquery/jquery-3.5.1.slim.min.js"></script>
+    <script src="util/js/lenis/lenis.min.js"></script>
+    <script src="util/js/gsap/minified/gsap.min.js"></script>
+    <script src="util/js/gsap/minified/ScrollTrigger.min.js"></script>
+    <script src="custom/js/proventure-custom.js"></script>
+    
+    <script>
+        // Simple Filter Logic
+        $(document).ready(function() {
+            $('.filter-btn').click(function() {
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                const filter = $(this).data('filter');
+                
+                if(filter === 'all') {
+                    $('.project-card').fadeIn();
+                } else {
+                    $('.project-card').hide();
+                    $('.project-card[data-category="' + filter + '"]').fadeIn();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
