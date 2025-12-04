@@ -25,12 +25,12 @@ load_dotenv()
 # Configuration
 SMTP_EMAIL = os.getenv("SMTP_EMAIL")
 SMTP_APP_PASSWORD = os.getenv("SMTP_APP_PASSWORD")
-RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL")
+RECEIVER_EMAIL = os.getenv("RECEIVER_EMAIL", "rahuljadhav44@gmail.com, proventurein@gmail.com")
 FLASK_ENV = os.getenv("FLASK_ENV", "production")
 
-# Validate required environment variables
-if not all([SMTP_EMAIL, SMTP_APP_PASSWORD, RECEIVER_EMAIL]):
-    raise RuntimeError("Missing required environment variables. Check .env file.")
+# Validate required environment variables (SMTP credentials still needed)
+if not all([SMTP_EMAIL, SMTP_APP_PASSWORD]):
+    raise RuntimeError("Missing required environment variables (SMTP_EMAIL, SMTP_APP_PASSWORD). Check .env file.")
 
 # Initialize Flask app
 app = Flask(__name__)
