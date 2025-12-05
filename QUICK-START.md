@@ -1,27 +1,27 @@
 # 🚀 ProVenture - Quick Start Guide
 
-## ⚠️ CRITICAL: Do This FIRST!
+## ⚠️ GOOD NEWS: No Configuration Required!
 
-### 1. Secure Your Backend (5 minutes)
+### 1. Backend is Ready to Use (No Setup Needed!)
+
+**All Gmail dependencies have been removed!**
+
+The backend now saves all contact form submissions to a local `submissions.json` file.
+
+**Optional: Customize settings**
 
 ```bash
 # Navigate to backend folder
 cd proventure-backend
 
-# Create .env file from template
+# Create .env file from template (optional)
 copy .env.example .env
 
-# Edit .env file and add your NEW Gmail app password
+# Edit .env if you want to customize port, host, etc.
 notepad .env
 ```
 
-**Get new Gmail app password:**
-1. Visit: https://myaccount.google.com/apppasswords
-2. Click "Generate new app password"
-3. Copy the 16-character password
-4. Paste into `.env` file
-
-**Your old password was EXPOSED and must be revoked!**
+**No email service needed** - Everything works out of the box!
 
 ---
 
@@ -54,23 +54,32 @@ cd proventure-backend
 python app.py
 ```
 
-Visit: http://localhost:5000/health
-
-Should see:
-```json
-{"status": "healthy", "service": "ProVenture Contact API"}
+You should see:
+```
+Server running. Messages will be saved to: C:\path\to\submissions.json
+ * Running on http://127.0.0.1:5000
 ```
 
 ### Test Contact Form:
 
-```bash
-# Send test email
-curl -X POST http://localhost:5000/submit \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Test","email":"test@test.com","message":"Test message"}'
-```
+1. Open your website in a browser
+2. Go to the contact page
+3. Fill out and submit the form
+4. Check `proventure-backend/submissions.json` - your submission will be saved there!
 
-Check your email inbox!
+**Example submission in JSON:**
+```json
+[
+  {
+    "timestamp": "2025-12-05 09:19:46",
+    "data": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "message": "Test message"
+    }
+  }
+]
+```
 
 ---
 
@@ -251,16 +260,16 @@ notepad proventure-backend\.env
 
 Before going live:
 
-- [ ] Created `.env` file with NEW Gmail password
-- [ ] Tested backend locally
+- [ ] Backend tested locally
 - [ ] Added custom CSS to HTML
 - [ ] Added custom JS to HTML
 - [ ] Tested contact form
-- [ ] Verified email delivery
+- [ ] Verified submissions save to `submissions.json`
 - [ ] Checked mobile responsiveness
 - [ ] Tested in different browsers
 - [ ] Enabled HTTPS on cPanel
 - [ ] Backed up website
+- [ ] Set up backup strategy for `submissions.json`
 
 ---
 

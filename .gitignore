@@ -41,4 +41,11 @@ logs/
 *.bak
 *.backup
 
+# Data files
 submissions.json
+
+# Vercel
+.vercel
+.vercel/
+.env.local
+.env.production.local

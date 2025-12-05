@@ -2,6 +2,8 @@
 
 Flask-based backend for handling contact form submissions.
 
+**✅ No Email Dependencies Required** - All submissions are saved locally to a JSON file.
+
 ## Setup
 
 1. **Create virtual environment:**
@@ -18,15 +20,10 @@ Flask-based backend for handling contact form submissions.
    pip install -r requirements.txt
    ```
 
-4. **Configure environment variables:**
-   - Copy `.env.example` to `.env`
-   - Update with your Gmail credentials:
-     ```
-     SMTP_EMAIL=your-email@gmail.com
-     SMTP_APP_PASSWORD=your-app-password
-     RECEIVER_EMAIL=your-email@gmail.com
-     ```
-   - Get Gmail app password: https://myaccount.google.com/apppasswords
+4. **Configure environment (Optional):**
+   - Copy `.env.example` to `.env` if you want to customize settings
+   - The backend works out-of-the-box without any configuration
+   - Submissions are saved to `submissions.json` in the backend directory
 
 ## Development
 
@@ -129,22 +126,29 @@ Health check endpoint.
 
 ## Security
 
-- Never commit `.env` file
-- Use strong app passwords
+- Never commit `.env` file (already in .gitignore)
+- Protect `submissions.json` - contains user data
 - Enable HTTPS in production
 - Consider rate limiting for production
 - Regularly update dependencies
+- Backup `submissions.json` regularly
+- Set proper file permissions on production server
 
 ## Troubleshooting
 
-**Email not sending:**
-- Check Gmail app password is correct
-- Verify 2FA is enabled on Gmail account
-- Check SMTP settings in `.env`
+**Submissions not saving:**
+- Check write permissions in the backend directory
+- Verify `submissions.json` can be created/modified
+- Check application logs for errors
 
 **CORS errors:**
 - Ensure flask-cors is installed
 - Check allowed origins in production
+- Update CORS_ORIGINS in `.env` if needed
+
+**File not found errors:**
+- Ensure you're running the app from the `proventure-backend` directory
+- Check that `DATA_FILE` path is correct
 
 ## License
 

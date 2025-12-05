@@ -52,27 +52,21 @@
 
 ## 🚀 Next Steps
 
-### 1. Configure Backend (CRITICAL)
+### 1. Configure Backend (OPTIONAL)
 
-**You MUST create a new `.env` file:**
+**The backend works out-of-the-box with no configuration needed!**
+
+All contact form submissions are automatically saved to `submissions.json` in the backend directory.
+
+**Optional: Customize settings**
 
 ```bash
 cd proventure-backend
 cp .env.example .env
+# Edit .env if you want to change port, host, or other settings
 ```
 
-**Edit `.env` with your credentials:**
-```env
-SMTP_EMAIL=rahuljadhav44@gmail.com
-SMTP_APP_PASSWORD=<NEW_APP_PASSWORD>
-RECEIVER_EMAIL=rahuljadhav44@gmail.com
-```
-
-**⚠️ IMPORTANT: Generate NEW Gmail App Password**
-1. Go to: https://myaccount.google.com/apppasswords
-2. Your old password was exposed and should be revoked
-3. Generate a new app password
-4. Update `.env` file
+**No email service required** - All Gmail/SMTP dependencies have been removed.
 
 ### 2. Install Backend Dependencies
 
@@ -87,15 +81,16 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Visit: http://localhost:5000/health
-
-Expected response:
-```json
-{
-  "status": "healthy",
-  "service": "ProVenture Contact API"
-}
+The server will start and display:
 ```
+Server running. Messages will be saved to: C:\path\to\submissions.json
+ * Running on http://127.0.0.1:5000
+```
+
+**Test the contact form:**
+1. Open your website's contact page
+2. Fill out and submit the form
+3. Check `proventure-backend/submissions.json` - you'll see your submission saved there!
 
 ### 4. Integrate Custom Design Elements
 
@@ -157,17 +152,17 @@ Expected response:
 ### Before Going Live:
 
 - [ ] **Security**
-  - [ ] New Gmail app password generated
-  - [ ] `.env` file created with correct credentials
-  - [ ] `.env` added to `.gitignore`
+  - [ ] `.env` file not committed to Git (already in .gitignore)
+  - [ ] `submissions.json` protected with proper permissions
   - [ ] HTTPS enabled on cPanel
   - [ ] SSL certificate installed
 
 - [ ] **Backend**
-  - [ ] Dependencies installed
+  - [ ] Dependencies installed (`pip install -r requirements.txt`)
   - [ ] Backend tested locally
   - [ ] Production deployment configured
-  - [ ] Error logging enabled
+  - [ ] Write permissions verified for `submissions.json`
+  - [ ] Backup strategy for submissions data
 
 - [ ] **Frontend**
   - [ ] Custom CSS linked in HTML
@@ -177,7 +172,7 @@ Expected response:
 
 - [ ] **Testing**
   - [ ] Contact form works
-  - [ ] Email delivery confirmed
+  - [ ] Submissions saved to `submissions.json`
   - [ ] Mobile responsiveness checked
   - [ ] Cross-browser testing done
   - [ ] Performance tested

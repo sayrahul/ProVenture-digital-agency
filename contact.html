@@ -520,57 +520,201 @@
 </span>
 </div>
 </div>
+<script type="text/javascript">
+		$(document).ready(function () {
+
+			// Remove loading state
+			$(".is-loading").removeClass("is-loading");
+
+			// Adjust main bottom margin based on footer height
+			function updateMainMargin() {
+				const footerHeight = $('footer').outerHeight(true);
+				$('main').css('margin-bottom', footerHeight + 'px');
+			}
+			updateMainMargin();
+			$(window).on('resize', updateMainMargin);
+
+			// Service thumbnails hover effect
+			$('.servicenav-item').hover(
+				function () {
+					const targetImg = $(this).data('img');
+					$('.mainnav-servicethumb img').not(targetImg).css({
+						'opacity': 0,
+						'transform': 'scale(1)'
+					});
+					$(targetImg).css({
+						'opacity': 1,
+						'transform': 'scale(1.05)'
+					});
+				},
+				function () {
+					$('.mainnav-servicethumb img').css({
+						'opacity': 0,
+						'transform': 'scale(1)'
+					});
+					$('.mainnav-servicethumb .default-img').css({
+						'opacity': 1,
+						'transform': 'scale(1)'
+					});
+				}
+			);
+
+			// Custom cursor
+			const $cursor = $('.cursor');
+			let mouseX = 0,
+				mouseY = 0;
+			let cursorX = 0,
+				cursorY = 0;
+			const speed = 0.1;
+
+			$(document).mousemove(function (e) {
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+			});
+
+			function lerp(start, end, speed) {
+				return start + (end - start) * speed;
+			}
+
+			function animateCursor() {
+				cursorX = lerp(cursorX, mouseX, speed);
+				cursorY = lerp(cursorY, mouseY, speed);
+				$cursor.css({
+					left: cursorX,
+					top: cursorY,
+					position: 'fixed'
+				});
+				requestAnimationFrame(animateCursor);
+			}
+			animateCursor();
+
+			$('a, button, .navtoggle').hover(
+				function () {
+					$cursor.css({
+						transform: 'translate(-50%, -50%) scale(2.2)'
+					});
+				},
+				function () {
+					$cursor.css({
+						transform: 'translate(-50%, -50%) scale(1)'
+					});
+				}
+			);
+
+			// Navigation toggle
+			$('.navtoggle').click(function () {
+				$('html').toggleClass('shownav');
+			});
+
+			// Smooth scrolling with Lenis
+			const lenis = new Lenis({
+				lerp: 0.08,
+				wheelMultiplier: 1.2
+			});
+
+			function raf(time) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+			requestAnimationFrame(raf);
+
+			// Change logo color on white background sections
+			const $body = $('body');
+			const $sections = $('.bg-white');
+
+			function checkSectionInView() {
+				let active = false;
+				$sections.each(function () {
+					const sectionTop = $(this).offset().top;
+					const sectionBottom = sectionTop + $(this).outerHeight();
+					const scrollTop = $(window).scrollTop();
+					if (scrollTop + 59 >= sectionTop && scrollTop < sectionBottom - 59) {
+						active = true;
+						return false;
+					}
+				});
+				$body.toggleClass('bg-white-active', active);
+			}
+			$(window).on('scroll', checkSectionInView);
+			checkSectionInView();
+
+			// Scroll-triggered reveal for elements
+			function isInViewport(elem) {
+				const rect = elem.getBoundingClientRect();
+				return (rect.top <= window.innerHeight && rect.bottom >= 0);
+			}
+
+			function revealElements() {
+				$('.scroll-el, .reveal-el').each(function () {
+					if (isInViewport(this)) $(this).addClass('visible');
+				});
+			}
+			revealElements();
+			$(window).on('scroll', revealElements);
+
 </div>
-</footer>
+<div class="form-check" data-item-key="Design: Branding &amp; Graphic Design" data-item-type="List">
+<input class="form-check-input" id="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl12" name="interest" type="checkbox"/>
+<label class="form-check-label" for="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl12">Design: Branding &amp; Graphic Design</label>
 </div>
-</form>
-<!--WCFormEnd-->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('pvContactForm') || document.querySelector('form'); // fallback
-  if (!form) return;
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const btn = form.querySelector('button[type=submit], input[type=submit]');
-    if (btn) { btn.disabled = true; btn.value = btn.value ? 'Sending...' : 'Sending.'; }
-
-    const payload = {
-      name: (document.getElementById('name') || {}).value || '',
-      email: (document.getElementById('email') || {}).value || '',
-      company: (document.getElementById('company') || {}).value || '',
-      phone: (document.getElementById('phone') || {}).value || '',
-      interest: (document.querySelector('input[name="interest"]:checked') || {}).value || '',
-      message: (document.getElementById('message') || {}).value || ''
-    };
-
-    try {
-      const resp = await fetch('http://127.0.0.1:5000/submit', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
-      });
-      const json = await resp.json();
-      if (json.ok) {
-        alert('Thanks. We received your message.');
-        form.reset();
-      } else {
-        alert('Error: ' + (json.error || 'Submission failed'));
-      }
-    } catch (err) {
-      alert('Network error. Check server and try again.');
-      console.error(err);
-    } finally {
-      if (btn) { btn.disabled = false; btn.value = 'Send Message'; }
-    }
-  });
-});
-</script>
-<!-- Script Includes - BodyEnd -->
-<script nonce="e23f1113bb5f4d5d8bea2762b70d725f" src="util/js/lenis/lenis.min.js" type="text/javascript">
-</script>
-<!-- Script Includes - Default -->
-<script nonce="e23f1113bb5f4d5d8bea2762b70d725f" src="custom/js/textparallax.js" type="text/javascript"></script>
+<div class="form-check" data-item-key="Printing: Custom Print Solutions" data-item-type="List">
+<input class="form-check-input" id="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl14" name="interest" type="checkbox"/>
+<label class="form-check-label" for="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl14">Printing: Custom Print Solutions</label>
+</div>
+<div class="form-check" data-item-key="Other" data-item-type="List">
+<input class="form-check-input" id="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl16" name="interest" type="checkbox"/>
+<label class="form-check-label" for="C_T_DefaultRegion_M7060_Form$pnlForm$cblOptions$ctl16">Other</label>
+</div>
+</fieldset>
+</div>
+<div class="col-12">
+<div class="form-group comment required" data-item-key="Comment" data-item-type="Text" id="C_T_DefaultRegion_M7060_Form_pnlForm_Comment_pnlComment">
+<label for="C_T_DefaultRegion_M7060_Form$pnlForm$Comment$txtComment" id="C_T_DefaultRegion_M7060_Form$pnlForm$Comment_lblComment" title="Message">Message</label>
+<textarea class="form-control" cols="20" id="message" name="message" required="required" rows="8" title="Message"></textarea>
+</div>
+</div>
+</div>
+<div class="privacy alert alert-info">
+<span>
+									We respect your privacy and only use your information to process your request. By
+									submitting this form, you agree to our
+								</span>
+<span>
+<a href="privacy.html">Privacy Policy</a>.
+								</span>
+</div>
+<div class="buttonpanel">
+<input class="btn btn-primary btn-text btn-md button" id="submit-btn" name="submit" title="Send Message" type="submit" value="Send Message"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional sections can go here -->
+</main>
+<footer class="footer bg-gradient">
+<div class="container-big">
+<div class="footer-wrapper grid-row">
+<ul class="address list-unstyled">
+<li class="footer-title">ProVenture Digital Agency</li>
+<li>Kanchanwadi, Chhatrapati Sambhajinagar (Aurangabad), Maharashtra, IN</li>
+</ul>
+<ul class="links contactlinks list-unstyled">
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="tel:+919595997711" class="btn btn-outline pv-btn-primary pv-magnetic">Call us now</a></li>
+</ul>
+</div>
+<div class="copyright">
+<div class="container">
+<span class="legalinfobar">
+<span>© 2025 ProVenture Digital Agency. All rights reserved.</span>
+<span class="legalinfolinks">
+<a class="pagelink" href="legal.html" title="ProVenture Digital Agency - Legal Notice">Legal Notice</a> -
+<a class="pagelink" href="privacy.html" title="ProVenture Digital Agency - Privacy Policy">Privacy Policy</a> -
+<a class="pagelink" href="terms.html" title="ProVenture Digital Agency - Terms & Conditions">Terms & Conditions</a>
+</span>
+</span>
+</div>
+</div>
 <script type="text/javascript">
 		$(document).ready(function () {
 
@@ -712,5 +856,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	</script>
 <!-- ProVenture Custom JavaScript -->
 <script src="custom/js/proventure-custom.js"></script>
+<!-- Contact Form Handler (works with local and Vercel) -->
+<script src="custom/js/contact-form-handler.js"></script>
 </body>
 </html>
