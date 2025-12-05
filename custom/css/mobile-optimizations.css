@@ -1,0 +1,370 @@
+/**
+ * ProVenture Mobile Optimizations
+ * Responsive design improvements for mobile devices
+ */
+
+/* ========================================
+   MOBILE-FIRST RESPONSIVE UTILITIES
+   ======================================== */
+
+/* Touch-friendly targets (minimum 44x44px) */
+@media (max-width: 768px) {
+    /* Navigation improvements */
+    .navigation a,
+    .btn,
+    button,
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Form inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+        min-height: 44px;
+    }
+
+    /* Mobile navigation */
+    .header-nav {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .mainnav {
+        max-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Improve tap targets for social icons */
+    .socialicons a {
+        padding: 12px;
+        margin: 8px;
+    }
+
+    /* Mobile-friendly cards */
+    .pv-glass-card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    /* Optimize images for mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Mobile typography */
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    /* Container spacing */
+    .container,
+    .container-big,
+    .container-small {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Hero section mobile */
+    .hero {
+        min-height: 60vh;
+        padding: 40px 0;
+    }
+
+    /* Footer mobile */
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Mobile menu improvements */
+    .navtoggle {
+        padding: 15px;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Disable cursor trail on mobile */
+    .pv-cursor-trail {
+        display: none !important;
+    }
+
+    /* Mobile-optimized animations */
+    .pv-parallax {
+        transform: none !important; /* Disable parallax on mobile for performance */
+    }
+
+    /* Improve form layout on mobile */
+    .row {
+        margin: 0;
+    }
+
+    .col-12,
+    .col-lg-6 {
+        padding: 10px 0;
+    }
+
+    /* Mobile-friendly buttons */
+    .btn {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Optimize service thumbnails */
+    .mainnav-servicethumb {
+        display: none; /* Hide on mobile to save space */
+    }
+
+    /* Mobile contact form */
+    .mailform {
+        padding: 30px 20px;
+    }
+
+    /* Stats section mobile */
+    .pv-stat-box {
+        margin: 15px 0;
+        padding: 20px;
+    }
+
+    /* Back to top button mobile */
+    .pv-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ========================================
+   TABLET OPTIMIZATIONS (768px - 1024px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    /* Grid adjustments */
+    .grid-row {
+        gap: 20px;
+    }
+}
+
+/* ========================================
+   LANDSCAPE MOBILE (480px - 767px)
+   ======================================== */
+
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .mainnav {
+        max-height: 80vh;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (< 375px)
+   ======================================== */
+
+@media (max-width: 374px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container,
+    .container-big,
+    .container-small {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Focus states for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #00ACDF;
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skiplink:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    padding: 15px;
+    background: #00ACDF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .pv-parallax,
+    .pv-float,
+    .pv-pulse {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* GPU acceleration for animations */
+.pv-glass-card,
+.pv-btn-primary,
+.pv-magnetic {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimize font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Lazy loading images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* ========================================
+   MOBILE NAVIGATION ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Smooth mobile menu animation */
+    .mainnav {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    html:not(.shownav) .mainnav {
+        transform: translateX(100%);
+    }
+
+    html.shownav .mainnav {
+        transform: translateX(0);
+    }
+
+    /* Prevent body scroll when menu is open */
+    html.shownav {
+        overflow: hidden;
+    }
+
+    /* Mobile menu overlay */
+    html.shownav::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    /* Hide non-essential elements */
+    .header,
+    .footer,
+    .navtoggle,
+    .pv-back-to-top,
+    .pv-cursor-trail,
+    .pv-scroll-indicator {
+        display: none !important;
+    }
+
+    /* Optimize for printing */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    /* Show URLs after links */
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+}
