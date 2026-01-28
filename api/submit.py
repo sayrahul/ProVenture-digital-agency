@@ -1,7 +1,9 @@
 from http.server import BaseHTTPRequestHandler
 import json
+import os
 from datetime import datetime
-from urllib.parse import parse_qs
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 class handler(BaseHTTPRequestHandler):
     """
@@ -32,33 +34,48 @@ class handler(BaseHTTPRequestHandler):
                 self._send_error(400, "Message is required")
                 return
             
-            # Create submission entry with timestamp
-            entry = {
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "data": {
-                    "name": data.get('name', ''),
-                    "email": data.get('email', ''),
-                    "company": data.get('company', ''),
-                    "phone": data.get('phone', ''),
-                    "interest": data.get('interest', []),
-                    "message": data.get('message', '')
-                }
-            }
-            
-            # Log submission (visible in Vercel logs)
-            print(f"New submission from: {data.get('email')}")
-            print(f"Submission data: {json.dumps(entry, indent=2)}")
-            
-            # TODO: In production, integrate with:
-            # - Vercel KV for storage
-            # - Email service (SendGrid, Resend, etc.)
-            # - Database (Supabase, MongoDB, etc.)
-            # - Airtable or Google Sheets
+            # Prepare data row
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            row_data = [
+                timestamp,
+                data.get('name', ''),
+                data.get('email', ''),
+                data.get('phone', ''),
+                data.get('company', ''),
+                ", ".join(data.get('interest', [])),
+                data.get('message', '')
+            ]
+
+            # Google Sheets Integration
+            try:
+                # Check for credentials
+                creds_json = os.environ.get('GOOGLE_SHEETS_CREDENTIALS')
+                if creds_json:
+                    # Parse credentials
+                    creds_dict = json.loads(creds_json)
+                    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+                    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+                    client = gspread.authorize(creds)
+                    
+                    # Open the spreadsheet
+                    # Using the ID from the URL provided: https://docs.google.com/spreadsheets/d/1hFMI0gSCBxSKw8gI3nwl0qNK97n5jeeUN7ZwkNF7svs/edit
+                    sheet_id = '1hFMI0gSCBxSKw8gI3nwl0qNK97n5jeeUN7ZwkNF7svs'
+                    sheet = client.open_by_key(sheet_id).sheet1
+                    
+                    # Append the row
+                    sheet.append_row(row_data)
+                    print("Successfully appended to Google Sheet")
+                else:
+                    print("GOOGLE_SHEETS_CREDENTIALS not found in environment variables. Skipping Sheet append.")
+
+            except Exception as e:
+                print(f"Google Sheets Error: {str(e)}")
+                # Continue execution to still return success to the user, but log the error on the backend
             
             # Send success response
             self._send_success({
                 "ok": True,
-                "message": "Thank you! Your message has been received successfully. We'll get back to you soon!"
+                "message": "Thank you! Your message has been received successfully."
             })
             
         except json.JSONDecodeError:
