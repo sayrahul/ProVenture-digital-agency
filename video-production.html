@@ -809,49 +809,7 @@
 			}
 			requestAnimationFrame(raf);
 
-							// Change logo color on white background sections
-		const $body = $('body');
-		const $sections = $('.bg-white');
-		const $hero = $('.hero').first();
-
-		function isLightBackground(el) {
-			const color = window.getComputedStyle(el).backgroundColor;
-			const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
-			if (!match) return false;
-			const r = parseInt(match[1], 10);
-			const g = parseInt(match[2], 10);
-			const b = parseInt(match[3], 10);
-			const luminance = (0.299 * r) + (0.587 * g) + (0.114 * b);
-			return luminance > 180;
-		}
-
-		function checkSectionInView() {
-			let active = false;
-			if ($sections.length) {
-				$sections.each(function () {
-					const sectionTop = $(this).offset().top;
-					const sectionBottom = sectionTop + $(this).outerHeight();
-					const scrollTop = $(window).scrollTop();
-					if (scrollTop + 59 >= sectionTop && scrollTop < sectionBottom - 59) {
-						active = true;
-						return false;
-					}
-				});
-			} else if ($hero.length) {
-				if ($hero.hasClass('bg-white')) {
-					active = true;
-				} else if ($hero.hasClass('bg-dark') || $hero.hasClass('bg-gradient')) {
-					const heroBottom = $hero.offset().top + $hero.outerHeight();
-					const scrollTop = $(window).scrollTop();
-					active = scrollTop + 59 >= heroBottom;
-				}
-			} else {
-				active = isLightBackground(document.body);
-			}
-			$body.toggleClass('bg-white-active', active);
-		}
-		$(window).on('scroll', checkSectionInView);
-		checkSectionInView();
+							
 
 			// Scroll-triggered reveal for elements
 			function isInViewport(elem) {
@@ -999,5 +957,59 @@
 </script>
 <!-- pv-mobile-nav-active -->
 
+<script id="pv-header-theme-fix">
+(function () {
+  if (window.__pvHeaderThemeFixInit) return;
+  window.__pvHeaderThemeFixInit = true;
+
+  function luminanceFromColor(color) {
+    var m = color && color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+    if (!m) return null;
+    var r = parseInt(m[1], 10), g = parseInt(m[2], 10), b = parseInt(m[3], 10);
+    return (0.299 * r) + (0.587 * g) + (0.114 * b);
+  }
+
+  function getContextElement() {
+    var y = Math.min(78, window.innerHeight - 1);
+    var x = Math.floor(window.innerWidth * 0.5);
+    return document.elementFromPoint(x, y);
+  }
+
+  function isLightContext() {
+    var el = getContextElement();
+    if (!el) return false;
+
+    var whiteSection = el.closest('.bg-white');
+    if (whiteSection) return true;
+
+    var darkSection = el.closest('.bg-dark, .bg-gradient');
+    if (darkSection) return false;
+
+    var n = el;
+    while (n && n !== document.body) {
+      var bg = window.getComputedStyle(n).backgroundColor;
+      var lum = luminanceFromColor(bg);
+      if (lum !== null && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+        return lum > 180;
+      }
+      n = n.parentElement;
+    }
+
+    var bodyBg = window.getComputedStyle(document.body).backgroundColor;
+    var bodyLum = luminanceFromColor(bodyBg);
+    return bodyLum !== null ? bodyLum > 180 : false;
+  }
+
+  function applyHeaderTheme() {
+    if (document.documentElement.classList.contains('shownav')) return;
+    document.body.classList.toggle('bg-white-active', isLightContext());
+  }
+
+  window.addEventListener('scroll', applyHeaderTheme, { passive: true });
+  window.addEventListener('resize', applyHeaderTheme);
+  window.addEventListener('load', applyHeaderTheme);
+  setTimeout(applyHeaderTheme, 0);
+})();
+</script>
 </body>
 </html>
