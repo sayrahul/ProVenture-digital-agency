@@ -32,18 +32,6 @@
             <span>${config.ctaText}</span>
         `;
         
-        // Track clicks
-        ctaButton.addEventListener('click', function(e) {
-            // Google Analytics tracking
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', {
-                    'event_category': 'CTA',
-                    'event_label': 'Sticky CTA Button',
-                    'value': 1
-                });
-            }
-        });
-        
         ctaContainer.appendChild(ctaButton);
         document.body.appendChild(ctaContainer);
         

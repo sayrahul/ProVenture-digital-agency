@@ -1747,7 +1747,7 @@ html.lenis body {
 
 .btn-outline:after {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -1772,7 +1772,7 @@ html.lenis body {
 .btn-outline:before {
     content: "";
     animation: scrollUp 2.5s linear infinite;
-    background: url(../images/logo-sprite.png) repeat;
+    background: none repeat;
     background-position: 0 0;
     position: absolute;
     width: 100%;
@@ -2158,7 +2158,7 @@ html body.animate:before {
 
 .header .logoslogan .number span:after {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 16px;
     height: 12px;
@@ -3876,7 +3876,7 @@ only screen and (max-width: 575.9px) {
 
 .hero .scrolldown:after {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -4441,7 +4441,7 @@ only screen and (max-width: 575.9px) {
 .goalslist-item h3:before {
     content: "";
     display: block;
-    background: url(../images/icons/visibility.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 44px;
     height: 35px;
@@ -4462,7 +4462,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .goalslist-item:nth-child(2) h3:before {
-    background: url(../images/icons/growth.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 31px
 }
@@ -4474,7 +4474,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .goalslist-item:nth-child(3) h3:before {
-    background: url(../images/icons/recruiting.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 44px
 }
@@ -4486,7 +4486,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .goalslist-item:nth-child(4) h3:before {
-    background: url(../images/icons/efficiency.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 28px
 }
@@ -4557,7 +4557,7 @@ only screen and (max-width: 575.9px) {
 .goals .intro-center:before {
     content: "";
     display: block;
-    background: url(../images/avatar.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 50px;
     height: 44px;
@@ -4771,7 +4771,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .parallax-background {
-    background-image: url('../images/headers/default.jpg');
+    background-image: none;
     background-position: 50% 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -5067,7 +5067,7 @@ only screen and (max-width: 575.9px) {
 
 .servicecard-text .catlist li a:before {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -5187,7 +5187,7 @@ only screen and (max-width: 575.9px) {
     position: absolute;
     right: -20px;
     top: -20px;
-    background: url(../images/check.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 20px;
     height: 16px;
@@ -5257,7 +5257,7 @@ only screen and (max-width: 575.9px) {
 
 .submenu ul li a:before {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -5598,7 +5598,7 @@ only screen and (max-width: 575.9px) {
     top: 40px;
     right: 0;
     transform: none;
-    background-image: url(../images/arrow-2025-black.svg);
+    background-image: none;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -5623,7 +5623,7 @@ only screen and (max-width: 575.9px) {
 .projectslider .flickity-button:focus,
 .projectslider .flickity-button:active {
     background-color: transparent;
-    background-image: url(../images/arrow-2025-black.svg);
+    background-image: none;
     background-position: center;
     background-repeat: no-repeat
 }
@@ -5835,7 +5835,7 @@ only screen and (max-width: 575.9px) {
 
 .clientratings-card .card-text:before {
     content: "";
-    background: url(../images/quote-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     opacity: 0.2;
     width: 24px;
@@ -5919,7 +5919,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .testimonials .section-inset {
-    background: url(../images/headers/bg-testimonials.jpg) no-repeat;
+    background: none no-repeat;
     background-size: cover;
     background-color: transparent;
     position: relative;
@@ -5988,7 +5988,7 @@ only screen and (max-width: 575.9px) {
 
 .testimonials-text:before {
     content: "";
-    background: url(../images/quote-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     opacity: 0.2;
     width: 34px;
@@ -6376,7 +6376,7 @@ only screen and (max-width: 575.9px) {
 
 .page-bq:before {
     content: "";
-    background: url(../images/quote-2025.svg) no-repeat;
+    background: none no-repeat;
     width: 34px;
     height: 27px;
     background-size: 100%;
@@ -6905,7 +6905,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .bg-full {
-    background: url(../images/headers/bg-about2.jpg) no-repeat;
+    background: none no-repeat;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7234,28 +7234,28 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
 .service-onlinewerbung .flex .item:first-child h3:before {
     width: 36px;
     height: 40px;
-    background: url(../images/icons/ow_searchads.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
 .service-onlinewerbung .flex .item:nth-child(2) h3:before {
     width: 40px;
     height: 40px;
-    background: url(../images/icons/ow_display.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
 .service-onlinewerbung .flex .item:nth-child(3) h3:before {
     width: 56px;
     height: 41px;
-    background: url(../images/icons/ow_videoads.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
 .service-onlinewerbung .flex .item:nth-child(4) h3:before {
     width: 34px;
     height: 41px;
-    background: url(../images/icons/ow_socialmedia.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
@@ -7561,7 +7561,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 }
 
 .teamlist-item:nth-child(11) .inner:before {
-    background: url(../images/quote-2025.svg) no-repeat;
+    background: none no-repeat;
     width: 34px;
     height: 27px;
     background-size: 100%
@@ -7577,7 +7577,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 }
 
 .teamlist-item:nth-child(12) .inner:before {
-    background: url(../images/icons/recruiting-white.svg) no-repeat;
+    background: none no-repeat;
     width: 34px;
     height: 27px;
     background-size: 100%
@@ -8460,7 +8460,7 @@ figcaption:empty,
     position: absolute;
     left: 20px;
     top: 15px;
-    background: url(../images/pdf.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 20px;
     height: 23px
@@ -9054,7 +9054,7 @@ only screen and (max-width: 575.9px) {
 
 .project-services ul li:before {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -9214,7 +9214,7 @@ only screen and (max-width: 575.9px) {
 .sitepaging ul .next a span:before,
 .sitepaging ul .prev a span:before {
     content: "";
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 24px;
     height: 18px;
@@ -9332,7 +9332,7 @@ only screen and (max-width: 575.9px) {
 
 .sitepaging ul .top a:before {
     content: "";
-    background: url(../images/all-2025.svg) no-repeat;
+    background: none no-repeat;
     width: 22px;
     height: 22px;
     background-size: 100%;
@@ -9494,27 +9494,27 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 
 .servicelist-background .image-default {
     opacity: 1;
-    background-image: url('../images/headers/image-default.jpg')
+    background-image: none
 }
 
 .servicelist-background .image-strategy {
-    background-image: url('../images/headers/image-strategy.jpg')
+    background-image: none
 }
 
 .servicelist-background .image-marketing {
-    background-image: url('../images/headers/image-marketing.jpg')
+    background-image: none
 }
 
 .servicelist-background .image-websites {
-    background-image: url('../images/headers/image-websites.jpg')
+    background-image: none
 }
 
 .servicelist-background .image-applications {
-    background-image: url('../images/headers/image-applications.jpg')
+    background-image: none
 }
 
 .servicelist-background .image-design {
-    background-image: url('../images/headers/image-design.jpg')
+    background-image: none
 }
 
 .servicelist-item {
@@ -9582,7 +9582,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 
 .servicelist-item h2 a:after {
     content: "";
-    background: url(../images/angle-white.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100% 100%;
     width: 10px;
     height: 18px;
@@ -9592,28 +9592,28 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 }
 
 .servicelist-item:first-child h2 a:before {
-    background: url(../images/icons/strategy.svg) no-repeat;
+    background: none no-repeat;
     width: 30px;
     height: 40px;
     background-size: 100%
 }
 
 .servicelist-item:nth-child(2) h2 a:before {
-    background: url(../images/icons/design.svg) no-repeat;
+    background: none no-repeat;
     width: 25px;
     height: 40px;
     background-size: 100%
 }
 
 .servicelist-item:nth-child(3) h2 a:before {
-    background: url(../images/icons/marketing.svg) no-repeat;
+    background: none no-repeat;
     width: 30px;
     height: 40px;
     background-size: 100%
 }
 
 .servicelist-item:nth-child(4) h2 a:before {
-    background: url(../images/icons/applications.svg) no-repeat;
+    background: none no-repeat;
     width: 40px;
     height: 40px;
     background-size: 100%
@@ -9721,35 +9721,35 @@ only screen and (max-width: 991.9px) {
 }
 
 .service-list .service-item:first-child h2:before {
-    background: url(../images/icons/strategy.svg) no-repeat;
+    background: none no-repeat;
     width: 37px;
     height: 50px;
     background-size: 100%
 }
 
 .service-list .service-item:nth-child(2) h2:before {
-    background: url(../images/icons/marketing.svg) no-repeat;
+    background: none no-repeat;
     width: 37px;
     height: 50px;
     background-size: 100%
 }
 
 .service-list .service-item:nth-child(3) h2:before {
-    background: url(../images/icons/websites.svg) no-repeat;
+    background: none no-repeat;
     width: 34px;
     height: 50px;
     background-size: 100%
 }
 
 .service-list .service-item:nth-child(4) h2:before {
-    background: url(../images/icons/applications.svg) no-repeat;
+    background: none no-repeat;
     width: 50px;
     height: 50px;
     background-size: 100%
 }
 
 .service-list .service-item:nth-child(5) h2:before {
-    background: url(../images/icons/design.svg) no-repeat;
+    background: none no-repeat;
     width: 31px;
     height: 50px;
     background-size: 100%
@@ -9861,7 +9861,7 @@ only screen and (max-width: 575.9px) {
 
 .bubble p:before {
     content: "";
-    background: url(../images/quote.svg) no-repeat;
+    background: none no-repeat;
     filter: brightness(0) invert(1);
     width: 15px;
     height: 10px;
@@ -9942,7 +9942,7 @@ blockquote strong {
 
 blockquote:before {
     content: "";
-    background: url(../images/quote-2025.svg) no-repeat;
+    background: none no-repeat;
     position: absolute;
     left: 0;
     top: 8px;
@@ -10321,42 +10321,42 @@ only screen and (max-width: 575.9px) {
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:first-child:before {
-    background: url(../images/icons/cms-garantie.svg) no-repeat;
+    background: none no-repeat;
     width: 23px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:nth-child(2):before {
-    background: url(../images/icons/cms-kosteneffizient.svg) no-repeat;
+    background: none no-repeat;
     width: 29px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:nth-child(3):before {
-    background: url(../images/icons/cms-individualisierbar.svg) no-repeat;
+    background: none no-repeat;
     width: 25px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:nth-child(4):before {
-    background: url(../images/icons/cms-leistungsorientiert.svg) no-repeat;
+    background: none no-repeat;
     width: 27px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:nth-child(5):before {
-    background: url(../images/icons/cms-saas-software.svg) no-repeat;
+    background: none no-repeat;
     width: 25px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-cms .usplist-item:last-child:before {
-    background: url(../images/icons/cms-cloud-hosting.svg) no-repeat;
+    background: none no-repeat;
     width: 45px;
     height: 30px;
     background-size: 100%
@@ -10386,42 +10386,42 @@ only screen and (max-width: 575.9px) {
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:first-child:before {
-    background: url(../images/icons/1-digitale-formate.svg) no-repeat;
+    background: none no-repeat;
     width: 30px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:nth-child(2):before {
-    background: url(../images/icons/2-geschaeftsdrucksachen.svg) no-repeat;
+    background: none no-repeat;
     width: 26px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:nth-child(3):before {
-    background: url(../images/icons/3-dokumente.svg) no-repeat;
+    background: none no-repeat;
     width: 21px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:nth-child(4):before {
-    background: url(../images/icons/4-werbedrucksachen.svg) no-repeat;
+    background: none no-repeat;
     width: 24px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:nth-child(5):before {
-    background: url(../images/icons/5-displaywerbung.svg) no-repeat;
+    background: none no-repeat;
     width: 20px;
     height: 30px;
     background-size: 100%
 }
 
 .entrylist .entryitem .usp .usp-design .usplist-item:nth-child(6):before {
-    background: url(../images/icons/6-sonderformate.svg) no-repeat;
+    background: none no-repeat;
     width: 31px;
     height: 30px;
     background-size: 100%
@@ -10868,7 +10868,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 
 .cta-beihilfen .cta-inner:before {
     content: "";
-    background-image: url(../images/icons/megaphone.svg);
+    background-image: none;
     background-repeat: no-repeat;
     background-size: 65%;
     background-position: center;
@@ -11005,14 +11005,14 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 }
 
 .contact-item .buttons .phonelink:before {
-    background: url(../images/icons/phone.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 18px;
     height: 18px
 }
 
 .contact-item .buttons .emaillink:before {
-    background: url(../images/icons/email.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 18px;
     height: 18px
@@ -11207,7 +11207,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 
 .contact-infos .btn-grey:before {
     content: "";
-    background: url(../images/icons/design_white.svg);
+    background: none;
     display: inline-block;
     vertical-align: middle;
     margin-right: 20px;
@@ -12108,7 +12108,7 @@ only screen and (max-width: 575.9px) {
 
 .offerform .alert-kmu:before {
     content: "";
-    background: url(../images/info.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 16px;
     height: 16px;
@@ -12281,7 +12281,7 @@ only screen and (max-width: 991.9px) {
 }
 
 .contact-quicklinks .buttonlist .btn-big:before {
-    background: url(../images/icons/pen.svg) no-repeat;
+    background: none no-repeat;
     width: 25px;
     height: 25px;
     background-size: 100%;
@@ -12289,7 +12289,7 @@ only screen and (max-width: 991.9px) {
 }
 
 .contact-quicklinks .buttonlist .btn-big:after {
-    background: url(../images/arrow-2025.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 21px;
     height: 16px;
@@ -12307,17 +12307,17 @@ only screen and (max-width: 991.9px) {
 }
 
 .contact-quicklinks .buttonlist .btn-big:nth-child(2):before {
-    background: url(../images/icons/globe.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
 .contact-quicklinks .buttonlist .btn-big:nth-child(3):before {
-    background: url(../images/icons/calendar.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
 .contact-quicklinks .buttonlist .btn-big:nth-child(4):before {
-    background: url(../images/icons/grow.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 35px;
     height: 20px
@@ -12374,7 +12374,7 @@ only screen and (max-width: 991.9px) {
 }
 
 .lead-rdv ul li:first-child a:before {
-    background: url(../images/icons/phone.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 22px;
     height: 22px
@@ -12388,7 +12388,7 @@ only screen and (max-width: 991.9px) {
 }
 
 .lead-rdv ul li:last-child a:before {
-    background: url(../images/icons/teams.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 22px;
     height: 22px
@@ -12522,7 +12522,7 @@ only screen and (max-width: 575.9px) {
 
 .contact-overview .contactoptions-item h3:before {
     content: "";
-    background: url(../images/icons/pen.svg) no-repeat;
+    background: none no-repeat;
     width: 42px;
     height: 42px;
     border: 2px solid rgba(0, 0, 0, 0.16);
@@ -12536,7 +12536,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .contact-overview .contactoptions-item:nth-child(2) h3:before {
-    background: url(../images/icons/calendar.svg) no-repeat;
+    background: none no-repeat;
     background-size: 50%;
     background-position: center
 }
@@ -12559,14 +12559,14 @@ only screen and (max-width: 575.9px) {
 }
 
 .contact-overview .contactoptions-item:nth-child(2) ul li:first-child a:before {
-    background: url(../images/icons/phone.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 18px;
     height: 18px
 }
 
 .contact-overview .contactoptions-item:nth-child(2) ul li:last-child a:before {
-    background: url(../images/icons/teams.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 19px;
     height: 18px
@@ -12681,21 +12681,21 @@ only screen and (max-width: 991.9px) {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    background: url(../images/icons/pen.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 18px;
     height: 18px
 }
 
 .cta-service .flex-ctr .buttons li:nth-child(2) a:before {
-    background: url(../images/icons/phone-outline.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 14px;
     height: 18px
 }
 
 .cta-service .flex-ctr .buttons li:nth-child(3) a:before {
-    background: url(../images/icons/calendar.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%
 }
 
@@ -12946,7 +12946,7 @@ only screen and (max-width: 575.9px) {
 
 .footer .notification span:before {
     content: "";
-    background: url(../images/info.svg) no-repeat;
+    background: none no-repeat;
     background-size: 100%;
     width: 22px;
     height: 22px;
