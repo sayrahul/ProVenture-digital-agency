@@ -1258,6 +1258,16 @@
 <!-- ProVenture Custom JavaScript -->
 <script src="custom/js/proventure-custom.js"></script>
 </section></main></div></form><!-- Mobile Bottom Nav -->
+<style id="pv-mobile-nav-inline">
+  .pv-mobile-nav { position: fixed !important; left: 12px !important; right: 12px !important; bottom: 12px !important; z-index: 2147483000 !important; background: #fff !important; border-radius: 16px !important; box-shadow: 0 12px 30px rgba(0,0,0,0.18) !important; display: none !important; padding: 6px !important; }
+  .pv-mobile-nav .pv-mobile-nav-inner { display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 6px !important; }
+  .pv-mobile-nav a { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 4px !important; padding: 8px 4px !important; font-size: 12px !important; font-weight: 600 !important; line-height: 1.15 !important; color: #243242 !important; text-decoration: none !important; border-radius: 12px !important; }
+  .pv-mobile-nav a span { display: block !important; font-size: 12px !important; line-height: 1.15 !important; }
+  .pv-mobile-nav a svg { width: 20px !important; height: 20px !important; min-width: 20px !important; min-height: 20px !important; max-width: 20px !important; max-height: 20px !important; stroke: currentColor !important; fill: none !important; stroke-width: 2 !important; }
+  .pv-mobile-nav a.active, .pv-mobile-nav a:active, .pv-mobile-nav a:focus { background: #f3f4f6 !important; color: #e53935 !important; outline: none !important; }
+  @media (max-width: 991.98px) { .pv-mobile-nav { display: block !important; } body { padding-bottom: 90px !important; } }
+  @media (min-width: 992px) { .pv-mobile-nav { display: none !important; } }
+</style>
 <nav class="pv-mobile-nav" aria-label="Mobile Navigation">
   <div class="pv-mobile-nav-inner">
     <a href="index.html" class="pv-nav-home">
