@@ -330,6 +330,80 @@
     }
 
     // ========================================
+    // 11. MOBILE NAV ACTIVE STATE
+    // ========================================
+    function initMobileNavActiveState() {
+        const nav = document.querySelector('.pv-mobile-nav');
+        if (!nav) return;
+
+        const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        const map = {
+            'index.html': '.pv-nav-home',
+            'about.html': '.pv-nav-about',
+            'services.html': '.pv-nav-services',
+            'clients.html': '.pv-nav-clients',
+            'contact.html': '.pv-nav-contact'
+        };
+
+        const selector = map[path];
+        if (!selector) return;
+        const link = nav.querySelector(selector);
+        if (link) link.classList.add('active');
+    }
+
+    // ========================================
+    // 12. HEADER THEME SWITCH (NON-INDEX)
+    // ========================================
+    function initHeaderThemeSwitch() {
+        const rootPath = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+        if (rootPath === 'index.html' || rootPath === '') return;
+        if (!document.querySelector('.header')) return;
+
+        function luminanceFromColor(color) {
+            const m = color && color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+            if (!m) return null;
+            const r = parseInt(m[1], 10);
+            const g = parseInt(m[2], 10);
+            const b = parseInt(m[3], 10);
+            return (0.299 * r) + (0.587 * g) + (0.114 * b);
+        }
+
+        function isLightContextAtHeader() {
+            const y = Math.min(74, window.innerHeight - 1);
+            const x = Math.floor(window.innerWidth * 0.5);
+            const el = document.elementFromPoint(x, y);
+            if (!el) return false;
+
+            if (el.closest('.bg-white')) return true;
+            if (el.closest('.bg-dark, .bg-gradient')) return false;
+
+            let n = el;
+            while (n && n !== document.body) {
+                const bg = window.getComputedStyle(n).backgroundColor;
+                const lum = luminanceFromColor(bg);
+                if (lum !== null && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
+                    return lum > 180;
+                }
+                n = n.parentElement;
+            }
+
+            const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+            const bodyLum = luminanceFromColor(bodyBg);
+            return bodyLum !== null ? bodyLum > 180 : false;
+        }
+
+        function applyHeaderTheme() {
+            if (document.documentElement.classList.contains('shownav')) return;
+            document.body.classList.toggle('bg-white-active', isLightContextAtHeader());
+        }
+
+        window.addEventListener('scroll', applyHeaderTheme, { passive: true });
+        window.addEventListener('resize', applyHeaderTheme);
+        window.addEventListener('load', applyHeaderTheme);
+        setTimeout(applyHeaderTheme, 0);
+    }
+
+    // ========================================
     // INITIALIZE ALL FEATURES
     // ========================================
     function init() {
@@ -350,6 +424,8 @@
         initFormValidation();
         initLazyLoad();
         initBackToTop();
+        initMobileNavActiveState();
+        initHeaderThemeSwitch();
 
         console.log('ProVenture Custom JS initialized ✓');
     }
