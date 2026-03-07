@@ -36,8 +36,6 @@ Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://proventure.in/sitemap.xml
-Sitemap: https://proventure.in/sitemap-images.xml
-
 # Specific bot rules
 User-agent: Googlebot
 Allow: /
