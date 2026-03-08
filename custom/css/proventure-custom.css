@@ -746,7 +746,7 @@ main.main {
 
 /* Projects page hero should not use sticky legacy hero behavior */
 .projects-hero {
-  padding: clamp(90px, 10vw, 160px) 0 clamp(40px, 5vw, 72px);
+  padding: clamp(130px, 14vw, 210px) 0 clamp(40px, 5vw, 72px);
 }
 
 .projects-hero h1 {
