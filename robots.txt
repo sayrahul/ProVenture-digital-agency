@@ -8,7 +8,6 @@ Allow: /
 # Disallow admin and backend areas
 Disallow: /admin/
 Disallow: /api/
-Disallow: /proventure-backend/
 Disallow: /.git/
 Disallow: /.venv/
 Disallow: /util/
