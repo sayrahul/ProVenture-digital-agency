@@ -26,7 +26,7 @@
 }
 
 .header .logoslogan .pv-wordmark-main {
-    font-family: "Outfit", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 900;
     letter-spacing: 0;
@@ -118,6 +118,127 @@ body figcaption {
     font-family: "Inter", sans-serif !important;
 }
 
+:root {
+    --space-xxs: 0.5rem;
+    --space-xs: 0.75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.25rem;
+    --space-xl: 3.5rem;
+    --space-xxl: 5rem;
+    --heading-lh-tight: 1.12;
+    --heading-lh-normal: 1.22;
+    --body-lh: 1.65;
+    --text-max: 66ch;
+}
+
+@media (max-width: 991.98px) {
+    :root {
+        --space-xl: 2.5rem;
+        --space-xxl: 3.5rem;
+    }
+}
+
+main.main section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+main.main h1,
+main.main .h1 {
+    font-size: clamp(2rem, 3.8vw, 3.7rem);
+    line-height: var(--heading-lh-tight);
+    letter-spacing: -0.015em;
+}
+
+main.main h2,
+main.main .h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+    line-height: var(--heading-lh-normal);
+    letter-spacing: -0.01em;
+}
+
+main.main h3,
+main.main .h3 {
+    font-size: clamp(1.15rem, 2vw, 1.9rem);
+    line-height: var(--heading-lh-normal);
+}
+
+main.main p,
+main.main li {
+    line-height: var(--body-lh);
+}
+
+.servicecards .servicecard p,
+.servicecards .servicecard .catlist {
+    max-width: var(--text-max);
+}
+
+.servicecards .servicecard .catlist li {
+    line-height: 1.58;
+}
+
+.btn,
+.btn-outline,
+.pv-btn-primary {
+    border-radius: 999px !important;
+    min-height: 44px;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
+}
+
+.btn-outline {
+    border-width: 2px !important;
+}
+
+.pagelink.lnk,
+.pagelink.btn {
+    font-weight: 700;
+}
+
+footer .footer-wrapper {
+    gap: var(--space-lg);
+}
+
+footer .address .footer-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+}
+
+footer .contactlinks li:first-child a {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+footer .socialicons {
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+}
+
+footer .socialicons .sociallink {
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+footer .copyright {
+    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer .legalinfobar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    align-items: center;
+}
+
+footer .legalinfolinks {
+    opacity: 0.94;
+}
+
 .header-logo {
     display: inline-flex;
     align-items: center;
@@ -139,11 +260,6 @@ body figcaption {
     .header-logo .header-logo-img {
         width: 44px;
     }
-}
-
-main > section:not(:first-child) {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 900px;
 }
 
 /* ========================================
@@ -626,4 +742,22 @@ main.main {
 
 @media (min-width: 992px) {
   .pv-mobile-nav { display: none; }
+}
+
+/* Projects page hero should not use sticky legacy hero behavior */
+.projects-hero {
+  padding: clamp(90px, 10vw, 160px) 0 clamp(40px, 5vw, 72px);
+}
+
+.projects-hero h1 {
+  margin: 0 0 18px;
+  color: #fff;
+}
+
+.projects-hero .intro {
+  margin: 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: 1.35;
 }
