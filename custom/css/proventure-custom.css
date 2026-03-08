@@ -93,6 +93,59 @@
     }
 }
 
+html,
+body,
+body button,
+body input,
+body textarea,
+body select,
+body option,
+body label,
+body a,
+body p,
+body span,
+body li,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body small,
+body strong,
+body blockquote,
+body figcaption {
+    font-family: "Inter", sans-serif !important;
+}
+
+.header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo svg {
+    display: none !important;
+}
+
+.header-logo .header-logo-img {
+    display: block;
+    width: 58px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 991.9px) {
+    .header-logo .header-logo-img {
+        width: 44px;
+    }
+}
+
+main > section:not(:first-child) {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+}
+
 /* ========================================
    1. CUSTOM ANIMATED GRADIENT BACKGROUND
    ======================================== */
