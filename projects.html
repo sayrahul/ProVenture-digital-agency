@@ -23,7 +23,7 @@
 </head>
 <body class="page">
   <div class="page-wrapper">
-    <header class="header bg-dark">
+    <header class="header">
       <a class="sr-only sr-only-focusable skiplink" href="#C_T_DefaultRegion">Skip to content</a>
       <div class="logoslogan">
         <a aria-label="Go to homepage" href="index.html" title="ProVenture digital agency">
@@ -36,11 +36,29 @@
             </span>
           </span>
         </a>
+        <a ariahidden="true" href="about.html" title="Full-Service Marketing Agency - ProVenture, Chhatrapati Sambhajinagar (Aurangabad)">
+          <div class="number"><small>10+</small><span>years of creativity</span></div>
+        </a>
       </div>
       <div class="header-nav">
         <a aria-label="Go to homepage" class="startpagelink header-logo" href="index.html" title="ProVenture digital agency">
           <img alt="ProVenture logo" class="header-logo-img" decoding="async" height="180" src="icon.png" width="180" />
         </a>
+        <div class="navtoggle">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="mainnav">
+        <div class="mainnav-in">
+          <ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
+            <li id="navigation_2"><a class="sitemenuitem" href="about.html">About Us</a></li>
+            <li id="navigation_3"><a class="sitemenuitem" href="services.html">Services</a></li>
+            <li id="navigation_4"><a class="sitemenuitem" href="projects.html">Projects</a></li>
+            <li id="navigation_5"><a class="sitemenuitem" href="clients.html">Clients</a></li>
+            <li id="navigation_6"><a class="sitemenuitem" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <main class="main" id="C_T_DefaultRegion">
@@ -48,21 +66,37 @@
         <div class="container-big">
           <h1 class="nospan">Projects</h1>
           <p class="intro">Portfolio updates are being prepared and will be published soon.</p>
+          <div class="projects-hero-cta">
+            <a class="btn projects-btn-primary" href="contact.html" title="Contact ProVenture">Request a Project Consultation</a>
+          </div>
         </div>
       </section>
       <section class="bg-white projects-coming">
         <div class="container-small">
-          <h2 class="h2">What to expect here</h2>
-          <p class="projects-coming-lead">Real client outcomes in digital marketing, branding, web design, video production, and print campaigns.</p>
-          <ul class="projects-coming-list">
-            <li>Performance-led growth campaigns with measurable KPIs</li>
-            <li>Brand identity systems and visual design rollouts</li>
-            <li>Responsive websites and conversion-focused landing pages</li>
-            <li>Video production and social-first creative execution</li>
-          </ul>
-          <p class="projects-coming-cta">
-            <a class="btn btn-outline" href="contact.html" title="Contact ProVenture">Request a project walkthrough</a>
-          </p>
+          <div class="projects-grid">
+            <div class="projects-main">
+              <h2 class="h2">What to expect here</h2>
+              <p class="projects-coming-lead">Real client outcomes in digital marketing, branding, web design, video production, and print campaigns.</p>
+              <ul class="projects-coming-list">
+                <li>Performance-led growth campaigns with measurable KPIs</li>
+                <li>Brand identity systems and visual design rollouts</li>
+                <li>Responsive websites and conversion-focused landing pages</li>
+                <li>Video production and social-first creative execution</li>
+              </ul>
+              <p class="projects-coming-cta">
+                <a class="btn btn-outline" href="contact.html" title="Contact ProVenture">Request a project walkthrough</a>
+              </p>
+            </div>
+            <aside class="projects-panel" aria-label="Upcoming portfolio details">
+              <h3>Launch Plan</h3>
+              <p>We are curating selected case studies from Chhatrapati Sambhajinagar (Aurangabad) and national campaigns.</p>
+              <ul class="projects-panel-list">
+                <li><strong>Q2 2026:</strong> Branding and website launches</li>
+                <li><strong>Q3 2026:</strong> Video marketing and ad campaign studies</li>
+                <li><strong>Q4 2026:</strong> Full-funnel growth results with insights</li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
@@ -93,5 +127,41 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var body = document.body;
+      var navToggle = document.querySelector('.navtoggle');
+      var navLinks = document.querySelectorAll('.mainnav a');
+      var header = document.querySelector('.header');
+
+      if (navToggle) {
+        navToggle.addEventListener('click', function () {
+          html.classList.toggle('shownav');
+        });
+      }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          html.classList.remove('shownav');
+        });
+      });
+
+      function updateHeaderTheme() {
+        if (!header) return;
+        var probeY = Math.min(window.innerHeight - 1, Math.max(1, header.offsetHeight + 8));
+        var probeX = Math.max(1, Math.min(window.innerWidth - 1, Math.floor(window.innerWidth / 2)));
+        var probeEl = document.elementFromPoint(probeX, probeY);
+        var scoped = probeEl ? probeEl.closest('section, footer, main, body') : null;
+        var isWhite = !!(scoped && (scoped.classList.contains('bg-white') || scoped.closest('.bg-white')));
+        body.classList.toggle('bg-white-active', isWhite);
+      }
+
+      window.addEventListener('scroll', updateHeaderTheme, { passive: true });
+      window.addEventListener('resize', updateHeaderTheme);
+      window.addEventListener('load', updateHeaderTheme);
+      updateHeaderTheme();
+    })();
+  </script>
 </body>
 </html>

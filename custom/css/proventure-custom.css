@@ -746,7 +746,7 @@ main.main {
 
 /* Projects page hero should not use sticky legacy hero behavior */
 .projects-hero {
-  padding: clamp(130px, 14vw, 210px) 0 clamp(40px, 5vw, 72px);
+  padding: clamp(170px, 18vw, 250px) 0 clamp(40px, 5vw, 72px);
 }
 
 .projects-hero h1 {
@@ -760,4 +760,113 @@ main.main {
   color: rgba(255, 255, 255, 0.9);
   font-size: clamp(18px, 2vw, 30px);
   line-height: 1.35;
+}
+
+.projects-hero-cta {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.projects-hero-cta .btn {
+  min-width: 220px;
+  text-align: center;
+}
+
+.projects-hero .projects-btn-primary {
+  background: #1fb6ea;
+  border: 1px solid #1fb6ea;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.projects-hero .projects-btn-primary:hover,
+.projects-hero .projects-btn-primary:focus {
+  background: #149fce;
+  border-color: #149fce;
+  color: #ffffff;
+}
+
+.projects-coming {
+  padding: clamp(54px, 6vw, 86px) 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: start;
+}
+
+.projects-main {
+  background: #fff;
+  border: 1px solid #dbe5f1;
+  border-radius: 18px;
+  padding: clamp(24px, 3.4vw, 42px);
+  box-shadow: 0 14px 30px rgba(11, 25, 45, 0.06);
+}
+
+.projects-coming-lead {
+  max-width: 65ch;
+}
+
+.projects-coming-list {
+  margin: 24px 0 0;
+  padding-left: 22px;
+}
+
+.projects-coming-list li {
+  margin-bottom: 10px;
+}
+
+.projects-coming-cta {
+  margin: 28px 0 0;
+}
+
+.projects-panel {
+  background: linear-gradient(145deg, #0e2238, #1b3551 56%, #17304a);
+  border-radius: 18px;
+  padding: clamp(24px, 3.4vw, 36px);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(10, 22, 41, 0.25);
+}
+
+.projects-panel h3 {
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.projects-panel p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+}
+
+.projects-panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects-panel-list li {
+  margin-bottom: 10px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(31, 182, 234, 0.85);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 991.98px) {
+  .projects-hero {
+    padding-top: 190px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-main,
+  .projects-panel {
+    border-radius: 14px;
+  }
 }
