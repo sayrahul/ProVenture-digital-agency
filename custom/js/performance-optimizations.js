@@ -254,7 +254,7 @@
             const lcpObserver = new PerformanceObserver((list) => {
                 const entries = list.getEntries();
                 const lastEntry = entries[entries.length - 1];
-                console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
+                // LCP value: lastEntry.renderTime || lastEntry.loadTime
             });
             lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
@@ -262,7 +262,7 @@
             const fidObserver = new PerformanceObserver((list) => {
                 const entries = list.getEntries();
                 entries.forEach(entry => {
-                    console.log('FID:', entry.processingStart - entry.startTime);
+                    // FID value: entry.processingStart - entry.startTime
                 });
             });
             fidObserver.observe({ entryTypes: ['first-input'] });
@@ -273,7 +273,7 @@
                 for (const entry of list.getEntries()) {
                     if (!entry.hadRecentInput) {
                         clsValue += entry.value;
-                        console.log('CLS:', clsValue);
+                        // CLS value: clsValue
                     }
                 }
             });
@@ -345,11 +345,9 @@
             preloadCriticalResources();
             optimizeMainThread();
         });
-
-        console.log('ProVenture Performance Optimizations initialized ✓');
     }
 
     // Start initialization
     init();
 
-})();
+})()

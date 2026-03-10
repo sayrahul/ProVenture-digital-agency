@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
 class handler(BaseHTTPRequestHandler):
     """
@@ -54,7 +54,7 @@ class handler(BaseHTTPRequestHandler):
                     # Parse credentials
                     creds_dict = json.loads(creds_json)
                     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-                    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+                    creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
                     client = gspread.authorize(creds)
                     
                     # Open the spreadsheet
@@ -111,6 +111,6 @@ class handler(BaseHTTPRequestHandler):
     
     def _set_cors_headers(self):
         """Set CORS headers for cross-origin requests"""
-        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Origin', 'https://proventure.in')
         self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')

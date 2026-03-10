@@ -426,8 +426,6 @@
         initBackToTop();
         initMobileNavActiveState();
         initHeaderThemeSwitch();
-
-        console.log('ProVenture Custom JS initialized ✓');
     }
 
     // Start initialization
