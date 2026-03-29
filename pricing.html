@@ -242,171 +242,14 @@
 					}
 
 					.pv-hero-actions .btn {
-						border-color: rgba(15, 23, 42, 0.28);
-						background: rgba(255, 255, 255, 0.92);
-						color: #0f172a;
+						border-color: rgba(15, 23, 42, 0.18);
+						background: rgba(255, 255, 255, 0.75);
 						backdrop-filter: blur(6px);
 					}
 
 					.pv-hero-actions .btn:hover {
-						border-color: rgba(15, 23, 42, 0.5);
-						background: #ffffff;
-					}
-
-					/* Creative pricing hero */
-					.page_pricing .hero.bg-white {
-						position: relative;
-						overflow: hidden;
-						background:
-							radial-gradient(circle at 12% 0%, rgba(14, 165, 233, 0.12), transparent 40%),
-							radial-gradient(circle at 88% 12%, rgba(37, 99, 235, 0.12), transparent 45%),
-							#fff;
-					}
-
-					.page_pricing .hero.bg-white::before,
-					.page_pricing .hero.bg-white::after {
-						content: "";
-						position: absolute;
-						width: 320px;
-						height: 320px;
-						border-radius: 999px;
-						background: radial-gradient(circle, rgba(14, 165, 233, 0.18), rgba(14, 165, 233, 0));
-						filter: blur(2px);
-						z-index: 0;
-					}
-
-					.page_pricing .hero.bg-white::before {
-						left: -130px;
-						top: -150px;
-					}
-
-					.page_pricing .hero.bg-white::after {
-						right: -150px;
-						top: 90px;
-						background: radial-gradient(circle, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0));
-					}
-
-					.page_pricing .hero .scroll-parallax {
-						position: relative;
-						z-index: 1;
-					}
-
-					.pv-hero-panel {
-						display: grid;
-						grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-						gap: 1.5rem;
-						align-items: center;
-						padding: clamp(1.25rem, 2.5vw, 2rem);
-						border-radius: 22px;
-						background: rgba(255, 255, 255, 0.72);
-						border: 1px solid rgba(15, 23, 42, 0.08);
-						box-shadow: 0 16px 40px rgba(2, 6, 23, 0.08);
-						backdrop-filter: blur(8px);
-					}
-
-					.pv-hero-kicker {
-						display: flex;
-						align-items: center;
-						gap: 0.55rem;
-						font-weight: 900;
-						letter-spacing: 0.14em;
-						text-transform: uppercase;
-						font-size: 0.78rem;
-						color: var(--pv-muted);
-					}
-
-					.pv-hero-kicker::before {
-						content: "";
-						width: 34px;
-						height: 2px;
-						background: linear-gradient(90deg, var(--pv-accent), var(--pv-accent-2));
-						border-radius: 999px;
-					}
-
-					.pv-hero-title {
-						margin: 0.4rem 0 0.35rem;
-						font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-						line-height: 1.05;
-						letter-spacing: -0.02em;
-					}
-
-					.pv-hero-title strong {
-						color: #0ea5e9;
-					}
-
-					.pv-hero-copy {
-						margin: 0.3rem 0 0;
-						color: var(--pv-muted);
-						font-weight: 700;
-						max-width: 60ch;
-					}
-
-					.pv-hero-chips {
-						display: flex;
-						flex-wrap: wrap;
-						gap: 0.5rem;
-						margin-top: 0.9rem;
-					}
-
-					.pv-chip {
-						padding: 0.4rem 0.75rem;
-						border-radius: 999px;
-						font-size: 0.85rem;
-						font-weight: 800;
-						background: rgba(14, 165, 233, 0.16);
-						border: 1px solid rgba(14, 165, 233, 0.38);
-						color: #0b1220;
-						white-space: nowrap;
-					}
-
-					.pv-hero-aside {
-						display: grid;
-						gap: 0.75rem;
-						padding: 1rem;
-						border-radius: 18px;
-						background: rgba(15, 23, 42, 0.92);
-						color: #fff;
-						box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-					}
-
-					.pv-hero-aside h4 {
-						margin: 0;
-						font-size: 1.05rem;
-						font-weight: 900;
-						letter-spacing: 0.02em;
-						color: #fff;
-					}
-
-					.pv-hero-aside p {
-						margin: 0;
-						color: rgba(255, 255, 255, 0.82);
-						font-weight: 600;
-					}
-
-					.pv-hero-metrics {
-						display: grid;
-						grid-template-columns: repeat(2, minmax(0, 1fr));
-						gap: 0.6rem;
-					}
-
-					.pv-metric {
-						border-radius: 14px;
-						background: rgba(255, 255, 255, 0.08);
-						padding: 0.6rem 0.75rem;
-					}
-
-					.pv-metric strong {
-						display: block;
-						font-size: 1.1rem;
-						font-weight: 900;
-						color: #fff;
-					}
-
-					.pv-metric span {
-						display: block;
-						font-size: 0.8rem;
-						color: rgba(255, 255, 255, 0.78);
-						font-weight: 600;
+						border-color: rgba(15, 23, 42, 0.34);
+						background: rgba(255, 255, 255, 0.92);
 					}
 
 					.pv-stats {
@@ -414,94 +257,6 @@
 						grid-template-columns: repeat(4, minmax(0, 1fr));
 						gap: 0.75rem;
 						margin: 1rem 0 1.25rem;
-					}
-
-					.pv-stage {
-						margin: 0.5rem 0 1.25rem;
-					}
-
-					.pv-stage-header {
-						display: flex;
-						align-items: center;
-						justify-content: space-between;
-						gap: 1rem;
-						margin-bottom: 0.75rem;
-					}
-
-					.pv-stage-title {
-						margin: 0;
-						font-size: clamp(1.15rem, 2.1vw, 1.6rem);
-						font-weight: 900;
-					}
-
-					.pv-stage-sub {
-						margin: 0;
-						color: var(--pv-muted);
-						font-weight: 700;
-						max-width: 70ch;
-					}
-
-					.pv-stage-grid {
-						display: grid;
-						grid-template-columns: repeat(4, minmax(0, 1fr));
-						gap: 0.75rem;
-					}
-
-					.pv-stage-card {
-						border: 1px solid var(--pv-line);
-						border-radius: 16px;
-						background: rgba(255, 255, 255, 0.85);
-						backdrop-filter: blur(6px);
-						padding: 1rem;
-						box-shadow: 0 12px 26px rgba(2, 6, 23, 0.06);
-						position: relative;
-						overflow: hidden;
-					}
-
-					.pv-stage-card::after {
-						content: "";
-						position: absolute;
-						right: -40px;
-						top: -40px;
-						width: 120px;
-						height: 120px;
-						border-radius: 999px;
-						background: radial-gradient(circle, rgba(14, 165, 233, 0.2), rgba(14, 165, 233, 0));
-						opacity: 0.9;
-					}
-
-					.pv-stage-icon {
-						width: 42px;
-						height: 42px;
-						border-radius: 12px;
-						display: grid;
-						place-items: center;
-						background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(37, 99, 235, 0.2));
-						color: #0f172a;
-						font-weight: 900;
-						margin-bottom: 0.6rem;
-					}
-
-					.pv-stage-card h4 {
-						margin: 0 0 0.35rem;
-						font-size: 1.05rem;
-						font-weight: 900;
-					}
-
-					.pv-stage-card p {
-						margin: 0;
-						color: var(--pv-muted);
-						font-weight: 700;
-						font-size: 0.95rem;
-					}
-
-					.pv-stage-card span {
-						display: inline-block;
-						margin-top: 0.45rem;
-						font-size: 0.85rem;
-						font-weight: 900;
-						color: #2563eb;
-						letter-spacing: 0.02em;
 					}
 
 					.pv-stat {
@@ -530,13 +285,8 @@
 						display: grid;
 						grid-template-columns: 1fr auto;
 						gap: 0.9rem;
-						align-items: center;
+						align-items: start;
 						margin: 0 0 1.1rem;
-						padding: 0.85rem 1rem;
-						border-radius: 16px;
-						border: 1px solid rgba(15, 23, 42, 0.12);
-						background: rgba(255, 255, 255, 0.85);
-						box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
 					}
 
 					.pv-tabs {
@@ -565,30 +315,31 @@
 						background: rgba(14, 165, 233, 0.08);
 					}
 
-					.pv-toolbar-aside {
-						display: flex;
-						flex-wrap: wrap;
-						gap: 0.5rem;
-						justify-content: flex-end;
+					.pv-search {
+						display: grid;
+						gap: 0.35rem;
+						min-width: min(520px, 100%);
+						justify-self: end;
 					}
 
-					.pv-toolbar-chip {
-						display: inline-flex;
-						align-items: center;
-						gap: 0.4rem;
-						padding: 0.45rem 0.7rem;
-						border-radius: 999px;
-						font-size: 0.85rem;
+					.pv-search span {
+						font-size: 0.95rem;
 						font-weight: 800;
-						color: #0f172a;
-						background: rgba(14, 165, 233, 0.12);
-						border: 1px solid rgba(14, 165, 233, 0.25);
-						white-space: nowrap;
+						color: var(--pv-muted);
 					}
 
-					.pv-toolbar-chip strong {
-						font-weight: 900;
-						color: #0b5fb6;
+					.pv-search input {
+						width: 100%;
+						border: 1px solid var(--pv-line);
+						border-radius: 12px;
+						padding: 0.8rem 0.95rem;
+						outline: none;
+						background: rgba(255, 255, 255, 0.92);
+					}
+
+					.pv-search input:focus {
+						border-color: rgba(14, 165, 233, 0.55);
+						box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.13);
 					}
 
 					.pv-panel {
@@ -605,7 +356,6 @@
 						overflow: auto;
 						background: rgba(255, 255, 255, 0.92);
 						box-shadow: 0 10px 28px rgba(2, 6, 23, 0.06);
-						-webkit-overflow-scrolling: touch;
 					}
 
 					.pv-table {
@@ -714,14 +464,6 @@
 						.pv-stats {
 							grid-template-columns: repeat(2, minmax(0, 1fr));
 						}
-
-						.pv-stage-grid {
-							grid-template-columns: repeat(2, minmax(0, 1fr));
-						}
-
-						.pv-hero-panel {
-							grid-template-columns: 1fr;
-						}
 					}
 
 					@media (max-width: 760px) {
@@ -737,91 +479,8 @@
 							grid-template-columns: 1fr;
 						}
 
-						.pv-toolbar-aside {
-							justify-content: flex-start;
-						}
-
-						.pv-stage-header {
-							flex-direction: column;
-							align-items: flex-start;
-						}
-
-						.pv-stage-grid {
-							grid-template-columns: 1fr;
-						}
-
-						.pv-hero-panel {
-							grid-template-columns: 1fr;
-						}
-
-						.pv-hero-panel {
-							padding: 1rem;
-						}
-
-						.pv-hero-title {
-							font-size: clamp(1.8rem, 8vw, 2.6rem);
-						}
-
-						.pv-hero-copy {
-							font-size: 0.98rem;
-						}
-
-						.pv-hero-chips {
-							gap: 0.4rem;
-						}
-
-						.pv-chip {
-							font-size: 0.8rem;
-							padding: 0.35rem 0.6rem;
-						}
-
-						.pv-hero-aside {
-							padding: 0.85rem;
-						}
-
-						.pv-hero-metrics {
-							grid-template-columns: 1fr;
-						}
-
-						.pv-toolbar {
-							padding: 0.7rem 0.75rem;
-						}
-
-						.pv-tabs {
-							flex-wrap: nowrap;
-							overflow-x: auto;
-							scrollbar-width: thin;
-						}
-
-						.pv-tab {
-							padding: 0.5rem 0.75rem;
-							font-size: 0.9rem;
-						}
-
-						.pv-toolbar-aside {
-							width: 100%;
-						}
-
-						.pv-toolbar-chip {
-							font-size: 0.8rem;
-						}
-					}
-
-					@media (max-width: 520px) {
-						.pv-stats {
-							grid-template-columns: 1fr;
-						}
-
-						.pv-stage-card {
-							padding: 0.85rem;
-						}
-
-						.pv-stat {
-							padding: 0.8rem;
-						}
-
-						.pv-table {
-							min-width: 860px;
+						.pv-search {
+							justify-self: start;
 						}
 					}
 
@@ -834,83 +493,27 @@
 							z-index: 0;
 						}
 					}
-
-					/* Pricing page: add a clean white band below header */
-					.page_pricing main.main {
-						background: #fff;
-					}
-
 				</style>
 
 				<!-- Services-style hero -->
 				<div class="hero bg-white hero-small">
 					<div class="container-big scroll-parallax">
-						<div class="pv-hero-panel">
-							<div>
-								<div class="pv-hero-kicker">ProVenture Pricing</div>
-								<h1 class="pv-hero-title">Pricing that feels <strong>clear</strong> and premium.</h1>
-								<p class="pv-hero-copy">Professional, Excel-style sheets for <strong>Design</strong>,
-									<strong>Video Editing</strong>, <strong>Web Design</strong>, and <strong>Digital Marketing</strong>.
-									Use tabs to switch sheets. Click any column header to sort.</p>
-								<div class="pv-hero-chips" aria-label="Highlights">
-									<span class="pv-chip">50+ Services</span>
-									<span class="pv-chip">Transparent add-ons</span>
-									<span class="pv-chip">Quick turnaround</span>
-								</div>
+						<div class="h1 nospan">Pricing</div>
+						<div class="pv-badge"><span class="pv-badge-dot" aria-hidden="true"></span>ProVenture Pricing</div>
+						<div class="grid-row twocol">
+							
+							<div class="hero-lead">
+								<p>Professional, Excel-style sheets for <strong>Design</strong>, <strong>Video Editing</strong>,
+									<strong>Web Design</strong>, and <strong>Digital Marketing</strong>. Use tabs to switch
+									sheets. Click any column header to sort.</p>
+								
 							</div>
-							<aside class="pv-hero-aside" aria-label="Pricing snapshot">
-								<h4>Pricing Snapshot</h4>
-								<p>Get a quick sense of turnaround, revisions, and formats before you dive into the sheets.</p>
-								<div class="pv-hero-metrics">
-									<div class="pv-metric"><strong>2-3</strong><span>Revision rounds</span></div>
-									<div class="pv-metric"><strong>24-72h</strong><span>Standard delivery</span></div>
-									<div class="pv-metric"><strong>CMYK</strong><span>Print ready</span></div>
-									<div class="pv-metric"><strong>HD</strong><span>Digital exports</span></div>
-								</div>
-							</aside>
 						</div>
 					</div>
 				</div>
 
 				<section class="pv-sheet" aria-label="Pricing sheets">
 					<div class="container-big">
-						<div class="pv-stage" aria-label="Pricing stages">
-							<div class="pv-stage-header">
-								<div>
-									<h3 class="pv-stage-title">Pricing Stages</h3>
-									<p class="pv-stage-sub">A simple, transparent flow that matches ProVenture quality and keeps
-										every quote clear.</p>
-								</div>
-								<a class="btn btn-outline pv-btn-primary" href="contact.html?service=pricing">Start Your Quote</a>
-							</div>
-							<div class="pv-stage-grid">
-								<div class="pv-stage-card">
-									<div class="pv-stage-icon">01</div>
-									<h4>Brief &amp; Scope</h4>
-									<p>We map goals, sizes, and formats to lock the right service.</p>
-									<span>Same-day response</span>
-								</div>
-								<div class="pv-stage-card">
-									<div class="pv-stage-icon">02</div>
-									<h4>Rate &amp; Timeline</h4>
-									<p>Clear starting price, delivery window, and revision plan.</p>
-									<span>Transparent pricing</span>
-								</div>
-								<div class="pv-stage-card">
-									<div class="pv-stage-icon">03</div>
-									<h4>Design &amp; Review</h4>
-									<p>Professional execution with structured revision rounds.</p>
-									<span>Quality-first</span>
-								</div>
-								<div class="pv-stage-card">
-									<div class="pv-stage-icon">04</div>
-									<h4>Delivery</h4>
-									<p>Print-ready and digital exports, organized and final.</p>
-									<span>Ready-to-use files</span>
-								</div>
-							</div>
-						</div>
-
 						<div class="pv-stats" aria-label="Pricing highlights">
 							<div class="pv-stat"><strong>Clear revisions</strong><span>Standard: 2-3 rounds</span></div>
 							<div class="pv-stat"><strong>Fast delivery</strong><span>Express option available</span></div>
@@ -925,11 +528,12 @@
 								<button class="pv-tab" type="button" data-sheet="web">Web Design</button>
 								<button class="pv-tab" type="button" data-sheet="marketing">Digital Marketing</button>
 							</nav>
-							<div class="pv-toolbar-aside" aria-label="Pricing tips">
-								<span class="pv-toolbar-chip"><strong>Tip:</strong> Click headers to sort</span>
-								<span class="pv-toolbar-chip"><strong>Design:</strong> 80 services</span>
-								<span class="pv-toolbar-chip"><strong>Tabs:</strong> Quick switch</span>
-							</div>
+
+							<label class="pv-search" for="pvSearch">
+								<span>Search</span>
+								<input id="pvSearch" type="search" placeholder="Type to filter (e.g., logo, reel, SEO)..."
+									autocomplete="off" />
+							</label>
 						</div>
 
 						<div class="pv-panel is-active" id="pvSheet-design" data-sheet="design">
@@ -941,98 +545,37 @@
 										</tr>
 										<tr>
 											<th scope="col" data-type="number" aria-sort="none">Sr. No.</th>
-											<th scope="col" data-type="text" aria-sort="none">Package / Service</th>
-											<th scope="col" data-type="number" aria-sort="none">Starting (INR)</th>
-											<th scope="col" data-type="text" aria-sort="none">Includes</th>
-											<th scope="col" data-type="number" aria-sort="none">Extra (INR)</th>
+											<th scope="col" data-type="text" aria-sort="none">Particular</th>
+											<th scope="col" data-type="number" aria-sort="none">Regular Charges<br /><span
+													class="pv-th-sub">(3 Correction)</span></th>
+											<th scope="col" data-type="number" aria-sort="none">MGM</th>
+											<th scope="col" data-type="number" aria-sort="none">Correction<br /><span
+													class="pv-th-sub">+3</span></th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr><td>1</td><td>Digital: Social, Digital Post</td><td>450</td><td>1 post design + 3 corrections</td><td>550</td></tr>
-										<tr><td>2</td><td>Digital: Social Post Carousel (per slide)</td><td>250</td><td>1 slide layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>3</td><td>Digital: Story Post (static)</td><td>300</td><td>1 story layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>4</td><td>Digital: Highlight Cover Set (5)</td><td>500</td><td>5 icons + 3 corrections</td><td>550</td></tr>
-										<tr><td>5</td><td>Digital: Social Media Cover (FB/LI)</td><td>700</td><td>1 cover design + 3 corrections</td><td>550</td></tr>
-										<tr><td>6</td><td>Digital: YouTube Thumbnail</td><td>699</td><td>1 thumbnail + 3 corrections</td><td>550</td></tr>
-										<tr><td>7</td><td>Digital: YouTube Channel Art</td><td>1200</td><td>1 banner layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>8</td><td>Digital: Email Newsletter Template</td><td>1800</td><td>1 template + 3 corrections</td><td>750</td></tr>
-										<tr><td>9</td><td>Branding: Logo Design</td><td>3000-10000</td><td>Concepts + 3 corrections</td><td>750</td></tr>
-										<tr><td>10</td><td>Branding: Brand Mark Refresh</td><td>2500</td><td>1 refresh concept + 3 corrections</td><td>750</td></tr>
-										<tr><td>11</td><td>Branding: Business Card (1 side)</td><td>700</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>12</td><td>Branding: Business Card (2 side)</td><td>1200</td><td>2 layouts + 3 corrections</td><td>550</td></tr>
-										<tr><td>13</td><td>Branding: Letterhead</td><td>800</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>14</td><td>Branding: Envelope</td><td>900</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>15</td><td>Branding: Stationery Set (Card + Letterhead)</td><td>1500</td><td>2 items + 3 corrections</td><td>750</td></tr>
-										<tr><td>16</td><td>Branding: ID Card Design</td><td>900</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>17</td><td>Branding: Certificate Design</td><td>900</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>18</td><td>Branding: Company Profile (per page)</td><td>600</td><td>1 page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>19</td><td>Print: Brochure Cover Page</td><td>1400</td><td>Cover layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>20</td><td>Print: Brochure Inner Page</td><td>450</td><td>Inner page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>21</td><td>Print: Flyer One Side</td><td>900</td><td>Single side design + 3 corrections</td><td>750</td></tr>
-										<tr><td>22</td><td>Print: Flyer Two Side</td><td>1500</td><td>Two side design + 3 corrections</td><td>750</td></tr>
-										<tr><td>23</td><td>Print: Pamphlet One Side</td><td>900</td><td>Single side design + 3 corrections</td><td>750</td></tr>
-										<tr><td>24</td><td>Print: Pamphlet Two Side</td><td>1500</td><td>Two side design + 3 corrections</td><td>750</td></tr>
-										<tr><td>25</td><td>Print: Leaflet (A5)</td><td>800</td><td>1 layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>26</td><td>Print: Poster (A3)</td><td>1200</td><td>1 poster + 3 corrections</td><td>750</td></tr>
-										<tr><td>27</td><td>Print: Poster (A2/A1)</td><td>1600</td><td>1 poster + 3 corrections</td><td>750</td></tr>
-										<tr><td>28</td><td>Print: Menu Card (1 page)</td><td>1000</td><td>1 page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>29</td><td>Print: Menu Card (multi page)</td><td>350</td><td>Per page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>30</td><td>Print: Newspaper Advertise Full Page</td><td>1800</td><td>Full page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>31</td><td>Print: Newspaper Advertise Half Page</td><td>1200</td><td>Half page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>32</td><td>Print: Newspaper Advertisement Custom Size</td><td>1000</td><td>Custom size layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>33</td><td>Print: Black &amp; White Paper Advertisement</td><td>350</td><td>B/W layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>34</td><td>Print: Magazine Ad (1 page)</td><td>1800</td><td>1 page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>35</td><td>Print: Magazine Ad (half page)</td><td>1200</td><td>Half page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>36</td><td>Outdoor: Hoarding, Billboards</td><td>2000</td><td>Hoarding layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>37</td><td>Outdoor: Standee</td><td>1200</td><td>1 standee layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>38</td><td>Outdoor: Banner (small)</td><td>900</td><td>1 banner layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>39</td><td>Outdoor: Banner (large)</td><td>1500</td><td>1 banner layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>40</td><td>Packaging: Product Label</td><td>1200</td><td>1 label layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>41</td><td>Packaging: Box / Carton Design</td><td>4500</td><td>1 box layout + 3 corrections</td><td>1000</td></tr>
-										<tr><td>42</td><td>Packaging: Pouch / Wrapper</td><td>3000</td><td>1 layout + 3 corrections</td><td>1000</td></tr>
-										<tr><td>43</td><td>Product: Mockups (per item)</td><td>800</td><td>1 mockup view + 3 corrections</td><td>750</td></tr>
-										<tr><td>44</td><td>Product: Product Catalog (per page)</td><td>600</td><td>1 page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>45</td><td>Presentation: Pitch Deck (per slide)</td><td>250</td><td>1 slide layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>46</td><td>Presentation: Corporate PPT (10 slides)</td><td>2200</td><td>10 slides + 3 corrections</td><td>750</td></tr>
-										<tr><td>47</td><td>UI/UX: Landing Page Wireframe</td><td>2500</td><td>1 page wireframe + 3 corrections</td><td>1000</td></tr>
-										<tr><td>48</td><td>UI/UX: App Screen UI (per screen)</td><td>1200</td><td>1 screen + 3 corrections</td><td>1000</td></tr>
-										<tr><td>49</td><td>Illustration: Caricature, Digital Sketch</td><td>6000</td><td>1 artwork + 3 corrections</td><td>750</td></tr>
-										<tr><td>50</td><td>Illustration: Vector Illustration</td><td>2500</td><td>1 illustration + 3 corrections</td><td>1000</td></tr>
-										<tr><td>51</td><td>Illustration: Mascot Character</td><td>5500</td><td>1 character + 3 corrections</td><td>1000</td></tr>
-										<tr><td>52</td><td>Photo: Photograph Manipulation</td><td>1400</td><td>1 edit + 3 corrections</td><td>750</td></tr>
-										<tr><td>53</td><td>Photo: Background Removal (per image)</td><td>150</td><td>1 image + 3 corrections</td><td>300</td></tr>
-										<tr><td>54</td><td>Photo: Color Correction (per image)</td><td>200</td><td>1 image + 3 corrections</td><td>300</td></tr>
-										<tr><td>55</td><td>Campaign: Theme Based Social Campaign (Week)</td><td>4500</td><td>Weekly theme set + 3 corrections</td><td>750</td></tr>
-										<tr><td>56</td><td>Digital: Digital Visiting Card</td><td>750</td><td>1 digital card + 3 corrections</td><td>750</td></tr>
-										<tr><td>57</td><td>Event: Invitation Card</td><td>900</td><td>1 layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>58</td><td>Event: Thank You Card</td><td>600</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>59</td><td>Event: Stage Backdrop</td><td>2500</td><td>1 layout + 3 corrections</td><td>1000</td></tr>
-										<tr><td>60</td><td>Event: Photobooth Backdrop</td><td>2000</td><td>1 layout + 3 corrections</td><td>1000</td></tr>
-										<tr><td>61</td><td>Retail: In-store Poster</td><td>1200</td><td>1 layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>62</td><td>Retail: Shelf Talker (per design)</td><td>700</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>63</td><td>Digital: Google Display Ad (per size)</td><td>450</td><td>1 ad size + 3 corrections</td><td>550</td></tr>
-										<tr><td>64</td><td>Digital: LinkedIn Ad Creative</td><td>600</td><td>1 layout + 3 corrections</td><td>550</td></tr>
-										<tr><td>65</td><td>Digital: WhatsApp Broadcast Template</td><td>500</td><td>1 template + 3 corrections</td><td>550</td></tr>
-										<tr><td>66</td><td>Digital: Infographic (single page)</td><td>2000</td><td>1 infographic + 3 corrections</td><td>1000</td></tr>
-										<tr><td>67</td><td>Print: Calendar (wall)</td><td>3500</td><td>12 months + cover + 3 corrections</td><td>1000</td></tr>
-										<tr><td>68</td><td>Print: Calendar (desk)</td><td>2800</td><td>12 months + cover + 3 corrections</td><td>1000</td></tr>
-										<tr><td>69</td><td>Print: Sticker / Label Sheet</td><td>900</td><td>1 layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>70</td><td>Branding: Brand Guideline (mini)</td><td>6500</td><td>Logo usage + colors + typography</td><td>1000</td></tr>
-										<tr><td>71</td><td>Branding: Social Media Kit</td><td>4500</td><td>10 templates + 3 corrections</td><td>1000</td></tr>
-										<tr><td>72</td><td>Branding: Signature Design</td><td>600</td><td>1 signature + 3 corrections</td><td>550</td></tr>
-										<tr><td>73</td><td>Digital: eBook Cover</td><td>1600</td><td>1 cover + 3 corrections</td><td>750</td></tr>
-										<tr><td>74</td><td>Print: Book Cover (front/back/spine)</td><td>3500</td><td>1 layout + 3 corrections</td><td>1000</td></tr>
-										<tr><td>75</td><td>Corporate: Report / Proposal (per page)</td><td>600</td><td>1 page layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>76</td><td>Corporate: Company Profile Cover</td><td>1400</td><td>1 cover layout + 3 corrections</td><td>750</td></tr>
-										<tr><td>77</td><td>Corporate: Presentation Theme (10 slides)</td><td>2800</td><td>Master template + 3 corrections</td><td>1000</td></tr>
-										<tr><td>78</td><td>Digital: App Store Screens (set of 5)</td><td>2200</td><td>5 screens + 3 corrections</td><td>1000</td></tr>
-										<tr><td>79</td><td>Print: Billboard Extension (per size)</td><td>900</td><td>Resize + 3 corrections</td><td>550</td></tr>
-										<tr><td>80</td><td>Digital: Resize Pack (5 sizes)</td><td>900</td><td>5 exports + 3 corrections</td><td>550</td></tr>
+										<tr><td>1</td><td>Social, Digital Post</td><td>450</td><td>350</td><td>550</td></tr>
+										<tr><td>3</td><td>Logo Design</td><td>3000-10000</td><td>1500-7500</td><td>-</td></tr>
+										<tr><td>2</td><td>Brochure Cover Page</td><td>1400</td><td>1100</td><td>750</td></tr>
+										<tr><td>4</td><td>Brochure Inner Page</td><td>450</td><td>350</td><td>750</td></tr>
+										<tr><td>5</td><td>Stationary (V-Card, Letter Head)</td><td>1500</td><td>1200</td><td>750</td></tr>
+										<tr><td>6</td><td>Product Design, Mockups</td><td>2000</td><td>1500</td><td>750</td></tr>
+										<tr><td>7</td><td>Newspaper Advertise Full Page</td><td>1800</td><td>1400</td><td>750</td></tr>
+										<tr><td>8</td><td>Newspaper Advertise Half Page</td><td>1200</td><td>900</td><td>750</td></tr>
+										<tr><td>9</td><td>Newspaper Advertisement Custom Size</td><td>1000</td><td>800</td><td>750</td></tr>
+										<tr><td>10</td><td>Pamphlet One Side</td><td>900</td><td>700</td><td>750</td></tr>
+										<tr><td>11</td><td>Pamphlet Two Side</td><td>1500</td><td>1200</td><td>750</td></tr>
+										<tr><td>12</td><td>Caricature, Digital Sketch</td><td>6000</td><td>5000</td><td>750</td></tr>
+										<tr><td>13</td><td>Hoarding, Billboards</td><td>2000</td><td>2000</td><td>750</td></tr>
+										<tr><td>14</td><td>Black &amp; White Paper Advertisement</td><td>350</td><td>500</td><td>750</td></tr>
+										<tr><td>15</td><td>Theme Based Social Campaign (Week)</td><td>4500</td><td>3000</td><td>750</td></tr>
+										<tr><td>16</td><td>Photograph Manipulation</td><td>1400</td><td>1000</td><td>750</td></tr>
+										<tr><td>17</td><td>Digital Visiting Card</td><td>750</td><td>750</td><td>750</td></tr>
 									</tbody>
 								</table>
 							</div>
-							<p class="pv-note"><strong>Note:</strong> Prices are starting charges in INR. Standard pricing includes
-								up to 3 corrections. Extra corrections are billed separately.</p>
+							<p class="pv-note"><strong>Note:</strong> Prices are starting charges in INR. "Regular Charges"
+								includes up to 3 corrections. "Correction +3" applies after 3 corrections.</p>
 						</div>
 
 						<div class="pv-panel" id="pvSheet-video" data-sheet="video">
@@ -1264,6 +807,7 @@
 			ready(function () {
 				var tabs = Array.prototype.slice.call(document.querySelectorAll('.pv-tab[data-sheet]'));
 				var panels = Array.prototype.slice.call(document.querySelectorAll('.pv-panel[data-sheet]'));
+				var search = document.getElementById('pvSearch');
 				var csvBtn = document.getElementById('pvCsvBtn');
 
 				function activePanel() {
@@ -1279,6 +823,7 @@
 					tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-sheet') === sheet); });
 					panels.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-sheet') === sheet); });
 					try { history.replaceState(null, '', '#' + sheet); } catch (e) { }
+					if (search) search.dispatchEvent(new Event('input'));
 				}
 
 				var initialSheet = (location.hash || '').replace('#', '').trim();
@@ -1298,6 +843,15 @@
 					var state = { tbody: tbody, rows: rows, sortIndex: -1, sortDir: 'asc' };
 					tableState.set(table, state);
 					return state;
+				}
+
+				function applyFilterToTable(table, query) {
+					var state = ensureState(table);
+					var q = String(query || '').trim().toLowerCase();
+					state.rows.forEach(function (row) {
+						var text = row.textContent.toLowerCase();
+						row.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+					});
 				}
 
 				function clearSortIndicators(table) {
@@ -1343,6 +897,7 @@
 							clearSortIndicators(table);
 							th.setAttribute('aria-sort', nextDir === 'asc' ? 'ascending' : 'descending');
 							sortTable(table, index, type, nextDir);
+							if (search) applyFilterToTable(table, search.value);
 						}
 
 						th.addEventListener('click', activate);
@@ -1356,6 +911,13 @@
 				}
 
 				Array.prototype.slice.call(document.querySelectorAll('.pv-panel table')).forEach(initSortableTable);
+
+				if (search) {
+					search.addEventListener('input', function () {
+						var table = activeTable();
+						if (table) applyFilterToTable(table, search.value);
+					});
+				}
 
 				if (csvBtn) {
 					csvBtn.addEventListener('click', function () {
