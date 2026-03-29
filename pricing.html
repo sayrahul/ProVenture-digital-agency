@@ -341,14 +341,14 @@
 					.pv-tablewrap {
 						border: 1px solid var(--pv-line);
 						border-radius: 14px;
-						overflow: auto;
+						overflow: visible; /* Prevents sticky context trapping and overlapping visual glitches */
 						background: rgba(255, 255, 255, 0.92);
 						box-shadow: 0 10px 28px rgba(2, 6, 23, 0.06);
 					}
 
 					.pv-table {
 						width: 100%;
-						min-width: 980px;
+						min-width: 100%;
 						border-collapse: collapse;
 						font-variant-numeric: tabular-nums;
 					}
@@ -362,7 +362,10 @@
 					}
 
 					.pv-table thead th {
-						background: var(--pv-head);
+						background: var(--pv-ink);
+						color: #ffffff;
+						border-color: var(--pv-ink);
+						border-bottom: 3px solid var(--pv-accent);
 						font-weight: 950;
 						text-align: center;
 						white-space: nowrap;
@@ -416,8 +419,7 @@
 					}
 
 					/* Universal Theme (Highlight Price Column equally on all tabs) */
-					.pv-table th:nth-child(3),
-					.pv-table td:nth-child(3) {
+					.pv-table tbody td:nth-child(3) {
 						background: rgba(14, 165, 233, 0.08); /* ProVenture Blue */
 					}
 
@@ -817,6 +819,65 @@
 						line-height: 1.6;
 						font-size: 0.95rem;
 					}
+
+					/* Sticky Table Headers */
+					.pv-table__title {
+						display: none; /* Hide redundant inline table title to prevent scroll gaps */
+					}
+					.pv-table thead tr:last-child th {
+						position: sticky;
+						top: 75px; /* Offset for site nav bar */
+						z-index: 10;
+						box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+					}
+					.pv-table thead tr:last-child th:first-child {
+						border-top-left-radius: 13px; /* Match exterior border radius without overflow:hidden */
+					}
+					.pv-table thead tr:last-child th:last-child {
+						border-top-right-radius: 13px;
+					}
+
+					/* Row Hover Micro-Interactions */
+					@media (min-width: 769px) {
+						.pv-table tbody tr:not(.pv-category-row) td {
+							transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+						}
+						.pv-table tbody tr:not(.pv-category-row):hover td {
+							background: rgba(14, 165, 233, 0.03) !important;
+						}
+						.pv-table tbody tr:not(.pv-category-row):hover td:first-child {
+							padding-left: 1.75rem !important; /* Visual translation shift */
+							box-shadow: inset 3px 0 0 var(--pv-accent);
+						}
+					}
+
+					/* Quick-Jump Category Links */
+					.pv-jump-links {
+						display: flex;
+						justify-content: center;
+						flex-wrap: wrap;
+						gap: 0.6rem;
+						margin-bottom: 2rem;
+					}
+					.pv-jump-btn {
+						background: rgba(15, 23, 42, 0.04);
+						border: 1px solid rgba(15, 23, 42, 0.05);
+						padding: 0.5rem 1.25rem;
+						border-radius: 99px;
+						font-weight: 700;
+						font-size: 0.9rem;
+						color: var(--pv-muted);
+						cursor: pointer;
+						transition: all 0.2s ease;
+						outline: none !important;
+						-webkit-tap-highlight-color: transparent;
+					}
+					.pv-jump-btn:hover {
+						background: rgba(14, 165, 233, 0.08);
+						border-color: rgba(14, 165, 233, 0.2);
+						color: var(--pv-accent-2);
+						transform: translateY(-1px);
+					}
 				</style>
 
 				<!-- Services-style hero -->
@@ -855,6 +916,12 @@
 						</div>
 
 						<div class="pv-panel is-active" id="pvSheet-design" data-sheet="design">
+							<nav class="pv-jump-links" aria-label="Design Sub-Categories">
+								<button class="pv-jump-btn" type="button" data-jump="cat-digital">Digital &amp; Social</button>
+								<button class="pv-jump-btn" type="button" data-jump="cat-print">Print Marketing</button>
+								<button class="pv-jump-btn" type="button" data-jump="cat-branding">Branding</button>
+								<button class="pv-jump-btn" type="button" data-jump="cat-illustration">Illustration</button>
+							</nav>
 							<div class="pv-tablewrap" role="region" aria-label="Graphic design pricing table" tabindex="0">
 								<table class="pv-table pv-table--design" data-sheet-name="Designing Rates">
 									<thead>
@@ -870,7 +937,7 @@
 										</tr>
 									<tbody>
 										<!-- Category: Digital & Social Media -->
-										<tr class="pv-category-row"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M21 2H3C1.9 2 1 2.9 1 4L1 16C1 17.1 1.9 18 3 18H10L8 22H16L14 18H21C22.1 18 23 17.1 23 16L23 4C23 2.9 22.1 2 21 2ZM21 16H3V4H21V16Z" fill="currentColor"/></svg><span>Digital &amp; Social Media</span></div></td></tr>
+										<tr class="pv-category-row" id="cat-digital"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M21 2H3C1.9 2 1 2.9 1 4L1 16C1 17.1 1.9 18 3 18H10L8 22H16L14 18H21C22.1 18 23 17.1 23 16L23 4C23 2.9 22.1 2 21 2ZM21 16H3V4H21V16Z" fill="currentColor"/></svg><span>Digital &amp; Social Media</span></div></td></tr>
 										<tr><td>1</td><td>Social, Digital Post</td><td>450</td><td>3 corrections + Web-ready</td><td>150 / round</td></tr>
 										<tr><td>2</td><td>Instagram Grid Layout (9 Posts)</td><td>3500</td><td>3 corrections + Web-ready</td><td>250 / round</td></tr>
 										<tr><td>3</td><td>Theme Based Social Campaign (Week)</td><td>4500</td><td>Strategy + 3 corrections</td><td>250 / round</td></tr>
@@ -899,7 +966,7 @@
 										<tr><td>67</td><td>Course Thumbnail / Udemy Art</td><td>800</td><td>3 corrections + Web-ready</td><td>150 / round</td></tr>
 
 										<!-- Category: Print & Offline Marketing -->
-										<tr class="pv-category-row"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" fill="currentColor"/></svg><span>Print &amp; Offline Marketing</span></div></td></tr>
+										<tr class="pv-category-row" id="cat-print"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" fill="currentColor"/></svg><span>Print &amp; Offline Marketing</span></div></td></tr>
 										<tr><td>17</td><td>Brochure Cover Page</td><td>1400</td><td>3 corrections + Print-ready</td><td>250 / round</td></tr>
 										<tr><td>18</td><td>Brochure Inner Page</td><td>450</td><td>3 corrections + Print-ready</td><td>250 / round</td></tr>
 										<tr><td>19</td><td>Pamphlet One Side</td><td>900</td><td>3 corrections + Print-ready</td><td>250 / round</td></tr>
@@ -931,7 +998,7 @@
 										<tr><td>79</td><td>Ticket / Event Pass Design</td><td>1000</td><td>3 corrections + Print-ready</td><td>150 / round</td></tr>
 
 										<!-- Category: Branding & Identity -->
-										<tr class="pv-category-row"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.8l7.5 14.2h-15L12 5.8z" fill="currentColor"/></svg><span>Branding &amp; Corporate Identity</span></div></td></tr>
+										<tr class="pv-category-row" id="cat-branding"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3.8l7.5 14.2h-15L12 5.8z" fill="currentColor"/></svg><span>Branding &amp; Corporate Identity</span></div></td></tr>
 										<tr><td>34</td><td>Logo Design</td><td>3000</td><td>3 concepts + Source file</td><td>-</td></tr>
 										<tr><td>35</td><td>Brand Guidelines (Brand Book)</td><td>8000</td><td>3 corrections + Source file</td><td>250 / round</td></tr>
 										<tr><td>36</td><td>Stationary (V-Card, Letter Head)</td><td>1500</td><td>3 corrections + Print-ready</td><td>250 / round</td></tr>
@@ -966,7 +1033,7 @@
 										<tr><td>94</td><td>Pitch Deck Master Template Creation</td><td>4000</td><td>3 corrections + Source file</td><td>250 / round</td></tr>
 
 										<!-- Category: Custom Illustration & Creative -->
-										<tr class="pv-category-row"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="currentColor"/></svg><span>Custom Illustration &amp; Creative</span></div></td></tr>
+										<tr class="pv-category-row" id="cat-illustration"><td colspan="5"><div class="pv-category-header"><svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="currentColor"/></svg><span>Custom Illustration &amp; Creative</span></div></td></tr>
 										<tr><td>51</td><td>Custom Illustration (Flat Vector)</td><td>3000</td><td>3 corrections + Source file</td><td>250 / round</td></tr>
 										<tr><td>52</td><td>Mascot / Character Design</td><td>8000</td><td>3 concepts + Source file</td><td>-</td></tr>
 										<tr><td>53</td><td>Caricature, Digital Sketch</td><td>6000</td><td>3 corrections + Hi-Res</td><td>250 / round</td></tr>
@@ -1554,6 +1621,24 @@
 						URL.revokeObjectURL(url);
 					});
 				}
+
+				// Category Jump Links Logic
+				document.querySelectorAll('.pv-jump-btn').forEach(function(btn) {
+					btn.addEventListener('click', function() {
+						var targetId = btn.getAttribute('data-jump');
+						var targetEl = document.getElementById(targetId);
+						if (targetEl) {
+							// 75px layout nav + ~50px table header = ~125px absolute offset
+							var headerOffset = 135; 
+							var elementPosition = targetEl.getBoundingClientRect().top;
+							var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+							window.scrollTo({
+								top: offsetPosition,
+								behavior: 'smooth'
+							});
+						}
+					});
+				});
 
 				// FAQ Tabs Logic
 				var faqTabs = Array.prototype.slice.call(document.querySelectorAll('.pv-faq-tab'));
