@@ -458,6 +458,86 @@
 						}
 					}
 
+					/* Mobile Table-to-Card Transformation */
+					@media (max-width: 768px) {
+						.pv-tablewrap {
+							border: none;
+							background: transparent;
+							box-shadow: none;
+							overflow: visible;
+						}
+						.pv-table, .pv-table tbody, .pv-table tr, .pv-table td {
+							display: block;
+							width: 100%;
+						}
+						.pv-table thead {
+							display: none;
+						}
+						.pv-table tr {
+							margin-bottom: 1.5rem;
+							border: 1px solid rgba(15, 23, 42, 0.1);
+							border-radius: 16px;
+							background: rgba(255, 255, 255, 0.95);
+							padding: 1.25rem;
+							box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+							position: relative;
+						}
+						.pv-table td {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							text-align: right !important;
+							border: none;
+							padding: 0.6rem 0;
+							border-bottom: 1px dashed rgba(15, 23, 42, 0.1);
+						}
+						.pv-table td:last-child {
+							border-bottom: none;
+							padding-bottom: 0;
+						}
+						.pv-table td:first-child {
+							padding-top: 0;
+						}
+						.pv-table td:nth-child(2) {
+							flex-direction: column;
+							align-items: flex-start;
+							text-align: left !important;
+							border-bottom: 2px solid rgba(15, 23, 42, 0.08);
+							padding-bottom: 1rem;
+							margin-bottom: 0.5rem;
+							font-size: 1.25rem;
+							color: var(--pv-ink);
+							background: transparent !important;
+						}
+						.pv-table td:nth-child(2)::before {
+							display: none !important;
+						}
+						.pv-table td::before {
+							font-weight: 800;
+							color: var(--pv-muted);
+							text-transform: uppercase;
+							font-size: 0.75rem;
+							letter-spacing: 0.05em;
+							text-align: left;
+							margin-right: 1rem;
+						}
+						.pv-table td:nth-child(1)::before { content: "Sr. No."; }
+						.pv-table td:nth-child(3)::before { content: "Starting (INR)"; }
+						.pv-table td:nth-child(4)::before { content: "Includes"; }
+						.pv-table td:nth-child(5)::before { content: "Add-on"; }
+						
+						.pv-table td:nth-child(3) {
+							border-radius: 8px;
+							background: rgba(14, 165, 233, 0.06) !important;
+							padding: 0.75rem 0.8rem;
+							margin: 0.5rem 0;
+							border: 1px solid rgba(14, 165, 233, 0.2);
+							color: var(--pv-accent-2);
+							font-size: 1.1rem;
+							font-weight: 900;
+						}
+					}
+
 					/* FAQ Section Glassmorphism Theme */
 					.pv-faq-section {
 						position: relative;
