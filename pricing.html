@@ -282,65 +282,53 @@
 					}
 
 					.pv-toolbar {
-						display: grid;
-						grid-template-columns: 1fr auto;
-						gap: 0.9rem;
-						align-items: start;
-						margin: 0 0 1.1rem;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: 1.5rem 0 2rem;
 					}
 
 					.pv-tabs {
-						display: flex;
-						gap: 0.55rem;
-						flex-wrap: nowrap;
+						display: inline-flex;
+						background: rgba(15, 23, 42, 0.04);
+						padding: 0.4rem;
+						border-radius: 999px;
+						gap: 0.35rem;
 						overflow: auto hidden;
-						scrollbar-width: thin;
-						padding-bottom: 0.2rem;
+						scrollbar-width: none;
+					}
+					
+					.pv-tabs::-webkit-scrollbar {
+						display: none;
 					}
 
 					.pv-tab {
-						border: 1px solid rgba(15, 23, 42, 0.18);
+						border: none;
 						border-radius: 999px;
-						padding: 0.55rem 0.85rem;
-						background: rgba(255, 255, 255, 0.8);
-						font-weight: 900;
+						padding: 0.75rem 1.5rem;
+						background: transparent;
+						color: var(--pv-muted);
+						font-weight: 700;
+						font-size: 0.95rem;
 						white-space: nowrap;
 						cursor: pointer;
 						user-select: none;
+						transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+					}
+
+					.pv-tab:hover {
+						color: var(--pv-ink);
+						background: rgba(15, 23, 42, 0.06);
 					}
 
 					.pv-tab.is-active {
-						border-color: rgba(14, 165, 233, 0.45);
-						box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.13);
-						background: rgba(14, 165, 233, 0.08);
-					}
-
-					.pv-search {
-						display: grid;
-						gap: 0.35rem;
-						min-width: min(520px, 100%);
-						justify-self: end;
-					}
-
-					.pv-search span {
-						font-size: 0.95rem;
+						background: #ffffff;
+						color: var(--pv-ink);
 						font-weight: 800;
-						color: var(--pv-muted);
+						box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
 					}
 
-					.pv-search input {
-						width: 100%;
-						border: 1px solid var(--pv-line);
-						border-radius: 12px;
-						padding: 0.8rem 0.95rem;
-						outline: none;
-						background: rgba(255, 255, 255, 0.92);
-					}
 
-					.pv-search input:focus {
-						border-color: rgba(14, 165, 233, 0.55);
-						box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.13);
-					}
 
 					.pv-panel {
 						display: none;
@@ -392,12 +380,12 @@
 					}
 
 					.pv-table thead tr:last-child th[aria-sort="ascending"]::after {
-						content: " \u25B2";
+						content: " \25B2";
 						font-size: 0.85em;
 					}
 
 					.pv-table thead tr:last-child th[aria-sort="descending"]::after {
-						content: " \u25BC";
+						content: " \25BC";
 						font-size: 0.85em;
 					}
 
@@ -408,45 +396,29 @@
 						opacity: 0.9;
 					}
 
-					.pv-table td:nth-child(1),
-					.pv-table td:nth-child(3),
-					.pv-table td:nth-child(5) {
-						text-align: right;
+					/* Default column alignment based on table structures */
+					.pv-table td {
+						text-align: left;
 					}
 
-					.pv-table td:nth-child(2),
-					.pv-table td:nth-child(4) {
-						text-align: left;
+					.pv-table td:nth-child(1) {
+						text-align: right;
 					}
 
 					.pv-table td:nth-child(2) {
 						font-weight: 850;
 					}
 
-					/* Themes (per sheet) */
-					.pv-table--design th:nth-child(4),
-					.pv-table--design td:nth-child(4) {
-						background: var(--pv-mgm);
+					/* Universal Column Content Alignments */
+					.pv-table td:nth-child(3) {
+						text-align: right;
+						font-variant-numeric: tabular-nums;
 					}
 
-					.pv-table--design th:nth-child(5),
-					.pv-table--design td:nth-child(5) {
-						border-left: 3px solid var(--pv-danger);
-					}
-
-					.pv-table--video th:nth-child(3),
-					.pv-table--video td:nth-child(3) {
-						background: rgba(14, 165, 233, 0.08);
-					}
-
-					.pv-table--web th:nth-child(3),
-					.pv-table--web td:nth-child(3) {
-						background: rgba(34, 197, 94, 0.08);
-					}
-
-					.pv-table--marketing th:nth-child(3),
-					.pv-table--marketing td:nth-child(3) {
-						background: rgba(168, 85, 247, 0.09);
+					/* Universal Theme (Highlight Price Column equally on all tabs) */
+					.pv-table th:nth-child(3),
+					.pv-table td:nth-child(3) {
+						background: rgba(14, 165, 233, 0.08); /* ProVenture Blue */
 					}
 
 					.pv-note {
@@ -474,14 +446,6 @@
 						.pv-hero-actions {
 							justify-content: flex-start;
 						}
-
-						.pv-toolbar {
-							grid-template-columns: 1fr;
-						}
-
-						.pv-search {
-							justify-self: start;
-						}
 					}
 
 					/* Pricing page: allow hero/banner to scroll normally (disable sticky hero-small) */
@@ -492,6 +456,226 @@
 							left: auto;
 							z-index: 0;
 						}
+					}
+
+					/* FAQ Section Glassmorphism Theme */
+					.pv-faq-section {
+						position: relative;
+						padding: clamp(4rem, 8vw, 6rem) 0;
+						background: #f8fafc;
+						overflow: hidden;
+						font-family: inherit;
+					}
+
+					.pv-faq-bg-blobs {
+						position: absolute;
+						top: 0; left: 0; right: 0; bottom: 0;
+						z-index: 0;
+						pointer-events: none;
+						overflow: hidden;
+						background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
+									radial-gradient(circle at 90% 80%, rgba(244, 114, 182, 0.05) 0%, transparent 40%),
+									linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+					}
+					
+					.pv-blob {
+						position: absolute;
+						border-radius: 50%;
+						filter: blur(40px);
+						opacity: 0.6;
+					}
+					
+					.pv-blob-1 { top: 20%; left: 15%; width: 20px; height: 20px; background: rgba(248, 113, 113, 0.4); filter: blur(4px); }
+					.pv-blob-2 { top: 25%; left: 25%; width: 12px; height: 12px; background: rgba(56, 189, 248, 0.4); filter: blur(2px); }
+					.pv-blob-3 { top: 15%; left: 55%; width: 16px; height: 16px; background: rgba(167, 139, 250, 0.4); filter: blur(3px); }
+					.pv-blob-4 { top: 30%; right: 20%; width: 30px; height: 30px; background: rgba(56, 189, 248, 0.3); filter: blur(5px); }
+
+					.pv-faq-header {
+						position: relative;
+						z-index: 1;
+						max-width: 600px;
+						margin: 0 auto 3.5rem;
+					}
+
+					.pv-faq-header h2 {
+						color: #0f172a;
+						font-weight: 800;
+						margin-bottom: 1rem;
+						font-size: clamp(2.2rem, 4vw, 2.75rem);
+					}
+
+					.pv-faq-header p {
+						color: #475569;
+						font-size: 1.05rem;
+						line-height: 1.6;
+						font-weight: 500;
+					}
+
+					.pv-faq-container {
+						position: relative;
+						z-index: 1;
+						display: grid;
+						grid-template-columns: 280px 1fr;
+						gap: 3rem;
+						align-items: start;
+						background: rgba(255, 255, 255, 0.65);
+						backdrop-filter: blur(24px);
+						border: 1px solid rgba(255, 255, 255, 0.8);
+						border-radius: 20px;
+						padding: clamp(2rem, 5vw, 4rem);
+						box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+					}
+
+					@media (max-width: 900px) {
+						.pv-faq-container { grid-template-columns: 1fr; gap: 2rem; }
+					}
+
+					.pv-faq-tabs {
+						display: flex;
+						flex-direction: column;
+						gap: 0.8rem;
+					}
+
+					.pv-faq-tab {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						padding: 1.15rem 1.4rem;
+						background: rgba(255, 255, 255, 0.5);
+						border: 1px solid transparent;
+						border-radius: 12px;
+						color: #64748b;
+						font-weight: 700;
+						font-size: 1.05rem;
+						cursor: pointer;
+						transition: all 0.3s ease;
+						text-align: left;
+					}
+
+					.pv-faq-tab svg {
+						width: 18px;
+						height: 18px;
+						opacity: 0.5;
+						transition: transform 0.3s ease;
+					}
+
+					.pv-faq-tab:hover {
+						background: rgba(255, 255, 255, 0.9);
+						color: #0f172a;
+					}
+
+					.pv-faq-tab.is-active {
+						background: #ffffff;
+						color: #0f172a;
+						font-weight: 800;
+						border-color: rgba(255, 255, 255, 0.9);
+						box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+					}
+
+					.pv-faq-tab.is-active svg {
+						opacity: 1;
+						transform: translateX(4px);
+					}
+
+					.pv-faq-panel {
+						display: none;
+					}
+
+					.pv-faq-panel.is-active {
+						display: flex;
+						flex-direction: column;
+						gap: 0.8rem;
+						animation: fadeIn 0.4s ease forwards;
+					}
+
+					@keyframes fadeIn {
+						from { opacity: 0; transform: translateY(10px); }
+						to { opacity: 1; transform: translateY(0); }
+					}
+
+					.pv-faq-item {
+						background: rgba(248, 250, 252, 0.6);
+						border-radius: 12px;
+						overflow: hidden;
+						transition: all 0.3s ease;
+						border: 1px solid rgba(255, 255, 255, 0.4);
+					}
+
+					.pv-faq-item.is-expanded {
+						background: #ffffff;
+						border: 1px solid rgba(255, 255, 255, 0.9);
+						box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+					}
+
+					.pv-faq-question {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						padding: 1.25rem 1.5rem;
+						background: transparent;
+						border: none;
+						color: #334155;
+						font-weight: 700;
+						font-size: 1.05rem;
+						text-align: left;
+						cursor: pointer;
+					}
+
+					.pv-faq-item.is-expanded .pv-faq-question {
+						color: #0f172a;
+						font-weight: 800;
+					}
+
+					.pv-faq-icon {
+						position: relative;
+						flex-shrink: 0;
+						width: 20px;
+						height: 20px;
+						margin-left: 1rem;
+					}
+
+					.pv-faq-icon::before, .pv-faq-icon::after {
+						content: '';
+						position: absolute;
+						background: #0f172a;
+						transition: transform 0.3s ease;
+						border-radius: 2px;
+						top: 50%; left: 50%;
+					}
+
+					.pv-faq-icon::before {
+						width: 14px; height: 2px;
+						margin-top: -1px; margin-left: -7px;
+					}
+
+					.pv-faq-icon::after {
+						width: 2px; height: 14px;
+						margin-top: -7px; margin-left: -1px;
+					}
+
+					/* Expanded State (X icon) */
+					.pv-faq-item.is-expanded .pv-faq-icon::before {
+						transform: rotate(45deg);
+					}
+					
+					.pv-faq-item.is-expanded .pv-faq-icon::after {
+						transform: rotate(45deg);
+					}
+
+					.pv-faq-answer {
+						max-height: 0;
+						overflow: hidden;
+						transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+					}
+
+					.pv-faq-answer p {
+						padding: 0 1.5rem 1.4rem;
+						margin: 0;
+						color: #475569;
+						line-height: 1.6;
+						font-size: 0.95rem;
 					}
 				</style>
 
@@ -528,12 +712,6 @@
 								<button class="pv-tab" type="button" data-sheet="web">Web Design</button>
 								<button class="pv-tab" type="button" data-sheet="marketing">Digital Marketing</button>
 							</nav>
-
-							<label class="pv-search" for="pvSearch">
-								<span>Search</span>
-								<input id="pvSearch" type="search" placeholder="Type to filter (e.g., logo, reel, SEO)..."
-									autocomplete="off" />
-							</label>
 						</div>
 
 						<div class="pv-panel is-active" id="pvSheet-design" data-sheet="design">
@@ -545,32 +723,69 @@
 										</tr>
 										<tr>
 											<th scope="col" data-type="number" aria-sort="none">Sr. No.</th>
-											<th scope="col" data-type="text" aria-sort="none">Particular</th>
-											<th scope="col" data-type="number" aria-sort="none">Regular Charges<br /><span
-													class="pv-th-sub">(3 Correction)</span></th>
-											<th scope="col" data-type="number" aria-sort="none">MGM</th>
-											<th scope="col" data-type="number" aria-sort="none">Correction<br /><span
-													class="pv-th-sub">+3</span></th>
+											<th scope="col" data-type="text" aria-sort="none">Service</th>
+											<th scope="col" data-type="number" aria-sort="none">Starting (INR)</th>
+											<th scope="col" data-type="text" aria-sort="none">Includes</th>
+											<th scope="col" data-type="text" aria-sort="none">Add-on</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr><td>1</td><td>Social, Digital Post</td><td>450</td><td>350</td><td>550</td></tr>
-										<tr><td>3</td><td>Logo Design</td><td>3000-10000</td><td>1500-7500</td><td>-</td></tr>
-										<tr><td>2</td><td>Brochure Cover Page</td><td>1400</td><td>1100</td><td>750</td></tr>
-										<tr><td>4</td><td>Brochure Inner Page</td><td>450</td><td>350</td><td>750</td></tr>
-										<tr><td>5</td><td>Stationary (V-Card, Letter Head)</td><td>1500</td><td>1200</td><td>750</td></tr>
-										<tr><td>6</td><td>Product Design, Mockups</td><td>2000</td><td>1500</td><td>750</td></tr>
-										<tr><td>7</td><td>Newspaper Advertise Full Page</td><td>1800</td><td>1400</td><td>750</td></tr>
-										<tr><td>8</td><td>Newspaper Advertise Half Page</td><td>1200</td><td>900</td><td>750</td></tr>
-										<tr><td>9</td><td>Newspaper Advertisement Custom Size</td><td>1000</td><td>800</td><td>750</td></tr>
-										<tr><td>10</td><td>Pamphlet One Side</td><td>900</td><td>700</td><td>750</td></tr>
-										<tr><td>11</td><td>Pamphlet Two Side</td><td>1500</td><td>1200</td><td>750</td></tr>
-										<tr><td>12</td><td>Caricature, Digital Sketch</td><td>6000</td><td>5000</td><td>750</td></tr>
-										<tr><td>13</td><td>Hoarding, Billboards</td><td>2000</td><td>2000</td><td>750</td></tr>
-										<tr><td>14</td><td>Black &amp; White Paper Advertisement</td><td>350</td><td>500</td><td>750</td></tr>
-										<tr><td>15</td><td>Theme Based Social Campaign (Week)</td><td>4500</td><td>3000</td><td>750</td></tr>
-										<tr><td>16</td><td>Photograph Manipulation</td><td>1400</td><td>1000</td><td>750</td></tr>
-										<tr><td>17</td><td>Digital Visiting Card</td><td>750</td><td>750</td><td>750</td></tr>
+										<tr><td>1</td><td>Social, Digital Post</td><td>450</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>2</td><td>Brochure Cover Page</td><td>1400</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>3</td><td>Brochure Inner Page</td><td>450</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>4</td><td>Logo Design</td><td>3000</td><td>3 concepts + Source file</td><td>-</td></tr>
+										<tr><td>5</td><td>Stationary (V-Card, Letter Head)</td><td>1500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>6</td><td>Product Design, Mockups</td><td>2000</td><td>3 corrections + Hi-Res</td><td>Correction 750</td></tr>
+										<tr><td>7</td><td>Newspaper Advertise Full Page</td><td>1800</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>8</td><td>Newspaper Advertise Half Page</td><td>1200</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>9</td><td>Newspaper Advertisement Custom Size</td><td>1000</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>10</td><td>Pamphlet One Side</td><td>900</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>11</td><td>Pamphlet Two Side</td><td>1500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>12</td><td>Caricature, Digital Sketch</td><td>6000</td><td>3 corrections + Hi-Res</td><td>Correction 750</td></tr>
+										<tr><td>13</td><td>Hoarding, Billboards</td><td>2000</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>14</td><td>Black &amp; White Paper Advertisement</td><td>350</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>15</td><td>Theme Based Social Campaign (Week)</td><td>4500</td><td>Strategy + 3 corrections</td><td>Correction 750</td></tr>
+										<tr><td>16</td><td>Photograph Manipulation</td><td>1400</td><td>3 corrections + Hi-Res</td><td>Correction 750</td></tr>
+										<tr><td>17</td><td>Digital Visiting Card</td><td>750</td><td>Interactive elements</td><td>Correction 750</td></tr>
+										<tr><td>18</td><td>Instagram Grid Layout (9 Posts)</td><td>3500</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>19</td><td>YouTube Channel Art (Banner)</td><td>1200</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>20</td><td>Podcast Cover Art</td><td>1500</td><td>3 corrections + Spotify-ready</td><td>Correction 750</td></tr>
+										<tr><td>21</td><td>LinkedIn Banner</td><td>1000</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>22</td><td>Facebook Cover Design</td><td>1000</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>23</td><td>WhatsApp Catalog Images</td><td>350</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>24</td><td>Standee / Roll-up Banner</td><td>1500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>25</td><td>Event Backdrop / Photobooth</td><td>2500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>26</td><td>Flyer Design (A4/A5)</td><td>1200</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>27</td><td>Poster Design (A3/Large)</td><td>1800</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>28</td><td>Restaurant Menu Design (Per Page)</td><td>800</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>29</td><td>E-book / PDF Lead Magnet (Cover)</td><td>1500</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>30</td><td>E-book Interior Formatting (Per Page)</td><td>250</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>31</td><td>Pitch Deck Presentation (Per Slide)</td><td>350</td><td>3 corrections + PPT/PDF</td><td>Correction 550</td></tr>
+										<tr><td>32</td><td>Company Profile (Per Page)</td><td>600</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>33</td><td>Brand Guidelines (Brand Book)</td><td>8000</td><td>3 corrections + Source file</td><td>Correction 750</td></tr>
+										<tr><td>34</td><td>Email Newsletter Template</td><td>1800</td><td>3 corrections + HTML/Image</td><td>Correction 750</td></tr>
+										<tr><td>35</td><td>Packaging Box Design</td><td>3500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>36</td><td>Product Label Design</td><td>2000</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>37</td><td>Pouch / Mylar Bag Design</td><td>2500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>38</td><td>Carry Bag / Shopping Bag</td><td>1500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>39</td><td>T-Shirt / Apparel Graphic</td><td>1800</td><td>3 corrections + Vector file</td><td>Correction 750</td></tr>
+										<tr><td>40</td><td>Cap / Mug / Merchandise</td><td>1200</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>41</td><td>Sticker / Decal Design</td><td>800</td><td>3 corrections + Print-ready</td><td>Correction 550</td></tr>
+										<tr><td>42</td><td>ID Card / Lanyard</td><td>750</td><td>3 corrections + Print-ready</td><td>Correction 550</td></tr>
+										<tr><td>43</td><td>Certificate Design</td><td>1200</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>44</td><td>Invitation / E-vite (Static)</td><td>1000</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>45</td><td>Web Banner / Slider Image</td><td>1200</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>46</td><td>Google Display Ad Static Banner</td><td>800</td><td>3 corrections + Web-ready</td><td>Correction 550</td></tr>
+										<tr><td>47</td><td>App Icon (iOS / Android)</td><td>2000</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>48</td><td>Web Iconography (Set of 5)</td><td>2000</td><td>3 corrections + SVG format</td><td>Correction 750</td></tr>
+										<tr><td>49</td><td>Infographic Design (Basic)</td><td>2500</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>50</td><td>Amazon A+ Content Wrapper</td><td>3500</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>51</td><td>Amazon Listing Images (Set of 5)</td><td>4000</td><td>3 corrections + Web-ready</td><td>Correction 750</td></tr>
+										<tr><td>52</td><td>Vehicle Wrap / Fleet Branding</td><td>5000</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>53</td><td>Flex / Vinyl Banner Custom</td><td>1200</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>54</td><td>Custom Illustration (Flat Vector)</td><td>3000</td><td>3 corrections + Source file</td><td>Correction 750</td></tr>
+										<tr><td>55</td><td>Mascot / Character Design</td><td>8000</td><td>3 concepts + Source file</td><td>-</td></tr>
+										<tr><td>56</td><td>Magazine / Catalogue Cover</td><td>2000</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
+										<tr><td>57</td><td>CD / Album Art Cover</td><td>1500</td><td>3 corrections + Print-ready</td><td>Correction 750</td></tr>
 									</tbody>
 								</table>
 							</div>
@@ -589,8 +804,8 @@
 											<th scope="col" data-type="number" aria-sort="none">Sr. No.</th>
 											<th scope="col" data-type="text" aria-sort="none">Service</th>
 											<th scope="col" data-type="number" aria-sort="none">Starting (INR)</th>
-											<th scope="col" data-type="text" aria-sort="none">Deliverables</th>
-											<th scope="col" data-type="number" aria-sort="none">Extra Revision</th>
+											<th scope="col" data-type="text" aria-sort="none">Includes</th>
+											<th scope="col" data-type="text" aria-sort="none">Add-on</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -620,10 +835,10 @@
 										</tr>
 										<tr>
 											<th scope="col" data-type="number" aria-sort="none">Sr. No.</th>
-											<th scope="col" data-type="text" aria-sort="none">Package / Service</th>
+											<th scope="col" data-type="text" aria-sort="none">Service</th>
 											<th scope="col" data-type="number" aria-sort="none">Starting (INR)</th>
 											<th scope="col" data-type="text" aria-sort="none">Includes</th>
-											<th scope="col" data-type="text" aria-sort="none">Popular Add-on</th>
+											<th scope="col" data-type="text" aria-sort="none">Add-on</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -652,20 +867,20 @@
 										<tr>
 											<th scope="col" data-type="number" aria-sort="none">Sr. No.</th>
 											<th scope="col" data-type="text" aria-sort="none">Service</th>
-											<th scope="col" data-type="number" aria-sort="none">Starting / Month (INR)</th>
+											<th scope="col" data-type="number" aria-sort="none">Starting (INR)</th>
 											<th scope="col" data-type="text" aria-sort="none">Includes</th>
 											<th scope="col" data-type="text" aria-sort="none">Add-on</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr><td>1</td><td>Social Media Management (Starter)</td><td>12999</td><td>12 posts + 4 reels + captions + scheduling</td><td>Ad management 4999</td></tr>
-										<tr><td>2</td><td>Social Media Management (Growth)</td><td>19999</td><td>20 posts + 8 reels + monthly insights</td><td>Influencer outreach</td></tr>
-										<tr><td>3</td><td>SEO (Local)</td><td>14999</td><td>GMB + local citations + 10 keywords</td><td>Blog 1500/article</td></tr>
-										<tr><td>4</td><td>Performance Ads (Setup + Optimization)</td><td>9999</td><td>Google/Meta setup + weekly optimization</td><td>Creatives from 399</td></tr>
-										<tr><td>5</td><td>Content Marketing</td><td>12999</td><td>Content plan + 4 long posts + distribution</td><td>Video content add-on</td></tr>
-										<tr><td>6</td><td>Lead Gen Funnel Setup</td><td>17999</td><td>Landing + tracking + lead form integration</td><td>CRM integration</td></tr>
-										<tr><td>7</td><td>WhatsApp Marketing Setup</td><td>4999</td><td>Templates + quick replies + catalog</td><td>Broadcast plan</td></tr>
-										<tr><td>8</td><td>Email Marketing (Setup)</td><td>6999</td><td>Template + list hygiene + automation basics</td><td>Campaign 999</td></tr>
+										<tr><td>1</td><td>Social Media Management (Starter)</td><td>12999/mo</td><td>12 posts + 4 reels + captions + scheduling</td><td>Ad management 4999</td></tr>
+										<tr><td>2</td><td>Social Media Management (Growth)</td><td>19999/mo</td><td>20 posts + 8 reels + monthly insights</td><td>Influencer outreach</td></tr>
+										<tr><td>3</td><td>SEO (Local)</td><td>14999/mo</td><td>GMB + local citations + 10 keywords</td><td>Blog 1500/article</td></tr>
+										<tr><td>4</td><td>Performance Ads (Setup + Optimization)</td><td>9999/mo</td><td>Google/Meta setup + weekly optimization</td><td>Creatives from 399</td></tr>
+										<tr><td>5</td><td>Content Marketing</td><td>12999/mo</td><td>Content plan + 4 long posts + distribution</td><td>Video content add-on</td></tr>
+										<tr><td>6</td><td>Lead Gen Funnel Setup</td><td>17999/mo</td><td>Landing + tracking + lead form integration</td><td>CRM integration</td></tr>
+										<tr><td>7</td><td>WhatsApp Marketing Setup</td><td>4999/mo</td><td>Templates + quick replies + catalog</td><td>Broadcast plan</td></tr>
+										<tr><td>8</td><td>Email Marketing (Setup)</td><td>6999/mo</td><td>Template + list hygiene + automation basics</td><td>Campaign 999</td></tr>
 									</tbody>
 								</table>
 							</div>
@@ -675,6 +890,182 @@
 					</div>
 				</section>
 			</main>
+
+			<section class="pv-faq-section">
+				<div class="pv-faq-bg-blobs">
+					<div class="pv-blob pv-blob-1"></div>
+					<div class="pv-blob pv-blob-2"></div>
+					<div class="pv-blob pv-blob-3"></div>
+					<div class="pv-blob pv-blob-4"></div>
+				</div>
+				<div class="container-big">
+					<div class="pv-faq-header text-center">
+						<h2 class="h1">Frequently Asked Questions</h2>
+						<p>Our platform is built to help you work smarter, not harder. It adapts to your needs<br />and supports your goals. Make the most of every feature.</p>
+					</div>
+					<div class="pv-faq-container">
+						<div class="pv-faq-tabs">
+							<button class="pv-faq-tab is-active" data-faq="design"><span>Graphic Design</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+							<button class="pv-faq-tab" data-faq="video"><span>Video Editing</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+							<button class="pv-faq-tab" data-faq="web"><span>Web Design</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+							<button class="pv-faq-tab" data-faq="marketing"><span>Digital Marketing</span><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+						</div>
+						<div class="pv-faq-content">
+							<div class="pv-faq-panel is-active" id="faq-design">
+								<div class="pv-faq-item is-expanded">
+									<button class="pv-faq-question">
+										<span>What does the "Starting (INR)" price include?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>It represents the base cost for the service. Final price may vary slightly based on actual project complexity and if additional premium assets or custom illustrations are required.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>How many revisions are included in the price?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Our standard Graphic Design rates include up to 3 rounds of consolidated corrections. Additional revisions will incur the 'Add-on Correction' fee listed next to each service.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Are the original source files delivered upon completion?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Yes, source files like AI or PSD are included for Logo Design and certain branding packages. Standard social posts generally include high-res JPG/PNG exports unless raw files are purchased additionally.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>What happens if I want to cancel my Graphic Design order?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>If work hasn't started, we offer a full refund. Once initial concepts are generated or delivered, cancellation policies apply based on the percentage of work completed.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Do you offer bulk discounts for multiple designs?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Yes, we offer packaged rates. You can explore our Theme Based Social Campaign packages or contact us for a custom recurring agency retainer strategy.</p></div>
+								</div>
+							</div>
+							
+							<div class="pv-faq-panel" id="faq-video">
+								<div class="pv-faq-item is-expanded">
+									<button class="pv-faq-question">
+										<span>Does the starting price include stock footage?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>The starting pricing covers editing your raw footage, basic transitions, and audio leveling. Premium stock footage or requested licensed music is quoted as a separate add-on.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Are subtitles included in the Reel Edit package?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Basic captions can be included depending on the tier. For extensive stylized captions or cinematic text animations, there is a dedicated Subtitles/Captions add-on fee per minute.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Can I request a shorter turnaround time?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Yes. Standard delivery is 2-4 business days. Express delivery (24-48 hours) is available to push your edit to the front of the queue at a premium rush fee.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Do you store raw footage after the project is done?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>We keep working files for up to 14 days post-delivery. We highly recommend you download and back up all final exported videos and assets immediately to avoid data loss.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>How do I send my large raw video files to you?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Once the upfront payment is cleared, we provide a secure Google Drive or Dropbox upload link for you to transfer your heavy assets safely without WhatsApp compression.</p></div>
+								</div>
+							</div>
+
+							<div class="pv-faq-panel" id="faq-web">
+								<div class="pv-faq-item is-expanded">
+									<button class="pv-faq-question">
+										<span>Are domain and hosting costs included in the web design rate?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>No, our website pricing strictly covers the UI/UX design, development, and basic SEO setup. Domain registration and server hosting are quoted separately based on your specific traffic requirements.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Is the website price a one-time fee or monthly?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>The primary website design and development cost is a one-time project fee. Ongoing technical maintenance or server hosting costs are handled separately either yearly or monthly.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>What is the payment structure for a new website?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Web projects strictly follow a 50% advance to formally start development, and the final 50% upon final approval right before migrating the staging website to your live servers.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Do you write the content for the website pages?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Content writing (copywriting) is an optional add-on starting at INR 2500 per page. Otherwise, the client must provide all text logic and hero images before development begins.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Will my newly designed website be mobile friendly?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Absolutely. Every single web package includes responsive, mobile-first design architecture to ensure it acts and looks perfect on smartphones, standard tablets, and generic desktops.</p></div>
+								</div>
+							</div>
+
+							<div class="pv-faq-panel" id="faq-marketing">
+								<div class="pv-faq-item is-expanded">
+									<button class="pv-faq-question">
+										<span>Are ad spend budgets included in the monthly retainer?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>No. The quoted monthly fee is our pure agency management and creative execution fee. The media ad spend budget is paid directly to platforms like Google or Meta by your registered cards.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Is there a minimum contract period for marketing services?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>We generally recommend a minimum 3-month commitment to see tangible SEO growth and campaign momentum, though initial pilot plans can be set up securely month-to-month.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Can I upgrade my package mid-month?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Yes! If you want to aggressively increase ad spend oversight or rapidly add more content deliverables, we simply prorate the difference directly onto your very next billing cycle.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>What kind of reporting will I receive?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>All digital marketing clients receive a comprehensive monthly performance report detailing actionable reach, audience engagement, conversion funnels, and ongoing ad spend efficiency.</p></div>
+								</div>
+								<div class="pv-faq-item">
+									<button class="pv-faq-question">
+										<span>Do you charge an upfront fee for marketing campaigns?</span>
+										<div class="pv-faq-icon"></div>
+									</button>
+									<div class="pv-faq-answer"><p>Yes, digital marketing retainers generally operate on a prepaid monthly timeline. We successfully commence forward strategy and execution once the baseline monthly invoice is cleared securely.</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
 			<footer class="footer bg-gradient">
 				<div class="container-big">
@@ -936,6 +1327,70 @@
 						URL.revokeObjectURL(url);
 					});
 				}
+
+				// FAQ Tabs Logic
+				var faqTabs = Array.prototype.slice.call(document.querySelectorAll('.pv-faq-tab'));
+				var faqPanels = Array.prototype.slice.call(document.querySelectorAll('.pv-faq-panel'));
+				
+				faqTabs.forEach(function(tab) {
+					tab.addEventListener('click', function() {
+						var targetId = 'faq-' + tab.getAttribute('data-faq');
+						
+						faqTabs.forEach(function(t) { t.classList.remove('is-active'); });
+						faqPanels.forEach(function(p) { p.classList.remove('is-active'); });
+						
+						tab.classList.add('is-active');
+						var tgt = document.getElementById(targetId);
+						if(tgt) tgt.classList.add('is-active');
+						updateAccordions();
+					});
+				});
+
+				// FAQ Accordion Logic
+				var faqItems = Array.prototype.slice.call(document.querySelectorAll('.pv-faq-item'));
+				
+				function updateAccordions() {
+					faqItems.forEach(function(item) {
+						var answer = item.querySelector('.pv-faq-answer');
+						if (!answer) return;
+						if (item.classList.contains('is-expanded')) {
+							answer.style.maxHeight = answer.scrollHeight + 'px';
+						} else {
+							answer.style.maxHeight = '0px';
+						}
+					});
+				}
+
+				faqItems.forEach(function(item) {
+					var questionBtn = item.querySelector('.pv-faq-question');
+					if(!questionBtn) return;
+					questionBtn.addEventListener('click', function() {
+						var isExpanded = item.classList.contains('is-expanded');
+						
+						// Close all others
+						var parentPanel = item.closest('.pv-faq-panel');
+						if(parentPanel) {
+							var siblings = parentPanel.querySelectorAll('.pv-faq-item');
+							siblings.forEach(function(otherItem) {
+								if (otherItem !== item) {
+									otherItem.classList.remove('is-expanded');
+								}
+							});
+						}
+						
+						if (isExpanded) {
+							item.classList.remove('is-expanded');
+						} else {
+							item.classList.add('is-expanded');
+						}
+						
+						updateAccordions();
+					});
+				});
+
+				// Init sizes
+				setTimeout(updateAccordions, 100);
+				window.addEventListener('resize', updateAccordions);
 			});
 		})();
 	</script>
