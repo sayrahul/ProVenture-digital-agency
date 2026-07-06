@@ -1972,3 +1972,169 @@ main.main {
         font-size: 1.05rem;
     }
 }
+
+/* ==========================================================================
+   PRICING CONVERSION OPTIMIZATIONS
+   ========================================================================== */
+
+/* Risk Reversal Tags */
+.pv-pricing-risk-reversal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 3rem 0;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.pv-dot-divider {
+    color: #cbd5e1;
+    margin: 0 0.25rem;
+}
+
+/* Call Banner CTA */
+.pv-pricing-call-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 20px;
+    padding: 2.5rem 3.5rem;
+    margin-top: 5rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.2);
+}
+.pv-pricing-call-content h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+.pv-pricing-call-content p {
+    color: #94a3b8;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.pv-pricing-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #00ACDF;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0, 172, 223, 0.2);
+    flex-shrink: 0;
+}
+.pv-pricing-call-btn:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 172, 223, 0.4);
+}
+.pv-pricing-call-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+.pv-pricing-call-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* How It Works Retainer Flow */
+.pv-how-works-sec {
+    padding: 6.5rem 0;
+    background: #f8fafc;
+    border-top: 1px solid rgba(15, 23, 42, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+.pv-how-works-header {
+    margin-bottom: 4.5rem;
+}
+.pv-how-works-header h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0.75rem 0 0.5rem;
+}
+.pv-how-works-header p {
+    font-size: 1.15rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0.5rem auto 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.pv-how-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3.5rem 2.5rem;
+    position: relative;
+}
+.pv-how-works-card {
+    background: #ffffff;
+    padding: 3.5rem 2rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pv-how-works-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+.pv-how-works-num {
+    position: absolute;
+    top: -24px;
+    left: 2rem;
+    background: linear-gradient(135deg, #00ACDF 0%, #0087b3 100%);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.25rem;
+    box-shadow: 0 6px 18px rgba(0, 172, 223, 0.35);
+}
+.pv-how-works-card h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 0.85rem;
+}
+.pv-how-works-card p {
+    color: #64748b;
+    line-height: 1.62;
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for optimizations */
+@media (max-width: 991px) {
+    .pv-pricing-call-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.75rem;
+        padding: 2.5rem 2rem;
+    }
+}
+@media (max-width: 640px) {
+    .pv-pricing-risk-reversal {
+        font-size: 0.85rem;
+        gap: 0.25rem;
+    }
+    .pv-dot-divider {
+        margin: 0 0.15rem;
+    }
+}
+
