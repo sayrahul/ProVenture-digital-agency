@@ -1280,7 +1280,7 @@ main.main {
 
 @media (max-width: 768px) {
     .pv-pricing-sec {
-        padding-top: 5.5rem;
+        padding-top: 10.5rem !important;
     }
     .pv-pricing-grid {
         grid-template-columns: 1fr;
