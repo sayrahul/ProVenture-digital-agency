@@ -909,3 +909,612 @@ main.main {
     border-radius: 14px;
   }
 }
+
+/* ========================================
+   17. STANDARD REDESIGNED PRICING STYLES
+   ======================================== */
+
+.pv-pricing-sec {
+    padding: clamp(2rem, 4vw, 4rem) 0 clamp(4rem, 8vw, 6rem);
+    background: 
+        linear-gradient(180deg, rgba(23, 184, 244, 0.08) 0%, rgba(255, 255, 255, 0) 35%),
+        linear-gradient(90deg, rgba(23, 184, 244, 0.03) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(23, 184, 244, 0.03) 1px, transparent 1px);
+    background-size: auto, 30px 30px, 30px 30px;
+    color: #0f172a;
+}
+
+.pv-pricing-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+}
+
+.pv-pricing-header h1 {
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.pv-pricing-header p {
+    color: #475569;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-weight: 500;
+}
+
+/* Toggle Switch Styles */
+.pv-pricing-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: clamp(3rem, 6vw, 4.5rem);
+    user-select: none;
+}
+
+.pv-pricing-toggle-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #475569;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.pv-pricing-toggle-label.is-active {
+    color: #0f172a;
+}
+
+.pv-pricing-switch {
+    position: relative;
+    width: 68px;
+    height: 38px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.pv-pricing-switch:hover {
+    background: #cbd5e1;
+}
+
+.pv-pricing-switch-handle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pv-pricing-switch.is-annual {
+    background: #00ACDF;
+}
+
+.pv-pricing-switch.is-annual .pv-pricing-switch-handle {
+    transform: translateX(30px);
+}
+
+.pv-pricing-discount-badge {
+    background: linear-gradient(135deg, #17b8f4 0%, #2563eb 100%);
+    color: #ffffff !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(23, 184, 244, 0.25);
+}
+
+/* Pricing Grid */
+.pv-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pv-pricing-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: clamp(2rem, 3.5vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+}
+
+.pv-pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+    border-color: rgba(0, 172, 223, 0.25);
+}
+
+/* Featured Card Glow & Styling */
+.pv-pricing-card.is-featured {
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid #00ACDF;
+    box-shadow: 0 20px 50px rgba(0, 172, 223, 0.12);
+}
+
+.pv-pricing-card.is-featured::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, #17b8f4, #2563eb);
+    z-index: -1;
+    border-radius: 24px;
+    opacity: 0.15;
+    filter: blur(8px);
+    transition: opacity 0.4s ease;
+}
+
+.pv-pricing-card.is-featured:hover::before {
+    opacity: 0.3;
+}
+
+.pv-pricing-featured-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #00ACDF 0%, #2563eb 100%);
+    color: #ffffff !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 172, 223, 0.3);
+    white-space: nowrap;
+}
+
+/* Plan details */
+.pv-pricing-plan-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.pv-pricing-plan-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    min-height: 48px;
+}
+
+.pv-pricing-price-box {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pv-pricing-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.pv-pricing-currency {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.pv-pricing-amount {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 950;
+    color: #0f172a;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    transition: opacity 0.2s ease;
+}
+
+.pv-pricing-period {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.pv-pricing-billing-info {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #00ACDF;
+    margin-top: 6px;
+    height: 18px;
+    transition: opacity 0.2s ease;
+}
+
+.pv-pricing-divider {
+    height: 1px;
+    background: rgba(15, 23, 42, 0.08);
+    margin: 0 0 28px 0;
+}
+
+.pv-pricing-features-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.pv-pricing-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.pv-pricing-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    line-height: 1.4;
+    text-align: left !important;
+}
+
+.pv-pricing-features-list li svg {
+    width: 20px;
+    height: 20px;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.pv-pricing-features-list li.is-muted {
+    color: #94a3b8;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.pv-pricing-features-list li.is-muted svg {
+    color: #cbd5e1;
+}
+
+/* Action button inside card */
+.pv-pricing-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.pv-pricing-btn-outline {
+    border: 2px solid #00ACDF;
+    color: #00ACDF !important;
+    background: transparent;
+}
+
+.pv-pricing-btn-outline:hover {
+    background: rgba(0, 172, 223, 0.05);
+    transform: translateY(-2px);
+}
+
+.pv-pricing-btn-primary {
+    background: linear-gradient(135deg, #00ACDF 0%, #2563eb 100%);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 172, 223, 0.3);
+}
+
+.pv-pricing-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 172, 223, 0.4);
+}
+
+/* FAQ customization for new style */
+.pv-faq-sec {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+    background: #f8fafc;
+}
+
+.pv-faq-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.pv-faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pv-faq-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 16px;
+    padding: 20px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
+}
+
+.pv-faq-card:hover {
+    border-color: rgba(0, 172, 223, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .pv-pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 800px;
+    }
+    .pv-pricing-card.enterprise-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .pv-pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+    .pv-pricing-card.enterprise-card {
+        grid-column: span 1;
+    }
+    .pv-pricing-header {
+        margin-bottom: 2rem;
+    }
+    .pv-pricing-toggle-container {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* FAQ Section Glassmorphism Theme */
+.pv-faq-section {
+    position: relative;
+    padding: clamp(4rem, 8vw, 6rem) 0;
+    background: #f8fafc;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.pv-faq-bg-blobs {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(244, 114, 182, 0.05) 0%, transparent 40%),
+                linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+}
+
+.pv-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.6;
+}
+
+.pv-blob-1 { top: 20%; left: 15%; width: 20px; height: 20px; background: rgba(248, 113, 113, 0.4); filter: blur(4px); }
+.pv-blob-2 { top: 25%; left: 25%; width: 12px; height: 12px; background: rgba(56, 189, 248, 0.4); filter: blur(2px); }
+.pv-blob-3 { top: 15%; left: 55%; width: 16px; height: 16px; background: rgba(167, 139, 250, 0.4); filter: blur(3px); }
+.pv-blob-4 { top: 30%; right: 20%; width: 30px; height: 30px; background: rgba(56, 189, 248, 0.3); filter: blur(5px); }
+
+.pv-faq-header {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
+}
+
+.pv-faq-header h2 {
+    color: #0f172a;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 4vw, 2.75rem);
+}
+
+.pv-faq-header p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.pv-faq-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: start;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: clamp(2rem, 5vw, 4rem);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.03), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+    .pv-faq-container { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.pv-faq-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.pv-faq-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.15rem 1.4rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.pv-faq-tab svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+    transition: transform 0.3s ease;
+}
+
+.pv-faq-tab:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f172a;
+}
+
+.pv-faq-tab.is-active {
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 800;
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+}
+
+.pv-faq-tab.is-active svg {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.pv-faq-panel {
+    display: none;
+}
+
+.pv-faq-panel.is-active {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pv-faq-item {
+    background: rgba(248, 250, 252, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.pv-faq-item.is-expanded {
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.pv-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #334155;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-align: left;
+    cursor: pointer;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.pv-faq-item.is-expanded .pv-faq-question {
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.pv-faq-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 1rem;
+}
+
+.pv-faq-icon::before, .pv-faq-icon::after {
+    content: '';
+    position: absolute;
+    background: #0f172a;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+    top: 50%; left: 50%;
+}
+
+.pv-faq-icon::before {
+    width: 14px; height: 2px;
+    margin-top: -1px; margin-left: -7px;
+}
+
+.pv-faq-icon::after {
+    width: 2px; height: 14px;
+    margin-top: -7px; margin-left: -1px;
+}
+
+/* Expanded State (X icon) */
+.pv-faq-item.is-expanded .pv-faq-icon::before {
+    transform: rotate(45deg);
+}
+
+.pv-faq-item.is-expanded .pv-faq-icon::after {
+    transform: rotate(45deg);
+}
+
+.pv-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pv-faq-answer p {
+    padding: 0 1.5rem 1.4rem;
+    margin: 0;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
