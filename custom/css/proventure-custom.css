@@ -1279,6 +1279,9 @@ main.main {
 }
 
 @media (max-width: 768px) {
+    .pv-pricing-sec {
+        padding-top: 5.5rem;
+    }
     .pv-pricing-grid {
         grid-template-columns: 1fr;
         max-width: 450px;
