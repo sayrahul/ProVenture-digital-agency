@@ -189,11 +189,92 @@
 							<span>Cancel in 1-Click</span>
 						</div>
 
+						<!-- Help Me Choose Tool Trigger -->
+						<div class="pv-quiz-trigger-container">
+							<button type="button" id="pv-quiz-trigger-btn" class="pv-quiz-trigger-btn">
+								<svg class="pv-quiz-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+								Not sure? Take the 15-second Plan Recommendation Quiz
+							</button>
+						</div>
+
+						<!-- Interactive Quiz Box (Collapsed by default) -->
+						<div id="pv-quiz-card" class="pv-quiz-card is-collapsed">
+							<div class="pv-quiz-progress-bar"><div id="pv-quiz-progress-fill" class="pv-quiz-progress-fill"></div></div>
+							
+							<!-- Step 1 -->
+							<div class="pv-quiz-step is-active" data-step="1">
+								<h3>Step 1 of 3: What is your primary content focus?</h3>
+								<div class="pv-quiz-options">
+									<button type="button" class="pv-quiz-opt" data-points="starter">
+										<span class="pv-quiz-opt-title">Brand Kickstart</span>
+										<span class="pv-quiz-opt-desc">Basic social presence, localized GMB setup, and light maintenance.</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="professional">
+										<span class="pv-quiz-opt-title">Active Brand Growth</span>
+										<span class="pv-quiz-opt-desc">Frequent video reels, print campaigns, and ongoing marketing operations.</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="enterprise">
+										<span class="pv-quiz-opt-title">All-In Agency Power</span>
+										<span class="pv-quiz-opt-desc">High volume posts, custom website design, dedicated support channel.</span>
+									</button>
+								</div>
+							</div>
+
+							<!-- Step 2 -->
+							<div class="pv-quiz-step" data-step="2">
+								<h3>Step 2 of 3: How many Reels / Video Edits do you need monthly?</h3>
+								<div class="pv-quiz-options">
+									<button type="button" class="pv-quiz-opt" data-points="starter">
+										<span class="pv-quiz-opt-title">Up to 2 Reels</span>
+										<span class="pv-quiz-opt-desc">Perfect for basic engagement or starting video content.</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="professional">
+										<span class="pv-quiz-opt-title">3 to 5 Reels</span>
+										<span class="pv-quiz-opt-desc">Consistent presence, custom sound mixing, subtitles and edits.</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="enterprise">
+										<span class="pv-quiz-opt-title">6+ Reels / Videos</span>
+										<span class="pv-quiz-opt-desc">Frequent high-impact reels to aggressively grow your accounts.</span>
+									</button>
+								</div>
+							</div>
+
+							<!-- Step 3 -->
+							<div class="pv-quiz-step" data-step="3">
+								<h3>Step 3 of 3: Do you require custom web builds or print collateral design?</h3>
+								<div class="pv-quiz-options">
+									<button type="button" class="pv-quiz-opt" data-points="starter">
+										<span class="pv-quiz-opt-title">None</span>
+										<span class="pv-quiz-opt-desc">Just digital social graphics and essential maintenance updates.</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="professional">
+										<span class="pv-quiz-opt-title">Print Support</span>
+										<span class="pv-quiz-opt-desc">Need design support for offline marketing (flyers, banners, brochures).</span>
+									</button>
+									<button type="button" class="pv-quiz-opt" data-points="enterprise">
+										<span class="pv-quiz-opt-title">Web Build & Blog Support</span>
+										<span class="pv-quiz-opt-desc">Require custom site design, analytics setups, and blog management.</span>
+									</button>
+								</div>
+							</div>
+
+							<!-- Result Panel -->
+							<div class="pv-quiz-step pv-quiz-result" data-step="result">
+								<div class="pv-quiz-success-icon">🎉</div>
+								<h3>Calculating your plan...</h3>
+								<p id="pv-quiz-recommendation-text"></p>
+								<div class="pv-quiz-result-actions">
+									<button type="button" id="pv-quiz-scroll-btn" class="pv-pricing-btn pv-pricing-btn-primary">View Recommended Plan</button>
+									<button type="button" id="pv-quiz-reset-btn" class="pv-quiz-reset-btn">Retake Quiz</button>
+								</div>
+							</div>
+						</div>
+
 						<!-- Pricing Cards Grid -->
 						<div class="pv-pricing-grid">
 							
 							<!-- Starter Pack -->
-							<div class="pv-pricing-card starter-card">
+							<div class="pv-pricing-card starter-card" id="starter-plan-card">
 								<div class="pv-pricing-plan-name">Starter Pack</div>
 								<div class="pv-pricing-plan-desc">Essential social media and web management to kickstart your online footprint.</div>
 								
@@ -255,7 +336,7 @@
 							</div>
 
 							<!-- Professional Plan (Featured) -->
-							<div class="pv-pricing-card is-featured professional-card">
+							<div class="pv-pricing-card is-featured professional-card" id="professional-plan-card">
 								<span class="pv-pricing-featured-badge">MOST POPULAR</span>
 								<div class="pv-pricing-plan-name">Professional</div>
 								<div class="pv-pricing-plan-desc">Advanced growth marketing, print support, paid ads, and SEO.</div>
@@ -319,7 +400,7 @@
 							</div>
 
 							<!-- Enterprise Plan -->
-							<div class="pv-pricing-card enterprise-card">
+							<div class="pv-pricing-card enterprise-card" id="enterprise-plan-card">
 								<div class="pv-pricing-plan-name">Enterprise</div>
 								<div class="pv-pricing-plan-desc">Ultimate digital agency setup. Custom website development & dedicated support.</div>
 								
@@ -371,6 +452,81 @@
 								</ul>
 
 								<a href="contact.html?plan=enterprise" class="pv-pricing-btn pv-pricing-btn-outline">Choose Enterprise</a>
+							</div>
+						</div>
+						<!-- ROI Calculator -->
+						<div class="pv-roi-calculator-container">
+							<div class="pv-roi-header text-center">
+								<div class="pv-badge"><span class="pv-badge-dot" aria-hidden="true"></span>ROI Calculator</div>
+								<h2>Compare In-House vs. ProVenture</h2>
+								<p>Calculate your potential monthly savings compared to building a traditional in-house creative team.</p>
+							</div>
+
+							<div class="pv-roi-grid">
+								<!-- Left Column: Controls -->
+								<div class="pv-roi-controls">
+									<div class="pv-roi-input-group">
+										<label for="pv-roi-slider" class="pv-roi-label">
+											<span>Estimated In-House Monthly Budget</span>
+											<strong id="pv-roi-slider-val">₹1,20,000</strong>
+										</label>
+										<input type="range" id="pv-roi-slider" min="40000" max="250000" step="5000" value="120000" class="pv-roi-slider" />
+										<div class="pv-roi-slider-ticks">
+											<span>₹40K</span>
+											<span>₹100K</span>
+											<span>₹150K</span>
+											<span>₹200K</span>
+											<span>₹250K</span>
+										</div>
+									</div>
+
+									<div class="pv-roi-plan-selector">
+										<span class="pv-roi-selector-title">Compare with ProVenture Plan:</span>
+										<div class="pv-roi-plan-buttons">
+											<button type="button" class="pv-roi-plan-btn" data-plan="starter" data-price="6999">Starter Pack (₹6,999)</button>
+											<button type="button" class="pv-roi-plan-btn is-active" data-plan="professional" data-price="9999">Professional (₹9,999)</button>
+											<button type="button" class="pv-roi-plan-btn" data-plan="enterprise" data-price="19999">Enterprise (₹19,999)</button>
+										</div>
+									</div>
+								</div>
+
+								<!-- Right Column: Visual Comparison Graph -->
+								<div class="pv-roi-visual">
+									<div class="pv-roi-card-header">
+										<span>Monthly Cost Breakdown</span>
+									</div>
+									
+									<div class="pv-roi-bars-container">
+										<!-- In House Cost Bar -->
+										<div class="pv-roi-bar-wrapper">
+											<div class="pv-roi-bar-label">
+												<span>In-House Team</span>
+												<strong id="pv-roi-inhouse-total">₹1,44,000</strong>
+											</div>
+											<div class="pv-roi-bar pv-roi-bar-inhouse">
+												<div id="pv-roi-bar-inhouse-fill" class="pv-roi-bar-fill" style="width: 100%;"></div>
+											</div>
+											<span class="pv-roi-bar-subtext">Includes salary + 20% taxes/overhead/software</span>
+										</div>
+
+										<!-- ProVenture Cost Bar -->
+										<div class="pv-roi-bar-wrapper">
+											<div class="pv-roi-bar-label">
+												<span>ProVenture Subscription</span>
+												<strong id="pv-roi-prov-total">₹9,999</strong>
+											</div>
+											<div class="pv-roi-bar pv-roi-bar-prov">
+												<div id="pv-roi-bar-prov-fill" class="pv-roi-bar-fill" style="width: 6.94%;"></div>
+											</div>
+											<span class="pv-roi-bar-subtext">Flat monthly rate, pause/cancel anytime</span>
+										</div>
+									</div>
+
+									<div class="pv-roi-savings-banner">
+										<span>YOUR MONTHLY SAVINGS</span>
+										<strong id="pv-roi-savings-val">₹1,34,001</strong>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -751,6 +907,181 @@
 				if (labelAnnual) {
 					labelAnnual.addEventListener('click', () => toggleBilling(true));
 				}
+
+				// ==========================================
+				// 3. INTERACTIVE PLAN RECOMMENDATION QUIZ
+				// ==========================================
+				var quizTriggerBtn = document.getElementById('pv-quiz-trigger-btn');
+				var quizCard = document.getElementById('pv-quiz-card');
+				var progressFill = document.getElementById('pv-quiz-progress-fill');
+				var steps = Array.prototype.slice.call(document.querySelectorAll('.pv-quiz-step'));
+				var options = Array.prototype.slice.call(document.querySelectorAll('.pv-quiz-opt'));
+				var scrollBtn = document.getElementById('pv-quiz-scroll-btn');
+				var resetBtn = document.getElementById('pv-quiz-reset-btn');
+				var recommendationText = document.getElementById('pv-quiz-recommendation-text');
+				
+				var quizAnswers = [];
+				var recommendedPlanId = 'professional'; // default
+
+				if (quizTriggerBtn && quizCard) {
+					quizTriggerBtn.addEventListener('click', function() {
+						quizCard.classList.toggle('is-collapsed');
+						if (!quizCard.classList.contains('is-collapsed')) {
+							quizCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						}
+					});
+				}
+
+				function updateQuizProgress(stepIndex) {
+					var percent = (stepIndex / 3) * 100;
+					if (progressFill) progressFill.style.width = percent + '%';
+				}
+
+				function selectStep(stepNum) {
+					steps.forEach(function(step) {
+						var stepAttr = step.getAttribute('data-step');
+						if (stepAttr === String(stepNum)) {
+							step.classList.add('is-active');
+						} else {
+							step.classList.remove('is-active');
+						}
+					});
+					updateQuizProgress(stepNum === 'result' ? 3 : stepNum - 1);
+				}
+
+				options.forEach(function(opt) {
+					opt.addEventListener('click', function() {
+						var parentStep = opt.closest('.pv-quiz-step');
+						var stepNum = parseInt(parentStep.getAttribute('data-step'), 10);
+						var points = opt.getAttribute('data-points');
+						
+						quizAnswers[stepNum - 1] = points;
+						
+						if (stepNum < 3) {
+							selectStep(stepNum + 1);
+						} else {
+							// Calculate Result
+							var counts = { starter: 0, professional: 0, enterprise: 0 };
+							quizAnswers.forEach(function(ans) {
+								counts[ans] = (counts[ans] || 0) + 1;
+							});
+							
+							// Recommend based on majority or highest tier selected
+							if (counts.enterprise > 0) {
+								recommendedPlanId = 'enterprise';
+							} else if (counts.professional > 0) {
+								recommendedPlanId = 'professional';
+							} else {
+								recommendedPlanId = 'starter';
+							}
+							
+							var text = "";
+							if (recommendedPlanId === 'starter') {
+								text = "Based on your focus on essential social presence and basic website maintenance, the **Starter Pack** is perfect for your needs!";
+							} else if (recommendedPlanId === 'professional') {
+								text = "Based on your growth-driven video reels, print campaigns, and ongoing marketing needs, we highly recommend the **Professional Plan**!";
+							} else {
+								text = "With your requirements for heavy social output, advanced SEO suite, and custom website engineering, the **Enterprise Plan** is your ideal solution!";
+							}
+							
+							if (recommendationText) {
+								recommendationText.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+							}
+							
+							selectStep('result');
+						}
+					});
+				});
+
+				if (resetBtn) {
+					resetBtn.addEventListener('click', function() {
+						quizAnswers = [];
+						selectStep(1);
+					});
+				}
+
+				if (scrollBtn) {
+					scrollBtn.addEventListener('click', function() {
+						var card = document.getElementById(recommendedPlanId + '-plan-card');
+						if (card) {
+							// Remove existing recommended classes
+							document.querySelectorAll('.pv-pricing-card').forEach(function(c) {
+								c.classList.remove('has-neon-recommend');
+								var oldBadge = c.querySelector('.pv-quiz-recommend-badge');
+								if (oldBadge) oldBadge.remove();
+							});
+							
+							// Add highlighting class
+							card.classList.add('has-neon-recommend');
+							
+							// Prepend badge
+							var badge = document.createElement('div');
+							badge.className = 'pv-quiz-recommend-badge';
+							badge.textContent = 'RECOMMENDED FOR YOU';
+							card.insertBefore(badge, card.firstChild);
+							
+							card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						}
+					});
+				}
+
+				// ==========================================
+				// 4. ROI SAVINGS CALCULATOR
+				// ==========================================
+				var roiSlider = document.getElementById('pv-roi-slider');
+				var roiSliderVal = document.getElementById('pv-roi-slider-val');
+				var roiPlanButtons = Array.prototype.slice.call(document.querySelectorAll('.pv-roi-plan-btn'));
+				var inhouseTotal = document.getElementById('pv-roi-inhouse-total');
+				var provTotal = document.getElementById('pv-roi-prov-total');
+				var savingsVal = document.getElementById('pv-roi-savings-val');
+				var inhouseFill = document.getElementById('pv-roi-bar-inhouse-fill');
+				var provFill = document.getElementById('pv-roi-bar-prov-fill');
+
+				var selectedPlanPrice = 9999; // Default Professional
+
+				function formatCurrency(val) {
+					return '₹' + Math.round(val).toLocaleString('en-IN');
+				}
+
+				function updateRoiCalculator() {
+					if (!roiSlider) return;
+					var sliderVal = parseInt(roiSlider.value, 10);
+					if (roiSliderVal) roiSliderVal.textContent = formatCurrency(sliderVal);
+
+					// In house total is Salary + 20% overhead benefits
+					var totalInhouse = sliderVal * 1.2;
+					if (inhouseTotal) inhouseTotal.textContent = formatCurrency(totalInhouse);
+
+					// ProVenture subscription total
+					if (provTotal) provTotal.textContent = formatCurrency(selectedPlanPrice);
+
+					// Savings
+					var savings = totalInhouse - selectedPlanPrice;
+					if (savingsVal) savingsVal.textContent = formatCurrency(savings);
+
+					// Fill bars relative to max possible value (₹2,50,000 * 1.2 = ₹3,00,000)
+					var maxVal = 300000;
+					var inhousePercent = (totalInhouse / maxVal) * 100;
+					var provPercent = (selectedPlanPrice / maxVal) * 100;
+
+					if (inhouseFill) inhouseFill.style.width = Math.min(100, Math.max(5, inhousePercent)) + '%';
+					if (provFill) provFill.style.width = Math.min(100, Math.max(5, provPercent)) + '%';
+				}
+
+				if (roiSlider) {
+					roiSlider.addEventListener('input', updateRoiCalculator);
+				}
+
+				roiPlanButtons.forEach(function(btn) {
+					btn.addEventListener('click', function() {
+						roiPlanButtons.forEach(function(b) { b.classList.remove('is-active'); });
+						btn.classList.add('is-active');
+						selectedPlanPrice = parseInt(btn.getAttribute('data-price'), 10);
+						updateRoiCalculator();
+					});
+				});
+
+				updateRoiCalculator();
 
 
 				// ==========================================

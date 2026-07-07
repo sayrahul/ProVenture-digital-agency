@@ -2141,3 +2141,401 @@ main.main {
     }
 }
 
+/* ==========================================================================
+   INTERACTIVE RECOMMENDATION QUIZ
+   ========================================================================== */
+.pv-quiz-trigger-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.pv-quiz-trigger-btn {
+    background: linear-gradient(135deg, rgba(0, 172, 223, 0.08) 0%, rgba(0, 172, 223, 0.03) 100%);
+    color: #00ACDF;
+    border: 1.5px solid rgba(0, 172, 223, 0.25);
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0, 172, 223, 0.05);
+}
+.pv-quiz-trigger-btn:hover {
+    background: #00ACDF;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 172, 223, 0.25);
+    border-color: #00ACDF;
+}
+.pv-quiz-sparkle {
+    width: 18px;
+    height: 18px;
+}
+.pv-quiz-card {
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+}
+.pv-quiz-card.is-collapsed {
+    max-height: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border-color: transparent;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: none;
+}
+.pv-quiz-progress-bar {
+    height: 6px;
+    background: #f1f5f9;
+    width: 100%;
+}
+.pv-quiz-progress-fill {
+    height: 100%;
+    background: #00ACDF;
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pv-quiz-step {
+    display: none;
+    padding: 2.5rem 3rem;
+    animation: fadeInStep 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.pv-quiz-step.is-active {
+    display: block;
+}
+.pv-quiz-step h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+}
+.pv-quiz-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+.pv-quiz-opt {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #f8fafc;
+    border: 1.5px solid rgba(15, 23, 42, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    width: 100%;
+}
+.pv-quiz-opt:hover {
+    background: rgba(0, 172, 223, 0.03);
+    border-color: rgba(0, 172, 223, 0.3);
+    transform: translateY(-2px);
+}
+.pv-quiz-opt-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+}
+.pv-quiz-opt-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.pv-quiz-result {
+    text-align: center;
+    padding: 3.5rem 3rem;
+}
+.pv-quiz-success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.pv-quiz-result-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.pv-quiz-reset-btn {
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.pv-quiz-reset-btn:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+.pv-pricing-card.has-neon-recommend {
+    position: relative;
+    border: 2.5px solid #00ACDF !important;
+    box-shadow: 0 0 25px rgba(0, 172, 223, 0.45) !important;
+    transform: scale(1.02);
+}
+.pv-quiz-recommend-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00ACDF;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 10px rgba(0, 172, 223, 0.3);
+    z-index: 10;
+}
+
+/* ==========================================================================
+   ROI SAVINGS CALCULATOR
+   ========================================================================== */
+.pv-roi-calculator-container {
+    max-width: 1000px;
+    margin: 6rem auto 2rem auto;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 3.5rem;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04);
+}
+.pv-roi-header h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0.5rem 0 0.5rem;
+}
+.pv-roi-header p {
+    color: #64748b;
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+.pv-roi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+.pv-roi-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.pv-roi-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+.pv-roi-label strong {
+    font-size: 1.5rem;
+    color: #00ACDF;
+    font-weight: 900;
+}
+.pv-roi-slider {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    outline: none;
+    -webkit-appearance: none;
+}
+.pv-roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #00ACDF;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 172, 223, 0.4);
+    transition: transform 0.1s ease;
+}
+.pv-roi-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+.pv-roi-slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+.pv-roi-plan-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.pv-roi-selector-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #475569;
+}
+.pv-roi-plan-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.pv-roi-plan-btn {
+    background: #f8fafc;
+    border: 1.5px solid rgba(15, 23, 42, 0.05);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: left;
+    font-size: 0.92rem;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.pv-roi-plan-btn:hover {
+    background: #f1f5f9;
+    border-color: rgba(15, 23, 42, 0.1);
+}
+.pv-roi-plan-btn.is-active {
+    background: rgba(0, 172, 223, 0.05);
+    border-color: #00ACDF;
+    color: #00ACDF;
+}
+.pv-roi-visual {
+    background: #f8fafc;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 20px;
+    padding: 2.5rem;
+}
+.pv-roi-card-header {
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    padding-bottom: 0.75rem;
+}
+.pv-roi-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+.pv-roi-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.pv-roi-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+}
+.pv-roi-bar {
+    height: 14px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.pv-roi-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pv-roi-bar-inhouse .pv-roi-bar-fill {
+    background: #64748b;
+}
+.pv-roi-bar-prov .pv-roi-bar-fill {
+    background: #00ACDF;
+}
+.pv-roi-bar-subtext {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+.pv-roi-savings-banner {
+    margin-top: 2.25rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 1.5rem;
+    border-radius: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.pv-roi-savings-banner span {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #059669;
+}
+.pv-roi-savings-banner strong {
+    font-size: 2.25rem;
+    color: #10b981;
+    font-weight: 900;
+}
+
+@keyframes fadeInStep {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 991px) {
+    .pv-roi-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .pv-roi-calculator-container {
+        padding: 2.5rem 2rem;
+        margin-top: 4rem;
+    }
+}
+@media (max-width: 640px) {
+    .pv-quiz-step {
+        padding: 2rem 1.5rem;
+    }
+    .pv-quiz-options {
+        grid-template-columns: 1fr;
+    }
+    .pv-quiz-result-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .pv-quiz-result-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .pv-pricing-risk-reversal {
+        font-size: 0.85rem;
+        gap: 0.25rem;
+    }
+    .pv-dot-divider {
+        margin: 0 0.15rem;
+    }
+}
+
