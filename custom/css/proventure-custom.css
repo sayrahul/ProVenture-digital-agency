@@ -2552,3 +2552,160 @@ main.main {
     }
 }
 
+
+
+/* ========================================
+   18. PREMIUM REDESIGN OVERRIDES
+   ======================================== */
+
+:root {
+    --accent-gold: #c69214;
+    --accent-gold-light: #e6b33c;
+    --bg-dark: #15202c;
+    --text-slate: #475569;
+}
+
+/* Typography pairings */
+.pv-pricing-header h1,
+.pv-faq-header h2,
+.pv-testimonial-header h2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 700 !important;
+}
+
+body, 
+.pv-pricing-card,
+.pv-pricing-btn,
+.pv-faq-question,
+.pv-faq-answer,
+.pv-client-logo,
+.pv-testimonial-card,
+.pv-pricing-risk-reversal {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Custom logo badge */
+.pv-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 172, 223, 0.06) !important;
+    color: #00ACDF !important;
+    padding: 6px 14px !important;
+    border-radius: 999px !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 20px !important;
+    border: 1px solid rgba(0, 172, 223, 0.15) !important;
+}
+
+.pv-badge-motif {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.pv-badge:hover .pv-badge-motif {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Trust Bar / Risk Reversal Branding */
+.pv-pricing-risk-reversal {
+    color: var(--text-slate) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 3.5rem !important;
+}
+
+/* Equal Height Pricing Cards and Button Alignment */
+.pv-pricing-grid {
+    align-items: stretch !important;
+}
+
+.pv-pricing-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.pv-pricing-features-list {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    margin-bottom: 2rem !important;
+}
+
+.pv-pricing-btn {
+    margin-top: auto !important;
+}
+
+/* Checklist items with custom icons */
+.pv-pricing-features-list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.pv-pricing-features-list li svg.pv-feat-icon {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+    color: var(--accent-gold) !important;
+    margin-top: 2px !important;
+}
+
+/* Not Included item styling */
+.pv-pricing-features-list li.is-muted {
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    opacity: 0.65 !important;
+}
+
+.pv-pricing-features-list li.is-muted svg.pv-feat-icon {
+    color: #cbd5e1 !important;
+}
+
+.pv-pricing-divider {
+    height: 2px !important;
+    background: linear-gradient(90deg, rgba(198, 146, 20, 0.4) 0%, rgba(0, 172, 223, 0.4) 100%) !important;
+}
+
+/* Accordion transition to minus icon */
+.pv-faq-icon::before,
+.pv-faq-icon::after {
+    background: var(--accent-gold) !important;
+}
+
+.pv-faq-item.is-expanded .pv-faq-icon::before {
+    transform: rotate(0deg) !important;
+}
+
+.pv-faq-item.is-expanded .pv-faq-icon::after {
+    transform: rotate(90deg) scale(0) !important;
+    opacity: 0 !important;
+}
+
+/* Accessibility Focus States */
+.pv-pricing-switch:focus-visible,
+.pv-faq-question:focus-visible,
+.pv-pricing-btn:focus-visible,
+.pv-pricing-call-btn:focus-visible,
+.sitemenuitem:focus-visible {
+    outline: 3px solid var(--accent-gold) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 3px rgba(198, 146, 20, 0.4) !important;
+}
+
+.pv-pricing-switch:focus,
+.pv-faq-question:focus,
+.pv-pricing-btn:focus,
+.pv-pricing-call-btn:focus,
+.sitemenuitem:focus {
+    outline: none !important;
+}
+
+
+
+
