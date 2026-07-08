@@ -369,9 +369,21 @@
         }
 
         function isLightContextAtHeader() {
+            const headerEl = document.querySelector('.header');
+            let prevPointerEvents = '';
+            if (headerEl) {
+                prevPointerEvents = headerEl.style.pointerEvents;
+                headerEl.style.pointerEvents = 'none';
+            }
+
             const y = Math.min(74, window.innerHeight - 1);
             const x = Math.floor(window.innerWidth * 0.5);
             const el = document.elementFromPoint(x, y);
+
+            if (headerEl) {
+                headerEl.style.pointerEvents = prevPointerEvents;
+            }
+
             if (!el) return false;
 
             if (el.closest('.bg-white')) return true;

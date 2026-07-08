@@ -1194,6 +1194,19 @@ main.main {
     color: #cbd5e1;
 }
 
+.pv-pricing-not-included {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: -24px 0 32px 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.pv-pricing-not-included strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
 /* Action button inside card */
 .pv-pricing-btn {
     width: 100%;
