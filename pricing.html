@@ -4,12 +4,37 @@
 <head>
 	<meta charset="utf-8" />
 	<meta content="DPR,ViewPort-Width,Width" http-equiv="Accept-CH" />
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "FAQPage",
+	  "mainEntity": [
+	    {
+	      "@type": "Question",
+	      "name": "Are there any hidden setup fees in ProVenture retainer plans?",
+	      "acceptedAnswer": {
+	        "@type": "Answer",
+	        "text": "No, all ProVenture retainer pricing is transparent with fixed deliverables and clear starting costs."
+	      }
+	    },
+	    {
+	      "@type": "Question",
+	      "name": "Can we customize a monthly marketing retainer package?",
+	      "acceptedAnswer": {
+	        "@type": "Answer",
+	        "text": "Yes, we tailor retainers according to your specific business goals, mixing web design, graphic design, reels editing, and paid advertising."
+	      }
+	    }
+	  ]
+	}
+	</script>
 
 	<link href="https://fonts.googleapis.com/" rel="dns-prefetch" />
 	<link href="https://fonts.gstatic.com/" rel="dns-prefetch" />
 	<link href="https://fonts.googleapis.com/" rel="preconnect" />
 	<link href="https://fonts.gstatic.com/" rel="preconnect" />
 	<link href="custom/css/default-20252e34.css?v=113" rel="stylesheet" type="text/css" />
+	<link href="custom/css/vendor.min.css?v=1.0" rel="stylesheet" type="text/css" />
 	<link href="custom/css/proventure-custom.css?v=20260707-v5" rel="stylesheet" type="text/css" />
 	<link href="util/js/lenis/lenis.min.css" rel="stylesheet" type="text/css" />
 
@@ -92,7 +117,8 @@
 						<ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
 							<li id="navigation_2"><a class="sitemenuitem" href="about.html">About Us</a></li>
 							<li id="navigation_3"><a class="sitemenuitem" href="services.html">Services</a></li>
-							<li id="navigation_4"><a class="sitemenuitem" href="projects.html">Projects</a></li>
+							<li id="navigation_pricing"><a class="sitemenuitem active" aria-current="page" href="pricing.html">Pricing</a></li>
+							
 							<li id="navigation_5"><a class="sitemenuitem" href="clients.html">Clients</a></li>
 							<li id="navigation_6"><a class="sitemenuitem" href="contact.html">Contact Us</a></li>
 						</ul>
@@ -104,8 +130,6 @@
 										src="thumbnails/121216-533-600-Crop.jpg" width="533" />
 									<img alt="ProVenture Services &gt; Strategy" class="img-fluid img-thumbnail img-1"
 										height="600" loading="lazy" src="thumbnails/98123-533-600-Crop.jpg" width="533" />
-									<img alt="ProVenture Services &gt; Creation" class="img-fluid img-thumbnail img-2"
-										height="600" loading="lazy" src="thumbnails/99887-533-600-Crop.jpg" width="533" />
 									<img alt="ProVenture Services &gt; Marketing" class="img-fluid img-thumbnail img-3"
 										height="600" loading="lazy" src="thumbnails/120771-533-600-Crop.jpg" width="533" />
 									<img alt="ProVenture Services &gt; Applications"
@@ -119,14 +143,6 @@
 											<li><a href="graphic-design.html">Graphic Design &amp; Branding</a></li>
 											<li><a href="web-design.html">Website Design &amp; Development</a></li>
 											<li><a href="creative-content.html">Creative Content</a></li>
-										</ul>
-									</div>
-									<div class="servicenav-item" data-img=".img-2">
-										<a href="digital-printing.html"><span class="h3">Printing</span></a>
-										<ul class="catlist">
-											<li><a href="digital-printing.html">Digital Printing</a></li>
-											<li><a href="offset-printing.html">Offset Printing</a></li>
-											<li><a href="special-materials.html">Special Prints &amp; Event Material</a></li>
 										</ul>
 									</div>
 									<div class="servicenav-item" data-img=".img-3">
@@ -191,7 +207,74 @@
 							<span>100% Dedicated Team Guarantee</span>
 						</div>
 
-
+						<!-- Interactive Pricing & Service Estimator Widget -->
+						<div class="pv-calc-wrapper">
+							<div class="pv-calc-card">
+								<div class="pv-calc-header">
+									<div class="pv-calc-badge">Interactive Estimator</div>
+									<h2>Build Your Custom Agency Retainer</h2>
+									<p>Select the services your business needs right now for a real-time estimate.</p>
+								</div>
+								<div class="pv-calc-body">
+									<div class="pv-calc-services-grid">
+										<label class="pv-calc-checkbox-card">
+											<input type="checkbox" class="pv-calc-option" data-monthly="4000" data-annual="3600" value="web-dev" checked />
+											<div class="pv-calc-option-content">
+												<span class="pv-calc-option-title">Website Management & Development</span>
+												<span class="pv-calc-option-desc">Performance hosting, UI updates & landing page tweaks</span>
+												<span class="pv-calc-option-price">+₹4,000/mo</span>
+											</div>
+										</label>
+										<label class="pv-calc-checkbox-card">
+											<input type="checkbox" class="pv-calc-option" data-monthly="3000" data-annual="2700" value="social-posts" checked />
+											<div class="pv-calc-option-content">
+												<span class="pv-calc-option-title">Social Media Graphics (8 Posts)</span>
+												<span class="pv-calc-option-desc">Custom brand creatives, stories & caption copy</span>
+												<span class="pv-calc-option-price">+₹3,000/mo</span>
+											</div>
+										</label>
+										<label class="pv-calc-checkbox-card">
+											<input type="checkbox" class="pv-calc-option" data-monthly="5000" data-annual="4500" value="reels-video" />
+											<div class="pv-calc-option-content">
+												<span class="pv-calc-option-title">Short-Form Reels (4 Videos)</span>
+												<span class="pv-calc-option-desc">Trending edits, sound sync & post-production</span>
+												<span class="pv-calc-option-price">+₹5,000/mo</span>
+											</div>
+										</label>
+										<label class="pv-calc-checkbox-card">
+											<input type="checkbox" class="pv-calc-option" data-monthly="6000" data-annual="5400" value="paid-ads" />
+											<div class="pv-calc-option-content">
+												<span class="pv-calc-option-title">Google & Meta Ads Management</span>
+												<span class="pv-calc-option-desc">Targeted lead generation & campaign setup</span>
+												<span class="pv-calc-option-price">+₹6,000/mo</span>
+											</div>
+										</label>
+										<label class="pv-calc-checkbox-card">
+											<input type="checkbox" class="pv-calc-option" data-monthly="4500" data-annual="4050" value="seo-growth" />
+											<div class="pv-calc-option-content">
+												<span class="pv-calc-option-title">Local SEO & Google Profile</span>
+												<span class="pv-calc-option-desc">Organic rank optimization & local citation updates</span>
+												<span class="pv-calc-option-price">+₹4,500/mo</span>
+											</div>
+										</label>
+									</div>
+									<div class="pv-calc-summary">
+										<div class="pv-calc-total-box">
+											<span class="pv-calc-total-label">Estimated Investment</span>
+											<div class="pv-calc-price-display">
+												<span class="pv-calc-currency">₹</span>
+												<span id="pv-calc-total-amount">7,000</span>
+												<span class="pv-calc-period">/ month</span>
+											</div>
+											<span class="pv-calc-saving-note" id="pv-calc-saving-note">Monthly Billing</span>
+										</div>
+										<div class="pv-calc-action">
+											<a href="contact.html?ref=custom-estimate" id="pv-calc-cta-btn" class="pv-pricing-btn is-highlight">Get Custom Proposal &rarr;</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
 						<!-- Pricing Cards Grid -->
 						<div class="pv-pricing-grid">
@@ -243,7 +326,7 @@
 									</li>
 									<li class="is-muted">
 										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-										<span>Print Media Support</span>
+										<span>Brand Support</span>
 									</li>
 									<li class="is-muted">
 										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
@@ -298,8 +381,8 @@
 										<span><strong>4 Reels/Videos</strong> (cinematic editing, B-rolls, & captions)</span>
 									</li>
 									<li>
-										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-										<span><strong>Print Media Support</strong> (up to 4 materials: banners, flyers, etc.)</span>
+										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+										<span><strong>Brand Support</strong></span>
 									</li>
 									<li>
 										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -365,8 +448,8 @@
 										<span><strong>10 Reels/Videos</strong> (pro edits, captions, B-rolls, audio mixes)</span>
 									</li>
 									<li>
-										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-										<span><strong>All Print Media Design</strong> (up to 20 materials: flyers, booklets, banners)</span>
+										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+										<span><strong>All Brand Design</strong></span>
 									</li>
 									<li>
 										<svg class="pv-feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/><line x1="12" y1="17" x2="12" y2="20"/></svg>
@@ -417,117 +500,8 @@
 
 
 
-			</main>
-
-			<section class="pv-faq-section">
-				<div class="pv-faq-bg-blobs">
-					<div class="pv-blob pv-blob-1"></div>
-					<div class="pv-blob pv-blob-2"></div>
-					<div class="pv-blob pv-blob-3"></div>
-					<div class="pv-blob pv-blob-4"></div>
-				</div>
-				<div class="container-big">
-					<div class="pv-faq-header text-center">
-						<h2 class="h1">Frequently Asked Questions</h2>
-						<p>Have questions about how our design and digital marketing retainers work? Find clear answers on billing cycles, revision scopes, and service turnarounds below.</p>
-					</div>
-					<div class="pv-faq-container" style="display: block; max-width: 800px; margin: 0 auto;">
-						<div class="pv-faq-content" style="max-width: 100%;">
-							<div class="pv-faq-panel is-active" id="faq-pricing">
-								
-								<div class="pv-faq-item is-expanded">
-									<button type="button" class="pv-faq-question">
-										<span>Which plan is right for me?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Starter suits a business just getting its social presence and Google listing in order. Professional is built for businesses actively running paid campaigns and needing print + SEO support alongside social. Enterprise is for businesses that need a full custom website built and maintained alongside all marketing operations.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>Can I upgrade or downgrade my plan?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Yes. You can switch plans at the start of any billing cycle. Upgrades take effect immediately; downgrades take effect from the next billing cycle.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>How many revisions do I get?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Starter includes 2 rounds of revisions per deliverable, Professional includes 3 rounds, and Enterprise includes unlimited revisions. A "round" means one consolidated set of feedback per asset — this keeps turnaround times predictable while still giving you room to get it right.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>What happens if I need more revisions than my plan includes?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Additional revision rounds beyond your plan's limit can be added for a small per-asset fee, agreed before work begins.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>What if I need more website hours than my plan includes?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Starter includes 2 hrs/month, Professional includes 5 hrs/month of website updates. Additional hours are billed at our standard hourly rate. Enterprise clients get ongoing development support included as part of the retainer.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>Do I own the content and files created for me?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Starter and Professional clients receive full usage rights to posted/published content. Source files (raw design files, unpublished assets, website codebase ownership) are included only with the Enterprise plan. Starter/Professional clients can add full source-file ownership as a one-time add-on.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>Is there a minimum contract period?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Plans run month-to-month with no long-term lock-in. We ask for 30 days' notice before cancellation so we can wrap up any work in progress.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>What's the turnaround time on deliverables?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Standard turnaround is 48–72 hours per asset for Starter and Professional plans. Enterprise clients get priority turnaround through the dedicated hotline.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>Can I get print media or paid ads on the Starter plan?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Not included in Starter by default, but both can be added on a per-project basis — ask us for a quick quote.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>Do you offer annual billing discounts?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Yes — pay annually and save 10% compared to the monthly rate on any plan.</p></div>
-								</div>
-
-								<div class="pv-faq-item">
-									<button type="button" class="pv-faq-question">
-										<span>What if my business needs something outside these plans?</span>
-										<div class="pv-faq-icon"></div>
-									</button>
-									<div class="pv-faq-answer"><p>Every business is different — if none of these plans fit exactly, reach out for a custom quote built around what you actually need.</p></div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
 			</section>
+			</main>
 
 			<footer class="footer bg-gradient">
 				<div class="container-big">
@@ -605,6 +579,8 @@
 								<a class="pagelink" href="terms.html"
 									title="ProVenture Digital Agency - Terms &amp; Conditions">Terms &amp;
 									Conditions</a>
+								-
+								<a class="pagelink" href="pricing.html" title="ProVenture Digital Agency - Pricing">Pricing</a>
 							</span>
 						</span>
 					</div>

@@ -31,14 +31,16 @@
         const start = 0;
         const increment = target / (duration / 16);
         let current = start;
+        const suffix = element.getAttribute('data-suffix') || '';
+        const prefix = element.getAttribute('data-prefix') || '';
 
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                element.textContent = target;
+                element.textContent = prefix + target + suffix;
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current);
+                element.textContent = prefix + Math.floor(current) + suffix;
             }
         }, 16);
     }
@@ -416,6 +418,103 @@
     }
 
     // ========================================
+    // INTERACTIVE PRICING CALCULATOR
+    // ========================================
+    function initPricingCalculator() {
+        const totalAmountEl = document.getElementById('pv-calc-total-amount');
+        const savingNoteEl = document.getElementById('pv-calc-saving-note');
+        const options = document.querySelectorAll('.pv-calc-option');
+        const billingSwitch = document.getElementById('billing-switch');
+
+        if (!totalAmountEl || !options.length) return;
+
+        function calculateTotal() {
+            let isAnnual = billingSwitch ? billingSwitch.classList.contains('is-annual') : false;
+            let total = 0;
+
+            options.forEach(opt => {
+                if (opt.checked) {
+                    const price = parseInt(isAnnual ? opt.getAttribute('data-annual') : opt.getAttribute('data-monthly'));
+                    total += isNaN(price) ? 0 : price;
+                }
+            });
+
+            totalAmountEl.textContent = total.toLocaleString('en-IN');
+            if (savingNoteEl) {
+                savingNoteEl.textContent = isAnnual ? 'Annual Billing (10% Off Applied)' : 'Monthly Billing';
+                savingNoteEl.style.color = isAnnual ? '#38bdf8' : '#94a3b8';
+            }
+        }
+
+        options.forEach(opt => opt.addEventListener('change', calculateTotal));
+        if (billingSwitch) {
+            billingSwitch.addEventListener('click', () => setTimeout(calculateTotal, 50));
+        }
+
+        calculateTotal();
+    }
+
+    // ========================================
+    // VIDEO LIGHTBOX MODAL
+    // ========================================
+    function initVideoLightboxModal() {
+        const videoTriggers = document.querySelectorAll('.sitevideo video, [data-video-src]');
+        if (!videoTriggers.length) return;
+
+        let overlay = document.querySelector('.pv-video-modal-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'pv-video-modal-overlay';
+            overlay.innerHTML = `
+                <div class="pv-video-modal-container">
+                    <button class="pv-video-modal-close" aria-label="Close video">&times;</button>
+                    <video class="pv-video-modal-video" controls autoplay></video>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+        }
+
+        const modalVideo = overlay.querySelector('.pv-video-modal-video');
+        const closeBtn = overlay.querySelector('.pv-video-modal-close');
+
+        function closeModal() {
+            overlay.classList.remove('is-open');
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.src = '';
+            }
+        }
+
+        videoTriggers.forEach(trigger => {
+            trigger.style.cursor = 'pointer';
+            trigger.addEventListener('click', (e) => {
+                let videoSrc = '';
+                if (trigger.tagName === 'VIDEO') {
+                    const source = trigger.querySelector('source');
+                    videoSrc = source ? source.src : trigger.src;
+                } else {
+                    videoSrc = trigger.getAttribute('data-video-src');
+                }
+
+                if (videoSrc && modalVideo) {
+                    e.preventDefault();
+                    modalVideo.src = videoSrc;
+                    overlay.classList.add('is-open');
+                    modalVideo.play().catch(() => {});
+                }
+            });
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+        });
+    }
+
+    // ========================================
     // INITIALIZE ALL FEATURES
     // ========================================
     function init() {
@@ -438,9 +537,12 @@
         initBackToTop();
         initMobileNavActiveState();
         initHeaderThemeSwitch();
+        initPricingCalculator();
+        initVideoLightboxModal();
     }
 
     // Start initialization
     init();
 
 })();
+

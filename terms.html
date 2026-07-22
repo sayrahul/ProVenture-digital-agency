@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html class="mozilla" lang="en">
 <head>
@@ -15,256 +15,9 @@
 <link href="https://fonts.googleapis.com/" rel="preconnect"/>
 <link href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link href="custom/css/default-20252e34.css?v=112" rel="stylesheet" type="text/css"/>
+<link href="custom/css/vendor.min.css?v=1.0" rel="stylesheet" type="text/css"/>
 <link href="custom/css/proventure-custom.css?v=20260308" rel="stylesheet" type="text/css"/>
 <link href="util/js/lenis/lenis.min.css" rel="stylesheet" type="text/css"/>
-<style nonce="ad1f02f363bf4f45afd5b4b5c5db4c34">
-		/*! Flickity v2.3.0
-https://flickity.metafizzy.co
----------------------------------------------- */
-		.flickity-enabled {
-			position: relative;
-		}
-
-		.flickity-enabled:focus {
-			outline: none;
-		}
-
-		.flickity-viewport {
-			overflow: hidden;
-			position: relative;
-			height: 100%;
-		}
-
-		.flickity-slider {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-
-		.flickity-enabled.is-draggable {
-			-webkit-tap-highlight-color: transparent;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-		}
-
-		.flickity-enabled.is-draggable .flickity-viewport {
-			cursor: move;
-			cursor: -webkit-grab;
-			cursor: grab;
-		}
-
-		.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-			cursor: -webkit-grabbing;
-			cursor: grabbing;
-		}
-
-		.flickity-button {
-			position: absolute;
-			background: hsla(0, 0%, 100%, .75);
-			border: none;
-			color: #333;
-		}
-
-		.flickity-button:hover {
-			background: #fff;
-			cursor: pointer;
-		}
-
-		.flickity-button:focus {
-			outline: none;
-			box-shadow: 0 0 0 5px #19f;
-		}
-
-		.flickity-button:active {
-			opacity: .6;
-		}
-
-		.flickity-button:disabled {
-			opacity: .3;
-			cursor: auto;
-			pointer-events: none;
-		}
-
-		.flickity-button-icon {
-			fill: currentColor;
-		}
-
-		.flickity-prev-next-button {
-			top: 50%;
-			width: 44px;
-			height: 44px;
-			border-radius: 50%;
-			transform: translateY(-50%);
-		}
-
-		.flickity-prev-next-button.previous {
-			left: 10px;
-		}
-
-		.flickity-prev-next-button.next {
-			right: 10px;
-		}
-
-		.flickity-rtl .flickity-prev-next-button.previous {
-			left: auto;
-			right: 10px;
-		}
-
-		.flickity-rtl .flickity-prev-next-button.next {
-			right: auto;
-			left: 10px;
-		}
-
-		.flickity-prev-next-button .flickity-button-icon {
-			position: absolute;
-			left: 20%;
-			top: 20%;
-			width: 60%;
-			height: 60%;
-		}
-
-		.flickity-page-dots {
-			position: absolute;
-			width: 100%;
-			bottom: -25px;
-			padding: 0;
-			margin: 0;
-			list-style: none;
-			text-align: center;
-			line-height: 1;
-		}
-
-		.flickity-rtl .flickity-page-dots {
-			direction: rtl;
-		}
-
-		.flickity-page-dots .dot {
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			margin: 0 8px;
-			background: #333;
-			border-radius: 50%;
-			opacity: .25;
-			cursor: pointer;
-		}
-
-		.flickity-page-dots .dot.is-selected {
-			opacity: 1;
-		}
-	</style>
-<style nonce="ad1f02f363bf4f45afd5b4b5c5db4c34">
-		.cc-window {
-			display: flex;
-			flex-wrap: nowrap;
-			flex-direction: column;
-			align-content: center;
-			font-size: 15px;
-			line-height: 1.4em;
-			box-sizing: border-box;
-			padding: 20px;
-			box-shadow: 0 0 16px rgba(0, 0, 0, .4);
-			position: fixed;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			overflow: hidden;
-			z-index: 9999;
-			opacity: 1;
-			-webkit-transition: opacity 1s ease;
-			-moz-transition: opacity 1s ease;
-			-o-transition: opacity 1s ease;
-			transition: opacity 1s ease;
-		}
-
-		.cc-window.cc-invisible {
-			opacity: 0 !important;
-		}
-
-		@media screen and (min-width:900px) {
-			.cc-window {
-				flex-direction: row;
-			}
-		}
-
-		.cc-window .cc-message {
-			flex: 1 1 auto;
-		}
-
-		.cc-window .cc-compliance {
-			display: flex;
-			flex: 0 1 auto;
-			align-items: center;
-			align-content: space-between;
-			flex-direction: column;
-			flex-wrap: nowrap;
-			margin-top: 20px;
-		}
-
-		.cc-window .cc-compliance .cc-btn {
-			cursor: pointer;
-			color: #fff;
-			flex: 1 0 auto;
-			width: 100%;
-			line-height: 24px;
-			padding: 10px 20px;
-			text-align: center;
-			text-transform: uppercase;
-			transition: all .15s linear;
-		}
-
-		.cc-window .cc-compliance .cc-btn:not(:first-child) {
-			margin-top: 10px;
-		}
-
-		.cc-window .cc-compliance .cc-btn.cc-dismiss {
-			background: transparent;
-			border: 1px solid rgba(255, 255, 255, .1);
-		}
-
-		.cc-window .cc-compliance .cc-btn:hover,
-		.cc-window .cc-compliance .cc-btn:active,
-		.cc-window .cc-compliance .cc-btn:focus {
-			border-color: #fff;
-		}
-
-		.cc-window .cc-compliance .cc-btn:last-child,
-		.cc-window .cc-compliance .cc-btn.cc-allow {
-			color: #000;
-			font-size: 18px;
-			border: 1px solid rgba(255, 255, 255, .1);
-			background: rgba(255, 255, 255, .9);
-		}
-
-		.cc-window .cc-compliance .cc-btn:last-child:hover,
-		.cc-window .cc-compliance .cc-btn.cc-allow:hover,
-		.cc-window .cc-compliance .cc-btn:last-child:active,
-		.cc-window .cc-compliance .cc-btn.cc-allow:active,
-		.cc-window .cc-compliance .cc-btn:last-child:focus,
-		.cc-window .cc-compliance .cc-btn.cc-allow:focus {
-			background: #fff;
-			border-color: #fff;
-		}
-
-		@media screen and (min-width:900px) {
-			.cc-window .cc-compliance {
-				flex-direction: row;
-				margin-top: 0;
-				margin-left: 40px;
-			}
-
-			.cc-window .cc-compliance .cc-btn {
-				width: auto;
-			}
-
-			.cc-window .cc-compliance .cc-btn:not(:first-child) {
-				margin-top: 0;
-				margin-left: 10px;
-			}
-		}
-	</style>
 <style nonce="ad1f02f363bf4f45afd5b4b5c5db4c34">
 		*,
 		*::before,
@@ -13671,7 +13424,7 @@ https://flickity.metafizzy.co
       "logo": "https://proventure.in/icon.png",
       "telephone": "+919595997711",
       "email": "proventurein@gmail.com",
-      "description": "ProVenture delivers digital marketing, branding, web design, video production, and print solutions for businesses in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra.",
+      "description": "ProVenture delivers digital marketing, branding, web design, video production, and solutions for businesses in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra.",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -13802,8 +13555,8 @@ https://flickity.metafizzy.co
 						<ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
 							<li id="navigation_2"><a class="sitemenuitem" href="about.html">About Us</a></li>
 							<li id="navigation_3"><a class="sitemenuitem" href="services.html">Services</a></li>
-							<li id="navigation_4"><a class="sitemenuitem" href="projects.html">Projects</a>
-							</li>
+							<li id="navigation_pricing"><a class="sitemenuitem" href="pricing.html">Pricing</a></li>
+							
 							<li id="navigation_5"><a class="sitemenuitem" href="clients.html">Clients</a></li>
 							<li id="navigation_6"><a class="sitemenuitem" href="contact.html">Contact Us</a></li>
 						</ul>
@@ -13815,9 +13568,6 @@ https://flickity.metafizzy.co
 										src="thumbnails/121216-533-600-Crop.jpg" width="533" />
 									<img alt="ProVenture Services &gt; Strategy" class="img-fluid img-thumbnail img-1"
 										height="600" loading="lazy" src="thumbnails/98123-533-600-Crop.jpg"
-										width="533" />
-									<img alt="ProVenture Services &gt; Creation" class="img-fluid img-thumbnail img-2"
-										height="600" loading="lazy" src="thumbnails/99887-533-600-Crop.jpg"
 										width="533" />
 									<img alt="ProVenture Services &gt; Marketing" class="img-fluid img-thumbnail img-3"
 										height="600" loading="lazy" src="thumbnails/120771-533-600-Crop.jpg"
@@ -13833,15 +13583,6 @@ https://flickity.metafizzy.co
 											<li><a href="graphic-design.html">Graphic Design &amp; Branding</a></li>
 											<li><a href="web-design.html">Website Design &amp; Development</a></li>
 											<li><a href="creative-content.html">Creative Content</a></li>
-										</ul>
-									</div>
-									<div class="servicenav-item" data-img=".img-2">
-										<a href="digital-printing.html"><span class="h3">Printing</span></a>
-										<ul class="catlist">
-											<li><a href="digital-printing.html">Digital Printing</a></li>
-											<li><a href="offset-printing.html">Offset Printing</a></li>
-											<li><a href="special-materials.html">Special Prints &amp; Event
-													Material</a></li>
 										</ul>
 									</div>
 									<div class="servicenav-item" data-img=".img-3">
@@ -14074,6 +13815,8 @@ https://flickity.metafizzy.co
 								<a class="pagelink" href="terms.html"
 									title="ProVenture Digital Agency - Terms &amp; Conditions">Terms &amp;
 									Conditions</a>
+								-
+								<a class="pagelink" href="pricing.html" title="ProVenture Digital Agency - Pricing">Pricing</a>
 							</span>
 						</span>
 					</div>

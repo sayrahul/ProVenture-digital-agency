@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailField = document.getElementById('email');
             const messageField = document.getElementById('message');
 
+            // Honeypot Anti-Spam Check
+            const hpField = document.getElementById('website_url_hp');
+            if (hpField && hpField.value) {
+                console.warn('Spam detected via honeypot field.');
+                alert("Thank you! Your message has been sent.");
+                return;
+            }
+
             // Empty Field Check
             if (!nameField.value || !emailField.value || !messageField.value) {
                 alert("Please fill in Name, Email, and Message.");

@@ -21,6 +21,11 @@ class handler(BaseHTTPRequestHandler):
             post_data = self.rfile.read(content_length)
             data = json.loads(post_data.decode('utf-8'))
             
+            # Check Honeypot Field
+            if data.get('website_url_hp'):
+                self._send_response(200, {"status": "success", "message": "Form submitted successfully"})
+                return
+
             # Validate required fields
             if not data or not data.get('email'):
                 self._send_error(400, "Email is required")
