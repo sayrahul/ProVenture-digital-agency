@@ -341,8 +341,8 @@
         const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
         const map = {
             'index.html': '.pv-nav-home',
-            'about.html': '.pv-nav-about',
             'services.html': '.pv-nav-services',
+            'pricing.html': '.pv-nav-pricing',
             'clients.html': '.pv-nav-clients',
             'contact.html': '.pv-nav-contact'
         };
@@ -515,6 +515,135 @@
     }
 
     // ========================================
+    // STICKY CTA BAR
+    // ========================================
+    function initStickyCta() {
+        if (document.querySelector('.pv-sticky-cta')) return;
+
+        const bar = document.createElement('div');
+        bar.className = 'pv-sticky-cta';
+        bar.innerHTML = `
+            <div class="pv-sticky-cta-text">
+                Ready to grow your brand?
+                <span>Get a free consultation today</span>
+            </div>
+            <div class="pv-sticky-cta-actions">
+                <a href="contact.html" class="pv-btn-primary">Get a Quote</a>
+            </div>
+        `;
+        document.body.appendChild(bar);
+
+        window.addEventListener('scroll', () => {
+            bar.classList.toggle('is-visible', window.pageYOffset > 600);
+        }, { passive: true });
+    }
+
+    // ========================================
+    // WHATSAPP FAB
+    // ========================================
+    function initWhatsAppFab() {
+        if (document.querySelector('.pv-whatsapp-fab')) return;
+
+        const fab = document.createElement('a');
+        fab.className = 'pv-whatsapp-fab';
+        fab.href = 'https://wa.me/919595997711';
+        fab.target = '_blank';
+        fab.rel = 'noopener noreferrer';
+        fab.setAttribute('aria-label', 'Chat on WhatsApp');
+        fab.innerHTML = '<svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>';
+        document.body.appendChild(fab);
+    }
+
+    // ========================================
+    // TESTIMONIALS CAROUSEL
+    // ========================================
+    function initTestimonialsCarousel() {
+        const track = document.querySelector('.pv-testimonials-track');
+        if (!track) return;
+
+        const slides = track.querySelectorAll('.pv-testimonial-slide');
+        const prevBtn = document.querySelector('.pv-testimonials-prev');
+        const nextBtn = document.querySelector('.pv-testimonials-next');
+        const dotsWrap = document.querySelector('.pv-testimonials-dots');
+        let current = 0;
+
+        function goTo(index) {
+            current = Math.max(0, Math.min(index, slides.length - 1));
+            const slide = slides[current];
+            if (slide) {
+                track.scrollTo({ left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+            }
+            if (dotsWrap) {
+                dotsWrap.querySelectorAll('button').forEach((dot, i) => {
+                    dot.classList.toggle('is-active', i === current);
+                });
+            }
+        }
+
+        if (dotsWrap) {
+            dotsWrap.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+                if (i === 0) dot.classList.add('is-active');
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+    }
+
+    // ========================================
+    // PROJECT SLIDER NAV
+    // ========================================
+    function initProjectSliderNav() {
+        const slider = document.querySelector('.projectslider');
+        const counter = document.querySelector('.pv-project-counter');
+        const prevBtn = document.querySelector('.pv-project-prev');
+        const nextBtn = document.querySelector('.pv-project-next');
+        if (!slider || !window.jQuery) return;
+
+        const $slider = window.jQuery(slider);
+        const flkty = $slider.data('flickity');
+
+        function updateCounter() {
+            if (!counter || !flkty) return;
+            counter.textContent = (flkty.selectedIndex + 1) + ' / ' + flkty.slides.length;
+        }
+
+        if (flkty) {
+            $slider.on('select.flickity', updateCounter);
+            updateCounter();
+        }
+
+        if (prevBtn && flkty) prevBtn.addEventListener('click', () => flkty.previous());
+        if (nextBtn && flkty) nextBtn.addEventListener('click', () => flkty.next());
+    }
+
+    // ========================================
+    // CLIENT FILTERS
+    // ========================================
+    function initClientFilters() {
+        const filters = document.querySelectorAll('.pv-client-filter');
+        const items = document.querySelectorAll('.clients-item[data-category]');
+        if (!filters.length || !items.length) return;
+
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filters.forEach(f => f.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const cat = btn.getAttribute('data-filter');
+                items.forEach(item => {
+                    const show = cat === 'all' || item.getAttribute('data-category') === cat;
+                    item.classList.toggle('is-hidden', !show);
+                });
+            });
+        });
+    }
+
+    // ========================================
     // INITIALIZE ALL FEATURES
     // ========================================
     function init() {
@@ -539,6 +668,11 @@
         initHeaderThemeSwitch();
         initPricingCalculator();
         initVideoLightboxModal();
+        initStickyCta();
+        initWhatsAppFab();
+        initTestimonialsCarousel();
+        initClientFilters();
+        setTimeout(initProjectSliderNav, 500);
     }
 
     // Start initialization
