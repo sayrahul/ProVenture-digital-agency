@@ -3990,9 +3990,14 @@ img {
     z-index: 10006 !important;
 }
 
-/* ========================================
-   PROJECT SLIDER ARROW BUTTONS (< >)
-   ======================================== */
+.projectslider .flickity-prev-next-button.previous {
+    transform: none !important;
+}
+
+.projectslider .flickity-prev-next-button.next {
+    transform: none !important;
+}
+
 .projectslider .flickity-button {
     border: 1.5px solid #182533 !important;
     border-radius: 50% !important;
