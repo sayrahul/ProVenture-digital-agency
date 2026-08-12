@@ -3989,3 +3989,37 @@ img {
     background-color: #ffffff !important;
     z-index: 10006 !important;
 }
+
+/* ========================================
+   PROJECT SLIDER ARROW BUTTONS (< >)
+   ======================================== */
+.projectslider .flickity-button {
+    border: 1.5px solid #182533 !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.25s ease !important;
+}
+
+.projectslider .flickity-button svg {
+    display: block !important;
+    width: 44% !important;
+    height: 44% !important;
+    position: absolute !important;
+    top: 28% !important;
+    left: 28% !important;
+    fill: #182533 !important;
+    transition: fill 0.2s ease !important;
+}
+
+.projectslider .flickity-button:hover,
+.projectslider .flickity-button:focus {
+    border-color: #00ACDF !important;
+    background-color: #00ACDF !important;
+    transform: scale(1.08) !important;
+}
+
+.projectslider .flickity-button:hover svg,
+.projectslider .flickity-button:focus svg {
+    fill: #ffffff !important;
+}
