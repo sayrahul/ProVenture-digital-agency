@@ -643,6 +643,29 @@
         });
     }
 
+    function initMobileNavToggle() {
+        const toggles = document.querySelectorAll('.navtoggle');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                document.documentElement.classList.toggle('shownav');
+            });
+        });
+
+        document.querySelectorAll('.mainnav a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.documentElement.classList.remove('shownav');
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                document.documentElement.classList.remove('shownav');
+            }
+        });
+    }
+
     // ========================================
     // INITIALIZE ALL FEATURES
     // ========================================
@@ -665,11 +688,10 @@
         initLazyLoad();
         initBackToTop();
         initMobileNavActiveState();
+        initMobileNavToggle();
         initHeaderThemeSwitch();
         initPricingCalculator();
         initVideoLightboxModal();
-        initStickyCta();
-        initWhatsAppFab();
         initTestimonialsCarousel();
         initClientFilters();
         setTimeout(initProjectSliderNav, 500);
@@ -679,4 +701,3 @@
     init();
 
 })();
-
