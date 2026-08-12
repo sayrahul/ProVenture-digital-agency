@@ -289,15 +289,7 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Lazy loading images */
-img[loading="lazy"] {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-img[loading="lazy"].loaded {
-    opacity: 1;
-}
+/* Lazy loading images (handled natively by browser) */
 
 /* ========================================
    MOBILE NAVIGATION ENHANCEMENTS

@@ -23,7 +23,7 @@ class handler(BaseHTTPRequestHandler):
             
             # Check Honeypot Field
             if data.get('website_url_hp'):
-                self._send_response(200, {"status": "success", "message": "Form submitted successfully"})
+                self._send_success({"status": "success", "message": "Form submitted successfully"})
                 return
 
             # Validate required fields
@@ -41,14 +41,17 @@ class handler(BaseHTTPRequestHandler):
             
             # Prepare data row
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            interests = data.get('interest', [])
+            interest_str = ", ".join(interests) if isinstance(interests, list) else str(interests)
+
             row_data = [
                 timestamp,
-                data.get('name', ''),
-                data.get('email', ''),
-                data.get('phone', ''),
-                data.get('company', ''),
-                ", ".join(data.get('interest', [])),
-                data.get('message', '')
+                str(data.get('name', '')).strip(),
+                str(data.get('email', '')).strip(),
+                str(data.get('phone', '')).strip(),
+                str(data.get('company', '')).strip(),
+                interest_str,
+                str(data.get('message', '')).strip()
             ]
 
             # Google Sheets Integration
@@ -115,7 +118,12 @@ class handler(BaseHTTPRequestHandler):
         }).encode())
     
     def _set_cors_headers(self):
-        """Set CORS headers for cross-origin requests"""
-        self.send_header('Access-Control-Allow-Origin', 'https://proventure.in')
+        """Set CORS headers for cross-origin requests dynamically"""
+        origin = self.headers.get('Origin', '')
+        allowed_origin = 'https://proventure.in'
+        if origin and (origin.endswith('proventure.in') or 'localhost' in origin or '127.0.0.1' in origin):
+            allowed_origin = origin
+
+        self.send_header('Access-Control-Allow-Origin', allowed_origin)
         self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')

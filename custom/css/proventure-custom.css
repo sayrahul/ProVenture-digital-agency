@@ -3704,6 +3704,23 @@ main.main.contact-main {
     color: #0099cc;
 }
 
+/* ========================================
+   IMAGE & PRELOADER VISIBILITY FIXES
+   ======================================== */
+.is-loading .hero-parallax .parallax img,
+.is-loading .hero-parallax .parallax video,
+.is-loading .hero .flex-ctr .single-thumb img,
+.section-projects .client-logo img,
+.projectgrid .client-logo img {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+
 
 
 

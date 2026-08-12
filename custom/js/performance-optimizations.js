@@ -10,36 +10,22 @@
     // 1. LAZY LOADING IMAGES
     // ========================================
     function initLazyLoading() {
-        // Native lazy loading support
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
+        // Clear any stuck preloader is-loading class immediately
+        document.querySelectorAll('.is-loading').forEach(el => el.classList.remove('is-loading'));
+
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            if (img.complete) {
+                img.classList.add('loaded');
+            } else {
                 img.addEventListener('load', function () {
                     this.classList.add('loaded');
                 });
-            });
-        } else {
-            // Fallback for browsers that don't support native lazy loading
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.classList.add('loaded');
-                            observer.unobserve(img);
-                        }
-                    }
+                img.addEventListener('error', function () {
+                    this.classList.add('loaded');
                 });
-            }, {
-                rootMargin: '50px 0px',
-                threshold: 0.01
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
+            }
+        });
     }
 
     // ========================================
