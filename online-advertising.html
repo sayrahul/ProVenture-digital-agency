@@ -834,11 +834,6 @@
 			function () {$cursor.css({transform: 'translate(-50%, -50%) scale(1)'});}
 		);
 
-		// Navigation toggle
-		$('.navtoggle').click(function () {
-			$('html').toggleClass('shownav');
-		});
-
 		// Smooth scrolling with Lenis
 		const lenis = new Lenis({lerp: 0.08, wheelMultiplier: 1.2});
 		function raf(time) {lenis.raf(time); requestAnimationFrame(raf);}
