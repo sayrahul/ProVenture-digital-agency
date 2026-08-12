@@ -33,12 +33,6 @@
     }
 
     /* Mobile navigation */
-    .header-nav {
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-    }
-
     .mainnav {
         max-height: 100vh;
         overflow-y: auto;
