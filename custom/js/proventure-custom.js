@@ -877,6 +877,41 @@
     }
 
     // ========================================
+    // MOBILE BOTTOM NAV ACTIVE LINK HIGHLIGHT
+    // ========================================
+    function initMobileNavActiveState() {
+        const nav = document.querySelector('.pv-mobile-nav');
+        if (!nav) return;
+
+        const links = nav.querySelectorAll('a');
+        let currentPath = window.location.pathname.toLowerCase().split('/').pop();
+        if (!currentPath || currentPath === '' || currentPath === 'index.html') {
+            currentPath = 'index.html';
+        }
+
+        const servicePages = [
+            'services.html', 'graphic-design.html', 'web-design.html',
+            'digital-marketing.html', 'online-advertising.html', 'social-media.html',
+            'video-production.html', 'video-editing.html', 'video-marketing.html', 'creative-content.html'
+        ];
+
+        links.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (!href) return;
+            const targetPath = href.toLowerCase().split('/').pop();
+
+            if (currentPath === 'index.html' && (targetPath === 'index.html' || targetPath === '')) {
+                link.classList.add('active');
+            } else if (currentPath === targetPath) {
+                link.classList.add('active');
+            } else if (targetPath === 'services.html' && servicePages.includes(currentPath)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // ========================================
     // INITIALIZE ALL FEATURES
     // ========================================
     function init() {
