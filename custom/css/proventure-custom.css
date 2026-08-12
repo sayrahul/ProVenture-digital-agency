@@ -85,14 +85,13 @@
 
     .header .logoslogan .pv-wordmark-sub {
         gap: 0.24rem;
-        font-size: 0.52rem !important;
+        font-size: 0.34rem;
         letter-spacing: 0.16em;
-        color: rgba(255, 255, 255, 0.9) !important;
     }
 
     .header .logoslogan .pv-wordmark-dot {
-        width: 3.5px;
-        height: 3.5px;
+        width: 3px;
+        height: 3px;
     }
 }
 
@@ -3989,15 +3988,4 @@ img {
 .shownav .navtoggle span {
     background-color: #ffffff !important;
     z-index: 10006 !important;
-}
-
-/* Mobile Hero Section Padding Adjustment */
-@media only screen and (max-width: 767px) {
-    .heroreel {
-        padding-top: 68px !important;
-    }
-
-    .page_hom .hero {
-        padding-top: 5px !important;
-    }
 }
