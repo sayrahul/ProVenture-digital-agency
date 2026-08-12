@@ -3915,22 +3915,41 @@ img {
 }
 
 /* ========================================
-   1. SERVICE CARDS DESKTOP PARALLAX REMOVAL
+   1. SERVICE CARDS STICKY OVERLAP PARALLAX (DESKTOP & MOBILE)
    ======================================== */
-@media only screen and (min-width: 992px) {
+/* Restore original desktop sticky card overlapping parallax */
+.servicecard {
+    position: sticky !important;
+}
 
-    .servicecard,
-    .servicecard:nth-child(1),
-    .servicecard:nth-child(2),
-    .servicecard:nth-child(3),
-    .servicecard:nth-child(4) {
-        position: relative !important;
-        top: auto !important;
+.servicecard:nth-child(4) {
+    position: sticky !important;
+    top: 415px !important;
+}
+
+/* Mobile Sticky Card Overlap Effect */
+@media only screen and (max-width: 991.9px) {
+    .servicecard {
+        position: sticky !important;
+        top: 75px !important;
         margin-bottom: 30px !important;
+        box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.12) !important;
     }
 
-    .page_hom .servicecard:first-child {
-        margin-top: 0 !important;
+    .servicecard:nth-child(1) {
+        top: 75px !important;
+    }
+
+    .servicecard:nth-child(2) {
+        top: 110px !important;
+    }
+
+    .servicecard:nth-child(3) {
+        top: 145px !important;
+    }
+
+    .servicecard:nth-child(4) {
+        top: 180px !important;
     }
 }
 
