@@ -4018,3 +4018,16 @@ img {
 .projectslider .flickity-button:focus svg {
     fill: #ffffff !important;
 }
+
+/* Minimalist footer Call Us Now button */
+.footer .pv-btn-primary {
+    box-shadow: none !important;
+    transform: none !important;
+}
+.footer .pv-btn-primary:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+.footer .pv-btn-primary::before {
+    display: none !important;
+}
