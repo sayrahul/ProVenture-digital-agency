@@ -822,29 +822,9 @@
             toggle.addEventListener('click', toggleNav);
         });
 
-        // Dropdown accordion toggle logic for mobile (instant touch & click response)
-        const dropdownItems = document.querySelectorAll('.pv-has-dropdown');
-        dropdownItems.forEach(item => {
-            const btn = item.querySelector('.pv-dropdown-btn');
-            if (btn) {
-                function handleDropdown(e) {
-                    if (window.innerWidth < 992) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        item.classList.toggle('is-open');
-                    }
-                }
-                btn.addEventListener('touchstart', handleDropdown, { passive: false });
-                btn.addEventListener('click', handleDropdown);
-            }
-        });
-
-        // Close mobile nav ONLY when clicking actual destination links (not dropdown trigger)
+        // Close mobile nav when clicking any menu link
         document.querySelectorAll('.mainnav a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                if (this.classList.contains('pv-dropdown-btn')) {
-                    return; // Keep menu open when expanding dropdown
-                }
+            link.addEventListener('click', function () {
                 document.documentElement.classList.remove('shownav');
             });
         });

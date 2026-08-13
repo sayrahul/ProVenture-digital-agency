@@ -4249,40 +4249,95 @@ img {
 }
 
 @media (max-width: 991.98px) {
-    .navigation-level-1 .pv-has-dropdown > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-    }
-
-    .navigation-level-1 .pv-sub-navigation {
+    /* Hide top-level dropdown trigger link & arrow on mobile view */
+    .navigation-level-1 .pv-has-dropdown > a.pv-dropdown-btn {
         display: none !important;
-        position: static !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: rgba(255, 255, 255, 0.06) !important;
-        border-radius: 12px !important;
-        padding: 4px 16px !important;
-        margin: 8px 0 12px 0 !important;
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
     }
 
-    .navigation-level-1 .pv-has-dropdown.is-open .pv-sub-navigation {
+    /* Fixed Equal-Width 2-Column Grid Container */
+    .header .mainnav .navigation {
+        display: grid !important;
+        grid-template-columns: repeat(2, 125px) !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin: 80px auto 25px auto !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    /* Unwrap container elements so all 7 items flow in 2 balanced columns */
+    .navigation-level-1 .pv-has-dropdown,
+    .navigation-level-1 .pv-sub-navigation {
+        display: contents !important;
+    }
+
+    .navigation-level-1 li {
         display: block !important;
-    }
-    
-    .navigation-level-1 .pv-sub-navigation li a {
-        color: #ffffff !important;
-        font-size: 1.15rem !important;
-        padding: 10px 0 !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        width: 125px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .navigation-level-1 .pv-sub-navigation li:last-child a {
-        border-bottom: none !important;
+    /* Fixed Equal-Width Compact Button Styling */
+    .navigation-level-1 li a,
+    .navigation-level-1 .pv-sub-navigation li a {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 125px !important;
+        height: 38px !important;
+        padding: 0 8px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.01em !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        backdrop-filter: blur(10px) !important;
+        white-space: nowrap !important;
+        transition: all 0.2s ease !important;
+    }
+
+    /* Compact Number badge (01, 02, 03...) */
+    .navigation-level-1 .pv-sub-navigation li:nth-child(1) a::before { content: "01"; }
+    .navigation-level-1 .pv-sub-navigation li:nth-child(2) a::before { content: "02"; }
+    .navigation-level-1 .pv-sub-navigation li:nth-child(3) a::before { content: "03"; }
+    .navigation-level-1 > li#navigation_portfolio a::before { content: "04"; }
+    .navigation-level-1 > li#navigation_5 a::before { content: "05"; }
+    .navigation-level-1 > li#navigation_blog a::before { content: "06"; }
+    .navigation-level-1 > li#navigation_6 a::before { content: "07"; }
+
+    .navigation-level-1 li a::before,
+    .navigation-level-1 .pv-sub-navigation li a::before {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        color: #00ACDF !important;
+        margin-bottom: 0 !important;
+        letter-spacing: 0.03em !important;
+        opacity: 0.85 !important;
+    }
+
+    /* Clear arrow pseudo element */
+    .navigation-level-1 li a::after,
+    .navigation-level-1 .pv-sub-navigation li a::after {
+        content: "" !important;
+        display: none !important;
+    }
+
+    .navigation-level-1 li a:hover,
+    .navigation-level-1 .pv-sub-navigation li a:hover {
+        background: rgba(0, 172, 223, 0.18) !important;
+        border-color: #00ACDF !important;
+        color: #ffffff !important;
+        transform: translateY(-1px) !important;
+        padding-left: 8px !important;
     }
 }
 
