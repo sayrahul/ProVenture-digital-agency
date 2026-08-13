@@ -4375,18 +4375,23 @@ only screen and (max-width: 575.9px) {
 }
 
 .horizontal-scroll {
-    overflow-x: hidden
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+@media only screen and (max-width: 991.9px) {
+    .horizontal-scroll {
+        padding-top: 40px;
+    }
 }
 
 .goalslist {
-    margin-top: 80px;
     display: flex;
     padding: 0 3vw
 }
 
 @media only screen and (max-width: 991.9px) {
     .goalslist {
-        margin-top: 40px;
         padding: 0 20px
     }
 }

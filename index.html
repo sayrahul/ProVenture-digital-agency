@@ -2162,9 +2162,9 @@
 
 					scrollTrigger: {
 
-						trigger: goalslist,
+						trigger: goalslist.parentElement,
 
-						start: "center center",
+						start: window.matchMedia("(max-width: 768px)").matches ? "top 15%" : "center center",
 
 						end: () => `+=${scrollWidth}`,
 
