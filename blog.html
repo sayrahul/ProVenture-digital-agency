@@ -18,35 +18,25 @@
         }
         
         .blog-card {
-            border-radius: 20px;
+            border-radius: 4px;
             overflow: hidden;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eaeaea;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
         
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
         .blog-thumb {
             height: 240px;
             overflow: hidden;
+            border-bottom: 1px solid #eaeaea;
         }
         
         .blog-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .blog-card:hover .blog-thumb img {
-            transform: scale(1.05);
         }
         
         .blog-content {
@@ -65,38 +55,39 @@
         }
         
         .blog-tag {
-            color: var(--pv-primary, #00ACDF);
+            color: #00ACDF;
             font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
         }
         
         .blog-title {
             font-size: 1.4rem;
             margin-bottom: 15px;
-            line-height: 1.3;
+            line-height: 1.4;
+            font-weight: 600;
         }
         
         .blog-excerpt {
-            color: #666;
+            color: #555;
             margin-bottom: 25px;
             line-height: 1.6;
             flex-grow: 1;
         }
         
         .read-more {
-            color: var(--pv-primary, #00ACDF);
+            color: #00ACDF;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            transition: gap 0.2s ease;
-        }
-        
-        .read-more:hover {
-            gap: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
     </style>
-</link>
+
 	<title>Digital Marketing Blog Sambhajinagar | ProVenture</title>
 	<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots" />
 	<meta content="ProVenture Digital Agency" name="author" />
@@ -127,114 +118,34 @@
 	<meta content="Digital Marketing Blog in Chhatrapati Sambhajinagar | ProVenture" name="twitter:image:alt" />
 	<meta content="#FFFFFF" name="theme-color" />
 	<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": [
-        "LocalBusiness",
-        "MarketingAgency"
-      ],
-      "@id": "https://proventure.in/#organization",
-      "name": "ProVenture Digital Agency",
-      "url": "https://proventure.in/",
-      "image": "https://proventure.in/icon.png",
-      "logo": "https://proventure.in/icon.png",
-      "telephone": "+919595997711",
-      "email": "proventurein@gmail.com",
-      "description": "ProVenture delivers digital marketing, branding, web design, video production, and solutions for businesses in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra.",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kanchanwadi",
-        "addressLocality": "Chhatrapati Sambhajinagar",
-        "addressRegion": "Maharashtra",
-        "postalCode": "431001",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 19.8359784,
-        "longitude": 75.2958903
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Chhatrapati Sambhajinagar"
+{"@context":"https://schema.org","@graph": [
+    {"@type": ["LocalBusiness","MarketingAgency"
+      ],"@id":"https://proventure.in/#organization","name":"ProVenture Digital Agency","url":"https://proventure.in/","image":"https://proventure.in/icon.png","logo":"https://proventure.in/icon.png","telephone":"+919595997711","email":"proventurein@gmail.com","description":"ProVenture delivers digital marketing, branding, web design, video production, and solutions for businesses in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra.","priceRange":"$$","address": {"@type":"PostalAddress","streetAddress":"Kanchanwadi","addressLocality":"Chhatrapati Sambhajinagar","addressRegion":"Maharashtra","postalCode":"431001","addressCountry":"IN"
+      },"geo": {"@type":"GeoCoordinates","latitude": 19.8359784,"longitude": 75.2958903
+      },"areaServed": [
+        {"@type":"City","name":"Chhatrapati Sambhajinagar"
         },
-        {
-          "@type": "City",
-          "name": "Aurangabad"
+        {"@type":"City","name":"Aurangabad"
         },
-        {
-          "@type": "State",
-          "name": "Maharashtra"
+        {"@type":"State","name":"Maharashtra"
         }
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:30",
-          "closes": "18:30"
+      ],"openingHoursSpecification": [
+        {"@type":"OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"
+          ],"opens":"09:30","closes":"18:30"
         },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:30",
-          "closes": "15:00"
+        {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:30","closes":"15:00"
         }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+919595997711",
-        "email": "proventurein@gmail.com",
-        "contactType": "customer support",
-        "areaServed": "IN",
-        "availableLanguage": [
-          "en",
-          "hi",
-          "mr"
+      ],"contactPoint": {"@type":"ContactPoint","telephone":"+919595997711","email":"proventurein@gmail.com","contactType":"customer support","areaServed":"IN","availableLanguage": ["en","hi","mr"
         ]
-      },
-      "sameAs": [
-        "https://www.facebook.com/ProVentureIN/",
-        "https://www.instagram.com/proventureIN/",
-        "https://www.linkedin.com/company/proventurein/",
-        "https://x.com/ProventureIN"
-      ],
-      "hasMap": "https://www.google.com/maps/search/?api=1&query=19.8359784,75.2958903"
+      },"sameAs": ["https://www.facebook.com/ProVentureIN/","https://www.instagram.com/proventureIN/","https://www.linkedin.com/company/proventurein/","https://x.com/ProventureIN"
+      ],"hasMap":"https://www.google.com/maps/search/?api=1&query=19.8359784,75.2958903"
     },
-    {
-      "@type": "WebSite",
-      "@id": "https://proventure.in/#website",
-      "url": "https://proventure.in/",
-      "name": "ProVenture Digital Agency",
-      "publisher": {
-        "@id": "https://proventure.in/#organization"
-      },
-      "inLanguage": "en-IN"
+    {"@type":"WebSite","@id":"https://proventure.in/#website","url":"https://proventure.in/","name":"ProVenture Digital Agency","publisher": {"@id":"https://proventure.in/#organization"
+      },"inLanguage":"en-IN"
     },
-    {
-      "@type": "Blog",
-      "@id": "https://proventure.in/blog#webpage",
-      "url": "https://proventure.in/blog",
-      "name": "Digital Marketing Blog in Chhatrapati Sambhajinagar | ProVenture",
-      "description": "Read ProVenture insights on SEO, branding, websites, social media, paid ads, and local digital marketing trends relevant to businesses in Chhatrapati Sambhajinagar.",
-      "isPartOf": {
-        "@id": "https://proventure.in/#website"
-      },
-      "about": {
-        "@id": "https://proventure.in/#organization"
-      },
-      "inLanguage": "en-IN",
-      "primaryImageOfPage": "https://proventure.in/icon.png"
+    {"@type":"Blog","@id":"https://proventure.in/blog#webpage","url":"https://proventure.in/blog","name":"Digital Marketing Blog in Chhatrapati Sambhajinagar | ProVenture","description":"Read ProVenture insights on SEO, branding, websites, social media, paid ads, and local digital marketing trends relevant to businesses in Chhatrapati Sambhajinagar.","isPartOf": {"@id":"https://proventure.in/#website"
+      },"about": {"@id":"https://proventure.in/#organization"
+      },"inLanguage":"en-IN","primaryImageOfPage":"https://proventure.in/icon.png"
     }
   ]
 }
@@ -419,22 +330,31 @@
 					</div>
 				</div>
 			</header>
-<main id="C_T_DefaultRegion">
+<main class="main" id="C_T_DefaultRegion">
 <!-- Hero Section -->
-<div class="hero pv-gradient-bg" style="min-height: 50vh; display: flex; align-items: center;">
-<div class="container-big">
-<h1 class="pv-reveal">Insights &amp; <span style="color: rgba(255,255,255,0.7);">News</span></h1>
-<p class="pv-reveal" style="font-size: 1.5rem; color: white; max-width: 600px; margin-top: 20px;">
-                    Trends, strategies, and updates from the world of digital marketing.
-                </p>
+<div class="hero bg-dark bg-gradient hero-small">
+<div class="container-big scroll-parallax">
+<h1 class="nospan">
+Blog
+</h1>
+<div class="grid-row twocol">
+<div class="hero-topt">
+<span class="toptitle">Insights &amp; News</span>
+</div>
+<div class="hero-lead">
+<p>
+<span>Trends, strategies, and updates from the world of digital marketing.</span>
+</p>
+</div>
+</div>
 </div>
 </div>
 <!-- Blog Section -->
-<section class="section bg-light" style="padding: 80px 0; background-color: #f8f9fa;">
+<section class="section bg-light" style="padding: 80px 0; background-color: #f8f9fa; position: relative; z-index: 1;">
 <div class="container-big">
 <div class="blog-grid">
 <!-- Blog Post 1 -->
-<article class="blog-card pv-reveal">
+<article class="blog-card">
 <div class="blog-thumb">
 <img alt="SEO Strategy" src="thumbnails/120297-800-500-Crop.jpg"/>
 </div>
@@ -445,11 +365,11 @@
 </div>
 <h2 class="blog-title"><a href="#" style="color: inherit; text-decoration: none;">5 SEO Strategies That Actually Work in 2025</a></h2>
 <p class="blog-excerpt">Search engines are evolving. Discover the key tactics you need to rank higher and drive organic traffic this year.</p>
-<a class="read-more" href="#">Read Article <span>?</span></a>
+<a class="read-more" href="#">Read Article <span>&rarr;</span></a>
 </div>
 </article>
 <!-- Blog Post 2 -->
-<article class="blog-card pv-reveal">
+<article class="blog-card">
 <div class="blog-thumb">
 <img alt="Social Media Trends" src="thumbnails/120304-800-500-Crop.jpg"/>
 </div>
@@ -460,11 +380,11 @@
 </div>
 <h2 class="blog-title"><a href="#" style="color: inherit; text-decoration: none;">The Rise of Short-Form Video Content</a></h2>
 <p class="blog-excerpt">Why TikTok, Reels, and Shorts are dominating the marketing landscape and how your brand can leverage them.</p>
-<a class="read-more" href="#">Read Article <span>?</span></a>
+<a class="read-more" href="#">Read Article <span>&rarr;</span></a>
 </div>
 </article>
 <!-- Blog Post 3 -->
-<article class="blog-card pv-reveal">
+<article class="blog-card">
 <div class="blog-thumb">
 <img alt="Branding" src="thumbnails/120294-800-500-Crop.jpg"/>
 </div>
@@ -475,7 +395,7 @@
 </div>
 <h2 class="blog-title"><a href="#" style="color: inherit; text-decoration: none;">Why Your Brand Identity Matters More Than Ever</a></h2>
 <p class="blog-excerpt">In a crowded digital marketplace, a strong, consistent brand identity is your most powerful asset.</p>
-<a class="read-more" href="#">Read Article <span>?</span></a>
+<a class="read-more" href="#">Read Article <span>&rarr;</span></a>
 </div>
 </article>
 </div>
@@ -486,12 +406,12 @@
 </div>
 </section>
 <!-- Newsletter CTA -->
-<section class="section bg-white" style="padding: 80px 0;">
+<section class="section bg-white" style="padding: 80px 0; background-color: #ffffff; position: relative; z-index: 1;">
 <div class="container-small text-center">
-<h2 class="pv-reveal">Subscribe to our newsletter</h2>
+<h2 >Subscribe to our newsletter</h2>
 <p style="margin-bottom: 30px; color: #666;">Get the latest marketing insights delivered straight to your inbox.</p>
-<form class="pv-reveal" style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px;">
-<input placeholder="Your email address" style="flex-grow: 1; padding: 15px; border-radius: 10px; border: 1px solid #ddd;" type="email"/>
+<form  style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px;">
+<input placeholder="Your email address" style="flex-grow: 1; padding: 15px; border-radius: 4px; border: 1px solid #ddd;" type="email"/>
 <button class="btn btn-primary pv-btn-primary" type="submit">Subscribe</button>
 </form>
 </div>
