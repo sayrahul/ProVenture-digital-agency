@@ -884,28 +884,28 @@
         if (!nav) return;
 
         const links = nav.querySelectorAll('a');
-        let currentPath = window.location.pathname.toLowerCase().split('/').pop();
-        if (!currentPath || currentPath === '' || currentPath === 'index.html') {
-            currentPath = 'index.html';
+        let currentPath = window.location.pathname.toLowerCase().split('/').pop().replace(/\.html$/, '');
+        if (!currentPath || currentPath === '' || currentPath === 'index') {
+            currentPath = 'index';
         }
 
         const servicePages = [
-            'services.html', 'graphic-design.html', 'web-design.html',
-            'digital-marketing.html', 'online-advertising.html', 'social-media.html',
-            'video-production.html', 'video-editing.html', 'video-marketing.html', 'creative-content.html'
+            'services', 'graphic-design', 'web-design',
+            'digital-marketing', 'online-advertising', 'social-media',
+            'video-production', 'video-editing', 'video-marketing', 'creative-content'
         ];
 
         links.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href');
             if (!href) return;
-            const targetPath = href.toLowerCase().split('/').pop();
+            const targetPath = href.toLowerCase().split('/').pop().replace(/\.html$/, '');
 
-            if (currentPath === 'index.html' && (targetPath === 'index.html' || targetPath === '')) {
+            if (currentPath === 'index' && (targetPath === 'index' || targetPath === '')) {
                 link.classList.add('active');
             } else if (currentPath === targetPath) {
                 link.classList.add('active');
-            } else if (targetPath === 'services.html' && servicePages.includes(currentPath)) {
+            } else if (targetPath === 'services' && servicePages.includes(currentPath)) {
                 link.classList.add('active');
             }
         });
