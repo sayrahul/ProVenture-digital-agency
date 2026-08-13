@@ -860,7 +860,7 @@
     // MOBILE BOTTOM NAV ACTIVE LINK HIGHLIGHT
     // ========================================
     function initMobileNavActiveState() {
-        const nav = document.querySelector('.pv-mobile-nav');
+        const nav = document.querySelector('.pv-android-nav');
         if (!nav) return;
 
         const links = nav.querySelectorAll('a');
@@ -868,12 +868,6 @@
         if (!currentPath || currentPath === '' || currentPath === 'index') {
             currentPath = 'index';
         }
-
-        const servicePages = [
-            'services', 'graphic-design', 'web-design',
-            'digital-marketing', 'online-advertising', 'social-media',
-            'video-production', 'video-editing', 'video-marketing', 'creative-content'
-        ];
 
         links.forEach(link => {
             link.classList.remove('active');
@@ -884,8 +878,6 @@
             if (currentPath === 'index' && (targetPath === 'index' || targetPath === '')) {
                 link.classList.add('active');
             } else if (currentPath === targetPath) {
-                link.classList.add('active');
-            } else if (targetPath === 'services' && servicePages.includes(currentPath)) {
                 link.classList.add('active');
             }
         });

@@ -732,67 +732,59 @@ main.main {
     pointer-events: none !important;
 }
 
-/* Limelight Floating Bottom Navigation (Desktop & Mobile) */
-.pv-mobile-nav {
-    position: fixed !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    bottom: 20px !important;
-    width: calc(100% - 32px) !important;
-    max-width: 440px !important;
-    z-index: 99999 !important;
-    background: rgba(15, 23, 42, 0.92) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45) !important;
-    display: block !important;
-    padding: 0 8px !important;
-    height: 60px !important;
-    overflow: visible !important;
+/* Android App Curved FAB Bottom Navigation */
+.pv-android-nav {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    width: calc(100% - 24px);
+    max-width: 440px;
+    height: 64px;
+    z-index: 99999;
+    display: none;
 }
 
-.pv-mobile-nav .pv-mobile-nav-inner {
+@media (max-width: 991.98px) {
+    .pv-android-nav {
+        display: block;
+    }
+
+    body {
+        padding-bottom: 90px !important;
+    }
+}
+
+.pv-android-nav-bar {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    align-items: center;
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
 
-/* Limelight Spotlight Top Bar & Light Beam */
-.pv-limelight-bar {
+.pv-android-nav-bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 36px;
-    height: 4px;
-    border-radius: 999px;
-    background: #00ACDF;
-    box-shadow: 0 0 10px #00ACDF, 0 0 20px #00ACDF;
-    transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    height: 100%;
     pointer-events: none;
-    z-index: 10;
-    opacity: 0;
+    z-index: 1;
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.15));
 }
 
-.pv-limelight-beam {
-    position: absolute;
-    top: 4px;
-    left: -40%;
-    width: 180%;
-    height: 46px;
-    clip-path: polygon(5% 100%, 25% 0, 75% 0, 95% 100%);
-    background: linear-gradient(to bottom, rgba(0, 172, 223, 0.35), transparent);
-    pointer-events: none;
-}
-
-.pv-mobile-nav a.pv-nav-item {
+.pv-android-nav-items {
     position: relative;
-    z-index: 20;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    height: 100%;
+    padding: 0 4px;
+}
+
+.pv-android-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -801,7 +793,7 @@ main.main {
     transition: color 0.2s ease;
 }
 
-.pv-mobile-nav a.pv-nav-item svg {
+.pv-android-item svg {
     width: 22px;
     height: 22px;
     stroke: currentColor;
@@ -809,18 +801,68 @@ main.main {
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
-    opacity: 0.45;
-    transition: opacity 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+    transition: stroke 0.2s ease, transform 0.2s ease;
 }
 
-.pv-mobile-nav a.pv-nav-item.active svg {
-    opacity: 1;
+.pv-active-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: transparent;
+    margin-top: 3px;
+    transition: background 0.2s ease;
+}
+
+.pv-android-item.active {
+    color: #00ACDF;
+}
+
+.pv-android-item.active svg {
     stroke: #00ACDF;
-    transform: scale(1.08);
+    transform: translateY(-1px);
 }
 
-body {
-    padding-bottom: 85px !important;
+.pv-android-item.active .pv-active-dot {
+    background: #00ACDF;
+}
+
+/* Center Raised FAB Circle Button */
+.pv-android-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+    top: -16px;
+    z-index: 5;
+}
+
+.pv-fab-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ACDF, #0099cc);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 22px rgba(0, 172, 223, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pv-fab-circle svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.pv-android-fab:active .pv-fab-circle {
+    transform: scale(0.94);
 }
 
 /* Projects page hero should not use sticky legacy hero behavior */
