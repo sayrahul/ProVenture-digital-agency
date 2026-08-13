@@ -939,6 +939,68 @@
         initTestimonialsCarousel();
         initClientFilters();
         setTimeout(initProjectSliderNav, 500);
+        initLimelightNav();
+    }
+
+    function initLimelightNav() {
+        const navContainer = document.querySelector('.pv-mobile-nav-inner');
+        const limelightBar = document.getElementById('pv-limelight-bar');
+        if (!navContainer || !limelightBar) return;
+
+        const navItems = Array.from(navContainer.querySelectorAll('a.pv-nav-item'));
+        let rawPath = window.location.pathname.split('/').pop().toLowerCase();
+        if (!rawPath || rawPath === '' || rawPath === '/') {
+            rawPath = 'index.html';
+        }
+
+        // Determine active index by matching page filename
+        let activeIndex = navItems.findIndex(item => {
+            const href = (item.getAttribute('href') || '').toLowerCase();
+            return href.endsWith(rawPath) || href.includes(rawPath);
+        });
+
+        // Fallbacks for specific page categories
+        if (activeIndex === -1) {
+            if (rawPath.includes('blog')) {
+                activeIndex = navItems.findIndex(item => (item.getAttribute('href') || '').includes('blog.html'));
+            } else if (rawPath.includes('client')) {
+                activeIndex = navItems.findIndex(item => (item.getAttribute('href') || '').includes('clients.html'));
+            } else if (rawPath.includes('contact')) {
+                activeIndex = navItems.findIndex(item => (item.getAttribute('href') || '').includes('contact.html'));
+            } else if (rawPath.includes('about')) {
+                activeIndex = navItems.findIndex(item => (item.getAttribute('href') || '').includes('about.html'));
+            }
+        }
+
+        if (activeIndex === -1) activeIndex = 0;
+
+        function setSpotlight(targetIndex) {
+            navItems.forEach((item, idx) => {
+                if (idx === targetIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            const targetItem = navItems[targetIndex];
+            if (targetItem && limelightBar) {
+                const itemWidth = targetItem.offsetWidth;
+                const itemLeft = targetItem.offsetLeft;
+                const barWidth = limelightBar.offsetWidth || 42;
+                const newLeft = itemLeft + (itemWidth / 2) - (barWidth / 2);
+                limelightBar.style.left = `${newLeft.toFixed(1)}px`;
+                limelightBar.style.opacity = '1';
+            }
+        }
+
+        // Lock spotlight position fixed on the current active page item
+        requestAnimationFrame(() => setSpotlight(activeIndex));
+        setTimeout(() => setSpotlight(activeIndex), 80);
+        setTimeout(() => setSpotlight(activeIndex), 300);
+
+        window.addEventListener('resize', () => setSpotlight(activeIndex), { passive: true });
+        window.addEventListener('orientationchange', () => setSpotlight(activeIndex), { passive: true });
     }
 
     // Start initialization

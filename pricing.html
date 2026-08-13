@@ -114,12 +114,18 @@
 				</div>
 				<div class="mainnav">
 					<div class="mainnav-in">
-						<ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
-							<li id="navigation_2"><a class="sitemenuitem" href="about.html">About Us</a></li>
-							<li id="navigation_3"><a class="sitemenuitem" href="services.html">Services</a></li>
-							<li id="navigation_pricing"><a class="sitemenuitem" href="pricing.html">Pricing</a></li>
-							
+																		<ul aria-label="Main Website Navigation" class="navigation navigation-level-1">
+							<li id="navigation_2" class="pv-has-dropdown">
+								<a class="sitemenuitem pv-dropdown-btn" href="about.html">About Us <span class="pv-nav-arrow">▾</span></a>
+								<ul class="pv-sub-navigation">
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="services.html">Services</a></li>
+									<li><a href="pricing.html">Pricing</a></li>
+								</ul>
+							</li>
+							<li id="navigation_portfolio"><a class="sitemenuitem" href="https://portfolio.proventure.in/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
 							<li id="navigation_5"><a class="sitemenuitem" href="clients.html">Clients</a></li>
+							<li id="navigation_blog"><a class="sitemenuitem" href="blog.html">Blogs</a></li>
 							<li id="navigation_6"><a class="sitemenuitem" href="contact.html">Contact Us</a></li>
 						</ul>
 						<div class="container-big">
@@ -300,74 +306,7 @@
 							<span>100% Dedicated Team Guarantee</span>
 						</div>
 
-						<!-- Interactive Pricing & Service Estimator Widget -->
-						<div class="pv-calc-wrapper">
-							<div class="pv-calc-card">
-								<div class="pv-calc-header">
-									<div class="pv-calc-badge">Interactive Estimator</div>
-									<h2>Build Your Custom Agency Retainer</h2>
-									<p>Select the services your business needs right now for a real-time estimate.</p>
-								</div>
-								<div class="pv-calc-body">
-									<div class="pv-calc-services-grid">
-										<label class="pv-calc-checkbox-card">
-											<input type="checkbox" class="pv-calc-option" data-monthly="4000" data-annual="3600" value="web-dev" checked />
-											<div class="pv-calc-option-content">
-												<span class="pv-calc-option-title">Website Management & Development</span>
-												<span class="pv-calc-option-desc">Performance hosting, UI updates & landing page tweaks</span>
-												<span class="pv-calc-option-price">+₹4,000/mo</span>
-											</div>
-										</label>
-										<label class="pv-calc-checkbox-card">
-											<input type="checkbox" class="pv-calc-option" data-monthly="3000" data-annual="2700" value="social-posts" checked />
-											<div class="pv-calc-option-content">
-												<span class="pv-calc-option-title">Social Media Graphics (8 Posts)</span>
-												<span class="pv-calc-option-desc">Custom brand creatives, stories & caption copy</span>
-												<span class="pv-calc-option-price">+₹3,000/mo</span>
-											</div>
-										</label>
-										<label class="pv-calc-checkbox-card">
-											<input type="checkbox" class="pv-calc-option" data-monthly="5000" data-annual="4500" value="reels-video" />
-											<div class="pv-calc-option-content">
-												<span class="pv-calc-option-title">Short-Form Reels (4 Videos)</span>
-												<span class="pv-calc-option-desc">Trending edits, sound sync & post-production</span>
-												<span class="pv-calc-option-price">+₹5,000/mo</span>
-											</div>
-										</label>
-										<label class="pv-calc-checkbox-card">
-											<input type="checkbox" class="pv-calc-option" data-monthly="6000" data-annual="5400" value="paid-ads" />
-											<div class="pv-calc-option-content">
-												<span class="pv-calc-option-title">Google & Meta Ads Management</span>
-												<span class="pv-calc-option-desc">Targeted lead generation & campaign setup</span>
-												<span class="pv-calc-option-price">+₹6,000/mo</span>
-											</div>
-										</label>
-										<label class="pv-calc-checkbox-card">
-											<input type="checkbox" class="pv-calc-option" data-monthly="4500" data-annual="4050" value="seo-growth" />
-											<div class="pv-calc-option-content">
-												<span class="pv-calc-option-title">Local SEO & Google Profile</span>
-												<span class="pv-calc-option-desc">Organic rank optimization & local citation updates</span>
-												<span class="pv-calc-option-price">+₹4,500/mo</span>
-											</div>
-										</label>
-									</div>
-									<div class="pv-calc-summary">
-										<div class="pv-calc-total-box">
-											<span class="pv-calc-total-label">Estimated Investment</span>
-											<div class="pv-calc-price-display">
-												<span class="pv-calc-currency">₹</span>
-												<span id="pv-calc-total-amount">7,000</span>
-												<span class="pv-calc-period">/ month</span>
-											</div>
-											<span class="pv-calc-saving-note" id="pv-calc-saving-note">Monthly Billing</span>
-										</div>
-										<div class="pv-calc-action">
-											<a href="contact.html?ref=custom-estimate" id="pv-calc-cta-btn" class="pv-pricing-btn is-highlight">Get Custom Proposal &rarr;</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
 
 						<!-- Pricing Cards Grid -->
 						<div class="pv-pricing-grid">
@@ -380,7 +319,7 @@
 								<div class="pv-pricing-price-box">
 									<div class="pv-pricing-price-row">
 										<span class="pv-pricing-currency">₹</span>
-										<span class="pv-pricing-amount" data-monthly="6,999" data-annual="6,299">6,999</span>
+										<span class="pv-pricing-amount" data-monthly="13,999" data-annual="12,599">13,999</span>
 										<span class="pv-pricing-period">/ month</span>
 									</div>
 									<div class="pv-pricing-billing-info" id="billing-info-starter">Billed monthly</div>
@@ -455,7 +394,7 @@
 								<div class="pv-pricing-price-box">
 									<div class="pv-pricing-price-row">
 										<span class="pv-pricing-currency">₹</span>
-										<span class="pv-pricing-amount" data-monthly="12,499" data-annual="11,249">12,499</span>
+										<span class="pv-pricing-amount" data-monthly="24,999" data-annual="22,499">24,999</span>
 										<span class="pv-pricing-period">/ month</span>
 									</div>
 									<div class="pv-pricing-billing-info" id="billing-info-professional">Billed monthly</div>
@@ -522,7 +461,7 @@
 								<div class="pv-pricing-price-box">
 									<div class="pv-pricing-price-row">
 										<span class="pv-pricing-currency">₹</span>
-										<span class="pv-pricing-amount" data-monthly="19,999" data-annual="17,999">19,999</span>
+										<span class="pv-pricing-amount" data-monthly="39,999" data-annual="35,999">39,999</span>
 										<span class="pv-pricing-period">/ month</span>
 									</div>
 									<div class="pv-pricing-billing-info" id="billing-info-enterprise">Billed monthly</div>
@@ -880,53 +819,39 @@
 	<script src="custom/js/proventure-custom.js?v=20260308"></script>
 
 	<!-- Mobile Bottom Nav -->
-	<nav class="pv-mobile-nav" aria-label="Mobile Navigation">
-		<div class="pv-mobile-nav-inner">
-			<a href="index.html" class="pv-nav-home">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M3 10.5L12 3l9 7.5" />
-					<path d="M5 10.5V21h14V10.5" />
-				</svg>
-				<span>Home</span>
-			</a>
-			<a href="about.html" class="pv-nav-about">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<circle cx="12" cy="7" r="3" />
-					<path d="M5 21a7 7 0 0 1 14 0" />
-				</svg>
-				<span>About</span>
-			</a>
-			<a href="services.html" class="pv-nav-services">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M12 2v6" />
-					<path d="M4.2 4.2l4.2 4.2" />
-					<path d="M2 12h6" />
-					<path d="M4.2 19.8l4.2-4.2" />
-					<path d="M12 16v6" />
-					<path d="M19.8 19.8l-4.2-4.2" />
-					<path d="M16 12h6" />
-					<path d="M19.8 4.2l-4.2 4.2" />
-					<circle cx="12" cy="12" r="2" />
-				</svg>
-				<span>Services</span>
-			</a>
-			<a href="clients.html" class="pv-nav-clients">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<circle cx="8" cy="8" r="3" />
-					<circle cx="16" cy="8" r="3" />
-					<path d="M2 21a6 6 0 0 1 12 0" />
-					<path d="M10 21a6 6 0 0 1 12 0" />
-				</svg>
-				<span>Clients</span>
-			</a>
-			<a href="contact.html" class="pv-nav-contact">
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M4 4h16v12H8l-4 4V4z" />
-				</svg>
-				<span>Contact</span>
-			</a>
-		</div>
-	</nav>
+	<!-- Mobile Limelight Bottom Nav -->
+<nav class="pv-mobile-nav" aria-label="Mobile Navigation">
+  <div class="pv-mobile-nav-inner">
+    <div class="pv-limelight-bar" id="pv-limelight-bar">
+      <div class="pv-limelight-beam"></div>
+    </div>
+    
+    <a href="index.html" class="pv-nav-item pv-nav-home" data-nav="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 10.5V21h14V10.5"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="about.html" class="pv-nav-item pv-nav-about" data-nav="about">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21a7 7 0 0 1 14 0"/></svg>
+      <span>About</span>
+    </a>
+    <a href="https://portfolio.proventure.in/" target="_blank" rel="noopener noreferrer" class="pv-nav-item pv-nav-portfolio" data-nav="portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+      <span>Portfolio</span>
+    </a>
+    <a href="clients.html" class="pv-nav-item pv-nav-clients" data-nav="clients">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 21a6 6 0 0 1 12 0"/><path d="M10 21a6 6 0 0 1 12 0"/></svg>
+      <span>Clients</span>
+    </a>
+    <a href="blog.html" class="pv-nav-item pv-nav-blog" data-nav="blog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span>Blogs</span>
+    </a>
+    <a href="contact.html" class="pv-nav-item pv-nav-contact" data-nav="contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
 </body>
 
 </html>
