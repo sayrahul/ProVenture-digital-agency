@@ -287,48 +287,10 @@
     }
 
     // ========================================
-    // 10. BACK TO TOP BUTTON
+    // 10. BACK TO TOP BUTTON (Disabled per user request)
     // ========================================
     function initBackToTop() {
-        const button = document.createElement('button');
-        button.className = 'pv-back-to-top';
-        button.innerHTML = '↑';
-        button.style.cssText = `
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #00ACDF, #0099cc);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 172, 223, 0.3);
-        `;
-        document.body.appendChild(button);
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                button.style.opacity = '1';
-                button.style.visibility = 'visible';
-            } else {
-                button.style.opacity = '0';
-                button.style.visibility = 'hidden';
-            }
-        });
-
-        button.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        return;
     }
 
     // ========================================
@@ -847,7 +809,7 @@
                 e.stopPropagation();
             }
             const now = Date.now();
-            if (now - lastToggleTime < 300) return;
+            if (now - lastToggleTime < 200) return;
             lastToggleTime = now;
             document.documentElement.classList.toggle('shownav');
         }
@@ -855,16 +817,34 @@
         const toggles = document.querySelectorAll('.navtoggle');
         toggles.forEach(toggle => {
             toggle.removeEventListener('click', toggleNav);
+            toggle.removeEventListener('touchstart', toggleNav);
+            toggle.addEventListener('touchstart', toggleNav, { passive: false });
             toggle.addEventListener('click', toggleNav);
         });
 
-        if (window.jQuery) {
-            window.jQuery(document).off('click.pvNav', '.navtoggle');
-            window.jQuery(document).on('click.pvNav', '.navtoggle', toggleNav);
-        }
+        // Dropdown accordion toggle logic for mobile (instant touch & click response)
+        const dropdownItems = document.querySelectorAll('.pv-has-dropdown');
+        dropdownItems.forEach(item => {
+            const btn = item.querySelector('.pv-dropdown-btn');
+            if (btn) {
+                function handleDropdown(e) {
+                    if (window.innerWidth < 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        item.classList.toggle('is-open');
+                    }
+                }
+                btn.addEventListener('touchstart', handleDropdown, { passive: false });
+                btn.addEventListener('click', handleDropdown);
+            }
+        });
 
+        // Close mobile nav ONLY when clicking actual destination links (not dropdown trigger)
         document.querySelectorAll('.mainnav a').forEach(link => {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', function (e) {
+                if (this.classList.contains('pv-dropdown-btn')) {
+                    return; // Keep menu open when expanding dropdown
+                }
                 document.documentElement.classList.remove('shownav');
             });
         });

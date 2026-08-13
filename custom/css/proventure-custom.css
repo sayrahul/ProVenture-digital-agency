@@ -717,23 +717,40 @@ main.main {
     flex: 1;
 }
 
-/* Mobile Limelight Bottom Navigation */
+/* Disable Back-to-Top / Floating Top Arrow Icon Entirely */
+.pv-back-to-top,
+#pv-back-to-top,
+.scroll-top,
+.back-to-top,
+#scroll-top,
+#back-to-top,
+[class*="back-to-top"],
+[class*="scroll-top"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Limelight Floating Bottom Navigation (Desktop & Mobile) */
 .pv-mobile-nav {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 16px;
-    width: calc(100% - 24px);
-    max-width: 440px;
-    z-index: 99999;
-    background: #0f172a;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-    display: none;
-    padding: 0 6px;
-    height: 56px;
-    overflow: visible;
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 20px !important;
+    width: calc(100% - 32px) !important;
+    max-width: 440px !important;
+    z-index: 99999 !important;
+    background: rgba(15, 23, 42, 0.92) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45) !important;
+    display: block !important;
+    padding: 0 8px !important;
+    height: 60px !important;
+    overflow: visible !important;
 }
 
 .pv-mobile-nav .pv-mobile-nav-inner {
@@ -802,20 +819,8 @@ main.main {
     transform: scale(1.08);
 }
 
-@media (max-width: 991.98px) {
-    .pv-mobile-nav {
-        display: block;
-    }
-
-    body {
-        padding-bottom: 90px;
-    }
-}
-
-@media (min-width: 992px) {
-    .pv-mobile-nav {
-        display: none;
-    }
+body {
+    padding-bottom: 85px !important;
 }
 
 /* Projects page hero should not use sticky legacy hero behavior */
@@ -4069,6 +4074,12 @@ img {
     }
 }
 
+/* Ultra-fast 0.25s mobile hamburger menu performance overrides */
+.header .mainnav,
+.header .mainnav:before {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
 /* Ensure mobile navtoggle X button is ALWAYS top-most and clickable when menu is open */
 .shownav .navtoggle {
     z-index: 10005 !important;
@@ -4195,19 +4206,46 @@ img {
     padding-left: 24px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
+    .navigation-level-1 .pv-has-dropdown > a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
     .navigation-level-1 .pv-sub-navigation {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding: 0 0 0 15px;
-        margin: 5px 0 15px 0;
+        display: none !important;
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        border-radius: 12px !important;
+        padding: 4px 16px !important;
+        margin: 8px 0 12px 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .navigation-level-1 .pv-has-dropdown.is-open .pv-sub-navigation {
+        display: block !important;
     }
     
     .navigation-level-1 .pv-sub-navigation li a {
         color: #ffffff !important;
-        font-size: 1.2rem !important;
-        padding: 8px 0;
+        font-size: 1.15rem !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .navigation-level-1 .pv-sub-navigation li:last-child a {
+        border-bottom: none !important;
+    }
+}
+
+@media only screen and (max-width: 575.9px) {
+    .bg-full {
+        height: 150px !important;
     }
 }
