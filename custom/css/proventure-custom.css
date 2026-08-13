@@ -394,42 +394,27 @@ footer .legalinfolinks {
     position: relative;
     display: inline-block;
     padding: 16px 40px;
-    background: linear-gradient(135deg, #00ACDF 0%, #0099cc 100%);
-    color: #fff;
+    background: #004a8c;
+    color: #ffffff;
     border: none;
-    border-radius: 50px;
+    border-radius: 4px;
     font-weight: 600;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    overflow: hidden;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 172, 223, 0.3);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.pv-btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.pv-btn-primary:hover::before {
-    left: 100%;
-}
-
-.pv-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 172, 223, 0.4);
+.pv-btn-primary:hover,
+.pv-btn-primary:focus {
+    background: #003a6c;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .pv-btn-primary:active {
-    transform: translateY(0);
+    background: #002b52;
 }
 
 /* ========================================
@@ -4017,17 +4002,4 @@ img {
 .projectslider .flickity-button:hover svg,
 .projectslider .flickity-button:focus svg {
     fill: #ffffff !important;
-}
-
-/* Minimalist footer Call Us Now button */
-.footer .pv-btn-primary {
-    box-shadow: none !important;
-    transform: none !important;
-}
-.footer .pv-btn-primary:hover {
-    box-shadow: none !important;
-    transform: none !important;
-}
-.footer .pv-btn-primary::before {
-    display: none !important;
 }
