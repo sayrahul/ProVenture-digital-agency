@@ -1,7 +1,7 @@
 # ProVenture - Fix Broken HTML Files
 # This script checks for and fixes common HTML issues
 
-$projectPath = "c:\My Web Sites\ProVenture-digital-agency"
+$projectPath = "d:\My Web Sites\ProVenture-digital-agency"
 $htmlFiles = Get-ChildItem -Path $projectPath -Filter "*.html" -File
 
 $issuesFound = 0

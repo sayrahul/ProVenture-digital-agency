@@ -1,0 +1,12 @@
+{
+  "name": "proventure-digital-agency",
+  "version": "1.0.0",
+  "description": "Static website for ProVenture Digital Agency",
+  "scripts": {
+    "dev": "serve . -p 3000",
+    "start": "serve . -p 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

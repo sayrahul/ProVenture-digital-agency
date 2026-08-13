@@ -3798,20 +3798,10 @@ main.main.contact-main {
     color: #fff;
 }
 
-/* Goals mobile stack */
+/* Goals mobile scroll adjustment */
 @media (max-width: 767px) {
-    .horizontal-scroll {
-        overflow-x: visible;
-    }
-
-    .goalslist {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-
     .goalslist-item {
-        min-width: 0 !important;
-        width: 100% !important;
+        width: 85% !important;
     }
 }
 

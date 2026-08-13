@@ -15,7 +15,6 @@ Disallow: /.analysis/
 Disallow: /demo-preview.html
 Disallow: /optimization-test.html
 Disallow: /seo-enhancements.html
-Disallow: /client-login.html
 
 # Disallow specific file types
 Disallow: /*.json$

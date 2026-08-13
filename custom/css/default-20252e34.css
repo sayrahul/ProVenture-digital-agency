@@ -1283,7 +1283,7 @@ a.badge:focus {
     }
 
     abbr[title]::after {
-        content: " ("attr(title) ")";
+        content: " (" attr(title) ")";
     }
 
     pre {
@@ -1429,7 +1429,7 @@ a.badge:focus {
 body {
     color: #1C1E20;
     font-family: 'Inter', sans-serif;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     font-size: 20px;
     line-height: 1.5
 }
@@ -1461,7 +1461,7 @@ a:focus {
 strong,
 b,
 .text-bold {
-    font-variation-settings: 'wght'600;
+    font-variation-settings: 'wght' 600;
     color: #000
 }
 
@@ -1478,7 +1478,7 @@ h5,
 h6,
 .h6 {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1C1E20;
     font-family: 'Outfit', sans-serif
 }
@@ -1486,7 +1486,7 @@ h6,
 h1,
 .h1 {
     color: #fff;
-    font-variation-settings: "wght"400;
+    font-variation-settings: "wght" 400;
     font-size: clamp(36px, 6vw, 102px)
 }
 
@@ -1676,7 +1676,7 @@ html.lenis body {
 .btn {
     display: inline-block;
     line-height: 1.2;
-    font-variation-settings: "wght"500;
+    font-variation-settings: "wght" 500;
     padding: 16px 25px;
     border-radius: 10px;
     font-size: 18px;
@@ -1788,7 +1788,7 @@ html.lenis body {
     color: #fff;
     font-size: 25px;
     position: relative;
-    font-variation-settings: 'wght'450
+    font-variation-settings: 'wght' 450
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1400px),
@@ -1860,12 +1860,12 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
     color: #999;
     border: 1px solid rgba(153, 153, 153, 0.5);
     background: rgba(153, 153, 153, 0.1);
-    font-variation-settings: 'wght'400
+    font-variation-settings: 'wght' 400
 }
 
 .alert a {
     color: inherit;
-    font-variation-settings: 'wght'600
+    font-variation-settings: 'wght' 600
 }
 
 .alert a:hover,
@@ -1882,12 +1882,12 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
     color: #57b03f;
     border: 1px solid rgba(87, 176, 63, 0.5);
     background: rgba(87, 176, 63, 0.1);
-    font-variation-settings: 'wght'400
+    font-variation-settings: 'wght' 400
 }
 
 .alert-success a {
     color: inherit;
-    font-variation-settings: 'wght'600
+    font-variation-settings: 'wght' 600
 }
 
 .alert-success a:hover,
@@ -1900,12 +1900,12 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
     color: #c33939;
     border: 1px solid rgba(195, 57, 57, 0.5);
     background: rgba(195, 57, 57, 0.1);
-    font-variation-settings: 'wght'400
+    font-variation-settings: 'wght' 400
 }
 
 .alert-danger a {
     color: inherit;
-    font-variation-settings: 'wght'600
+    font-variation-settings: 'wght' 600
 }
 
 .alert-danger a:hover,
@@ -1918,12 +1918,12 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
     color: #c69214;
     border: 1px solid rgba(198, 146, 20, 0.5);
     background: rgba(198, 146, 20, 0.1);
-    font-variation-settings: 'wght'400
+    font-variation-settings: 'wght' 400
 }
 
 .alert-info a {
     color: inherit;
-    font-variation-settings: 'wght'600
+    font-variation-settings: 'wght' 600
 }
 
 .alert-info a:hover,
@@ -1936,12 +1936,12 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
     color: #c69214;
     border: 1px solid rgba(198, 146, 20, 0.5);
     background: rgba(198, 146, 20, 0.1);
-    font-variation-settings: 'wght'400
+    font-variation-settings: 'wght' 400
 }
 
 .alert-warning a {
     color: inherit;
-    font-variation-settings: 'wght'600
+    font-variation-settings: 'wght' 600
 }
 
 .alert-warning a:hover,
@@ -2028,7 +2028,7 @@ html body.animate:before {
 .header .logoslogan {
     font-family: 'Outfit', sans-serif;
     text-transform: lowercase;
-    font-variation-settings: 'wght'350;
+    font-variation-settings: 'wght' 350;
     transition: all 0.1s ease;
     position: relative;
     cursor: pointer;
@@ -2102,7 +2102,7 @@ html body.animate:before {
     color: #fff;
     font-size: 16px;
     z-index: 0;
-    font-variation-settings: "wght"450;
+    font-variation-settings: "wght" 450;
     position: relative;
     transform: translate(8px, -8px);
     display: inline-flex;
@@ -2139,7 +2139,7 @@ html body.animate:before {
 @media only screen and (max-width: 991.9px) {
     .header .logoslogan .number small {
         color: #F53100;
-        font-variation-settings: "wght"500
+        font-variation-settings: "wght" 500
     }
 }
 
@@ -2201,7 +2201,7 @@ html body.animate:before {
 
 .header .logoslogan strong {
     color: #fff;
-    font-variation-settings: 'wght'550;
+    font-variation-settings: 'wght' 550;
     text-transform: uppercase;
     transition: all 0.1s ease;
     transition: all 0.2s ease
@@ -2660,7 +2660,7 @@ only screen and (max-width: 991.9px) {
 }
 
 .header .mainnav .servicenav-item .h3 {
-    font-variation-settings: "wght"400;
+    font-variation-settings: "wght" 400;
     color: #fff;
     font-size: clamp(21px, 1.7vw, 30px);
     margin-bottom: 10px;
@@ -2669,11 +2669,11 @@ only screen and (max-width: 991.9px) {
 }
 
 .header .mainnav .servicenav-item .h3:before {
-    content: "("counter(navcounter, decimal-leading-zero) ") ";
+    content: "(" counter(navcounter, decimal-leading-zero) ") ";
     color: #00ACDF;
     font-size: 18px;
     margin-right: 10px;
-    font-variation-settings: "wght"500
+    font-variation-settings: "wght" 500
 }
 
 @media only screen and (max-width: 991.9px) {
@@ -3003,7 +3003,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 .hero h1,
 .hero .h1 {
     margin: 0;
-    font-variation-settings: 'wght'450;
+    font-variation-settings: 'wght' 450;
     font-size: clamp(36px, 6.2vw, 116px)
 }
 
@@ -3054,7 +3054,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 .hero h1 .reveal:first-child span,
 .hero .h1 .reveal:first-child span {
     color: rgba(255, 255, 255, 0.6);
-    font-variation-settings: 'wght'300
+    font-variation-settings: 'wght' 300
 }
 
 .hero .reveal {
@@ -3269,7 +3269,7 @@ only screen and (max-width: 575.9px) {
 .hero.bg-white .h1,
 .hero.bg-dark .h1 {
     margin-bottom: 60px;
-    font-variation-settings: "wght"500
+    font-variation-settings: "wght" 500
 }
 
 .page_pro .hero.bg-white h1,
@@ -3351,7 +3351,7 @@ only screen and (max-width: 575.9px) {
 .hero.bg-white .hero-intro .toptitle,
 .hero.bg-dark .hero-intro .toptitle {
     font-size: 25px;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     font-family: 'Outfit', sans-serif;
     margin-bottom: 30px;
     max-width: inherit
@@ -3441,7 +3441,7 @@ only screen and (max-width: 575.9px) {
 .hero.bg-dark .h1 .reveal span,
 .hero.bg-dark h1 .reveal span {
     color: #fff;
-    font-variation-settings: 'wght'450
+    font-variation-settings: 'wght' 450
 }
 
 @media only screen and (min-width: 992px) {
@@ -3577,7 +3577,7 @@ only screen and (max-width: 575.9px) {
 
 .hero-contact ul li:first-child {
     color: #1C1E20;
-    font-variation-settings: "wght"500;
+    font-variation-settings: "wght" 500;
     margin-bottom: 10px;
     font-size: 21px
 }
@@ -3900,7 +3900,7 @@ only screen and (max-width: 575.9px) {
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.3;
     position: absolute;
-    bottom: 60px;
+    bottom: 150px;
     left: 3vw;
     font-family: 'Outfit', sans-serif;
     z-index: 4;
@@ -4387,7 +4387,6 @@ only screen and (max-width: 575.9px) {
 @media only screen and (max-width: 991.9px) {
     .goalslist {
         margin-top: 40px;
-        display: block;
         padding: 0 20px
     }
 }
@@ -4423,7 +4422,7 @@ only screen and (max-width: 575.9px) {
 
 .goalslist-item h3 {
     margin: 0 0 120px 0;
-    font-variation-settings: "wght"450
+    font-variation-settings: "wght" 450
 }
 
 @media only screen and (max-width: 991.9px) {
@@ -4520,7 +4519,7 @@ only screen and (max-width: 575.9px) {
     top: 30px;
     text-transform: lowercase;
     font-size: 21px;
-    font-variation-settings: 'ital'1
+    font-variation-settings: 'ital' 1
 }
 
 @media only screen and (max-width: 991.9px) {
@@ -4600,7 +4599,7 @@ only screen and (max-width: 575.9px) {
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     display: block;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     margin-bottom: 0;
     line-height: 1.5
 }
@@ -5090,7 +5089,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .servicecard-service:before {
-    content: "("counter(listcounter, decimal-leading-zero) ") ";
+    content: "(" counter(listcounter, decimal-leading-zero) ") ";
     color: #00ACDF;
     font-size: 18px;
     margin-right: 10px
@@ -5767,8 +5766,7 @@ only screen and (max-width: 575.9px) {
     }
 }
 
-@media only screen and (min-width: 992px),
-only screen and (min-width: 768px) and (max-width: 991.9px) {
+@media screen {
     .clientratings-card:nth-child(2) {
         top: 140px
     }
@@ -5809,8 +5807,6 @@ only screen and (min-width: 768px) and (max-width: 991.9px) {
 @media only screen and (min-width: 576px) and (max-width: 767.9px),
 only screen and (max-width: 575.9px) {
     .clientratings-card {
-        position: relative;
-        top: inherit;
         padding: 30px;
         min-height: inherit
     }
@@ -6101,7 +6097,7 @@ only screen and (min-width: 992px) and (max-width: 1199.9px) {
 .toptitle {
     display: inline-block;
     font-size: 25px;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     font-family: 'Outfit', sans-serif
 }
 
@@ -6323,7 +6319,7 @@ only screen and (max-width: 575.9px) {
 .blog-inner .bloglist .lnk {
     display: inline-block;
     font-size: 16px;
-    font-variation-settings: "wght"500
+    font-variation-settings: "wght" 500
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767.9px),
@@ -6335,13 +6331,13 @@ only screen and (max-width: 575.9px) {
 
 .page-bq {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
     margin: 60px 0 45px 0;
     line-height: 1.3;
-    font-variation-settings: "wght"380;
+    font-variation-settings: "wght" 380;
     font-size: clamp(23px, 2.1vw, 40px);
     text-indent: 6vw;
     position: relative
@@ -6371,7 +6367,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .page-bq strong {
-    font-variation-settings: "wght"380
+    font-variation-settings: "wght" 380
 }
 
 .page-bq:before {
@@ -6702,7 +6698,7 @@ only screen and (max-width: 575.9px) {
 
 .blogview-item .text h2 {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
@@ -6885,7 +6881,7 @@ only screen and (max-width: 575.9px) {
 .share .wc_socialsharelinks .shareon {
     display: block;
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
@@ -6985,7 +6981,7 @@ only screen and (max-width: 575.9px) {
 
 .facts .number {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     margin: 0;
@@ -6995,7 +6991,7 @@ only screen and (max-width: 575.9px) {
     font-size: clamp(32px, 5.2vw, 80px);
     margin-bottom: 0;
     position: relative;
-    font-variation-settings: "wght"600;
+    font-variation-settings: "wght" 600;
     color: rgba(28, 30, 32, 0.2)
 }
 
@@ -7876,13 +7872,13 @@ only screen and (max-width: 575.9px) {
 
 .footerservice-text p {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
     margin: 60px 0 45px 0;
     line-height: 1.3;
-    font-variation-settings: "wght"380;
+    font-variation-settings: "wght" 380;
     font-size: clamp(23px, 2.1vw, 40px)
 }
 
@@ -8061,7 +8057,7 @@ only screen and (max-width: 575.9px) {
 .page-cta h2 {
     margin-top: 0;
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
@@ -8872,7 +8868,7 @@ only screen and (max-width: 575.9px) {
     color: #1C1E20;
     margin-bottom: 10px;
     font-family: 'Outfit', sans-serif;
-    font-variation-settings: 'wght'500
+    font-variation-settings: 'wght' 500
 }
 
 .projectgrid .project-list .project-item a .text .project-summary {
@@ -9904,7 +9900,7 @@ only screen and (max-width: 575.9px) {
     font-size: 18px;
     color: rgba(28, 30, 32, 0.6);
     margin-top: 20px;
-    font-variation-settings: 'wght'500
+    font-variation-settings: 'wght' 500
 }
 
 .page_pro blockquote {
@@ -10284,11 +10280,11 @@ only screen and (max-width: 575.9px) {
 }
 
 .entrylist .entryitem .usp .usp-content h3:before {
-    content: "("counter(concounter, decimal-leading-zero) ") ";
+    content: "(" counter(concounter, decimal-leading-zero) ") ";
     color: #00ACDF;
     font-size: 18px;
     margin-right: 10px;
-    font-variation-settings: "wght"500
+    font-variation-settings: "wght" 500
 }
 
 @media only screen and (max-width: 991.9px) {
@@ -11243,7 +11239,7 @@ only screen and (min-width: 576px) and (max-width: 767.9px) {
 .map-container .routelink {
     display: inline-block;
     line-height: 1.2;
-    font-variation-settings: "wght"500;
+    font-variation-settings: "wght" 500;
     padding: 16px 25px;
     border-radius: 10px;
     font-size: 18px;
@@ -12662,7 +12658,7 @@ only screen and (max-width: 991.9px) {
     position: relative;
     color: #111;
     line-height: 1.2;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     font-family: 'Outfit', sans-serif;
     font-size: 14px;
     letter-spacing: 0.3px;
@@ -12987,7 +12983,7 @@ only screen and (max-width: 575.9px) {
 }
 
 .footer-cta h3 {
-    font-variation-settings: "wght"400;
+    font-variation-settings: "wght" 400;
     margin-bottom: 40px
 }
 
@@ -13126,7 +13122,7 @@ only screen and (max-width: 575.9px) {
 
 .legalinfo h2 {
     line-height: 1.2;
-    font-variation-settings: 'wght'500;
+    font-variation-settings: 'wght' 500;
     color: #1c1e20;
     font-family: 'Outfit', sans-serif;
     font-size: clamp(23px, 2.8vw, 40px);
@@ -13295,7 +13291,7 @@ only screen and (max-width: 575.9px) {
 
 #body .cc-window .cc-btn {
     line-height: 1.2;
-    font-variation-settings: 'wght'400;
+    font-variation-settings: 'wght' 400;
     font-family: 'Outfit', sans-serif;
     font-size: 14px;
     display: inline-block;
