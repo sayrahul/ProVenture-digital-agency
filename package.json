@@ -4,7 +4,10 @@
   "description": "Static website for ProVenture Digital Agency",
   "scripts": {
     "dev": "serve . -p 3000",
-    "start": "serve . -p 3000"
+    "start": "serve . -p 3000",
+    "publish:blogs": "node scripts/publish.js",
+    "publish:all": "node scripts/publish.js --all",
+    "publish:dry": "node scripts/publish.js --dry-run"
   },
   "devDependencies": {
     "serve": "^14.2.0"

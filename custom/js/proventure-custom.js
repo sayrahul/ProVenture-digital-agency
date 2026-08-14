@@ -892,6 +892,125 @@
         initClientFilters();
         setTimeout(initProjectSliderNav, 500);
         initLimelightNav();
+        initFooterClock();
+        initFooterInteractions();
+    }
+
+    // ========================================
+    // FOOTER LIVE IST CLOCK
+    // ========================================
+    function initFooterClock() {
+        const clockEls = document.querySelectorAll('.pv-footer-clock-time, #pv-footer-ist-clock');
+        if (!clockEls.length) return;
+
+        function updateClock() {
+            try {
+                const now = new Date();
+                const options = {
+                    timeZone: 'Asia/Kolkata',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                };
+                const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
+                clockEls.forEach(el => {
+                    el.textContent = `${timeString} IST`;
+                });
+            } catch (e) {
+                const d = new Date();
+                const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                const ist = new Date(utc + (3600000 * 5.5));
+                let hours = ist.getHours();
+                const minutes = String(ist.getMinutes()).padStart(2, '0');
+                const seconds = String(ist.getSeconds()).padStart(2, '0');
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                const str = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm} IST`;
+                clockEls.forEach(el => {
+                    el.textContent = str;
+                });
+            }
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    }
+
+    // ========================================
+    // FOOTER INTERACTION HANDLERS
+    // ========================================
+    function initFooterInteractions() {
+        const topBtns = document.querySelectorAll('.pv-footer-top-trigger, .pv-footer-back-to-top, #pv-footer-top-btn');
+        topBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const newsletterContainers = document.querySelectorAll('.pv-footer-newsletter-wrap, .pv-footer-newsletter-form');
+        newsletterContainers.forEach(container => {
+            const input = container.querySelector('.pv-newsletter-input');
+            const submitBtn = container.querySelector('.pv-newsletter-submit');
+            const feedback = container.querySelector('.pv-newsletter-feedback');
+
+            function handleNewsletterSubmit(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                if (!input || !input.value.trim()) return;
+
+                const email = input.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    if (feedback) {
+                        feedback.textContent = 'Please enter a valid business email.';
+                        feedback.style.color = '#f87171';
+                    }
+                    return;
+                }
+
+                input.disabled = true;
+                if (submitBtn) submitBtn.disabled = true;
+
+                if (feedback) {
+                    feedback.textContent = '✨ Thank you! We will connect with you shortly.';
+                    feedback.style.color = '#34d399';
+                }
+
+                setTimeout(() => {
+                    input.value = '';
+                    input.disabled = false;
+                    if (submitBtn) submitBtn.disabled = false;
+                    setTimeout(() => {
+                        if (feedback) feedback.textContent = '';
+                    }, 4000);
+                }, 1600);
+            }
+
+            if (submitBtn) {
+                submitBtn.addEventListener('click', handleNewsletterSubmit);
+            }
+            if (input) {
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleNewsletterSubmit(e);
+                    }
+                });
+            }
+            if (container.tagName === 'FORM') {
+                container.addEventListener('submit', handleNewsletterSubmit);
+            }
+        });
     }
 
     function initLimelightNav() {
